@@ -1,0 +1,689 @@
+{
+  "webApps": [
+    [
+      {
+        "title": "Creativehub",
+        "statusColor": "red",
+        "statusText": "IN DEVELOPMENT",
+        "subtitle": "Linktree-style Portfolio Hub",
+        "description": "creativehub is a web app currently in development, designed to function as a centralized hub for showcasing my work. I plan to fully migrate my existing portfolio into this streamlined platform for better accessibility and presentation.",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/hub.webp",
+        "bgImage": "/assets/images/temp-latest/BG5.svg",
+        "link": "#mockup-section-creative-hub",
+        "githubLink": "https://github.com/Lindocode-Digital/creative-hub--"
+      },
+      {
+        "title": "Creativehub Link",
+        "statusColor": "orange",
+        "statusText": "CREATIVEHUB DETAILS",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "bgImage": "",
+        "link": "/",
+        "iconKey": "creativehub",
+        "cardId": "creative-hub",
+        "githubLink": "https://github.com/Lindocode-Digital/creative-hub--",
+        "mockupWidth": 75,
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "/assets/images/temp-latest/Mockups/creative-hub3.webp",
+            "alt": "",
+            "caption": "Homepage layout is responsive on a number of devices for convenience."
+          }
+        ],
+        "features": [
+          "Centralized portfolio hub",
+          "Responsive layout",
+          "Modern UI/UX design",
+          "Fast navigation",
+          "Scalable architecture"
+        ],
+        "stats": [
+          {
+            "label": "Performance",
+            "value": "78%"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "4.8/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
+          },
+          {
+            "label": "Completion",
+            "value": "60%"
+          }
+        ],
+        "icons": {
+          "tech": [
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg"
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "title": "Recipe Search",
+        "statusColor": "green",
+        "statusText": "LIVE",
+        "subtitle": "Ingredient-Based Recipe Finder",
+        "description": "A responsive recipe search app that allows users to find meal ideas by entering ingredients they have at home. Includes input validation, pagination, and detailed recipe modals. Built with Redux for state management, Edamam API for recipes, and Material UI for a clean user interface.",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/recipe-search.webp",
+        "bgImage": "/assets/images/temp-latest/BG4.svg",
+        "link": "#stats-section-recipe-search"
+      },
+      {
+        "title": "Recipe Search Link",
+        "statusColor": "orange",
+        "statusText": "RECIPE SEARCH DETAILS",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "bgImage": "",
+        "mockupWidth": 100,
+        "iconKey": "recipe-search",
+        "cardId": "recipe-search",
+        "link": "https://lindo-code-recipe-search-app.netlify.app/",
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/recipe2.webp",
+            "alt": "",
+            "caption": "If found search results are sorted in card view style for efficient browsing."
+          },
+          {
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/recipe-1.webp",
+            "alt": "",
+            "caption": "A detailed recipe modal displaying ingredients and direct links to the original source pops up on card click."
+          }
+        ],
+        "features": [
+          "Smart ingredient-based recipe discovery using the Edamam API",
+          "Paginated results with quick, smooth navigation",
+          "Interactive recipe popups with ingredients and source links",
+          "Responsive, modern UI optimized for all devices",
+          "High-performance, scalable frontend architecture"
+        ],
+        "stats": [
+          {
+            "label": "Performance",
+            "value": "97%"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "4.8/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
+          },
+          {
+            "label": "Completion",
+            "value": "98%"
+          }
+        ],
+        "icons": {
+          "tech": [
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg",
+            "assets/images/icons/aws-svgrepo-com.svg",
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg"
+          ]
+        }
+      }
+    ]
+  ],
+  "webGames": [
+    [
+      {
+        "title": "Infiltration Countdown",
+        "statusText": "IN DEVELOPMENT",
+        "statusColor": "red",
+        "subtitle": "2D Space Shooter Game",
+        "description": "A space-themed game where players control the SH-141 Fighter Battleship, engaging in battles against light and heavy enemy battleships. The game offers a variety of challenges, requiring players to navigate and defeat enemy ships while avoiding collisions and achieving specific objectives.",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/infiltration.webp",
+        "bgImage": "/assets/images/temp-latest/BG5.svg",
+        "link": "#stats-section-infiltration-countdown"
+      },
+      {
+        "title": "Infiltration Countdown Link",
+        "statusColor": "orange",
+        "statusText": "INFILTRATION COUNTDOWN DETAILS",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "bgImage": "",
+        "iconKey": "infiltration",
+        "cardId": "infiltration-countdown",
+        "link": "https://lindo-code-infiltration-countdown.netlify.app/",
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/infiltration1.webp",
+            "alt": "",
+            "caption": "A victory screen is displayed upon completion, featuring a “Well done, soldier!” message alongside the player’s performance statistics."
+          },
+          {
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/infiltration-c4.webp",
+            "alt": "",
+            "caption": "Old-school graphical styling with collision detection that produces animated damage plume effects on impact."
+          }
+        ],
+        "features": [
+          "High-intensity space combat with the SH-141 Fighter Battleship",
+          "Dynamic enemy encounters across multiple ship types",
+          "Skill-based navigation and collision avoidance",
+          "Mission-focused gameplay with increasing challenge",
+          "Optimized performance for smooth, responsive play"
+        ],
+        "stats": [
+          {
+            "label": "Performance",
+            "value": "95%"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "4.8/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
+          },
+          {
+            "label": "Completion",
+            "value": "61%"
+          }
+        ],
+        "icons": {
+          "tech": [
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg",
+            "assets/images/icons/aws-svgrepo-com.svg",
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg"
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "title": "Jambuddy",
+        "statusText": "LIVE",
+        "statusColor": "green",
+        "subtitle": "Vanilla Javascrip Semitone difference Game",
+        "description": "This interactive music theory game helps users practice interval recognition using the note circle. The app randomly selects two notes, and the user must calculate the number of semi-tones between them. Ideal for musicians, it reinforces theory knowledge in a simple, engaging quiz format.",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/jambuddy-1.webp",
+        "bgImage": "/assets/images/temp-latest/BG4.svg",
+        "link": "#stats-section-jambuddy"
+      },
+      {
+        "title": "Jambuddy Link",
+        "statusColor": "orange",
+        "statusText": "JAMBUDDY DETAILS",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "bgImage": "",
+        "iconKey": "jambuddy",
+        "cardId": "jambuddy",
+        "link": "https://lindo-code-semitone-difference.netlify.app/",
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/jambuddy1.webp",
+            "alt": "",
+            "caption": "Feedback loop to instantly know when the distance between given notes is incorrect."
+          },
+          {
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/jambuddy2.webp",
+            "alt": "",
+            "caption": "Victory text with visualization of all note distances shows up on correct answer."
+          }
+        ],
+        "features": [
+          "Interval recognition training through interactive note challenges",
+          "Randomized semitone quizzes for effective theory reinforcement",
+          "Visual note-circle layout for intuitive learning",
+          "Fast, engaging quiz mechanics for daily practice",
+          "Lightweight, responsive design for smooth user experience"
+        ],
+        "stats": [
+          {
+            "label": "Performance",
+            "value": "99%"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "4.8/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
+          },
+          {
+            "label": "Completion",
+            "value": "99.9%"
+          }
+        ],
+        "icons": {
+          "tech": [
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg",
+            "assets/images/icons/aws-svgrepo-com.svg",
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg"
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "title": "Memory Game",
+        "statusColor": "green",
+        "statusText": "LIVE",
+        "subtitle": "React-Based Emoji Matching Game",
+        "description": "A fun and interactive memory card game built with React. Players flip over emoji cards two at a time to find matching pairs, with animated feedback for matches and mismatches. The game includes dynamic state management, reset functionality, and a celebratory modal upon completion.",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/mem-game.webp",
+        "bgImage": "/assets/images/temp-latest/BG3.svg",
+        "link": "#stats-section-memory-game"
+      },
+      {
+        "title": "Memory Game",
+        "statusColor": "orange",
+        "statusText": "MEMORY GAME DETAILS",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "bgImage": "",
+        "iconKey": "memory-game",
+        "cardId": "memory-game",
+        "link": "https://lindo-code-memory-game.netlify.app/",
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/memory2.webp",
+            "alt": "",
+            "caption": "Single flipped card has golden background and will flip back if unmatched."
+          },
+          {
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/memory1.webp",
+            "alt": "",
+            "caption": "Once cards are matched they remain flipped and color changes from gold to green."
+          }
+        ],
+        "stats": [
+          {
+            "label": "Performance",
+            "value": "98%"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "4.8/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
+          },
+          {
+            "label": "Completion",
+            "value": "89.9%"
+          }
+        ],
+        "features": [
+          "Engaging memory card gameplay powered by React",
+          "Animated emoji matching with real-time feedback",
+          "Smooth state-driven game logic and progression",
+          "Instant reset and replay for continuous engagement",
+          "Victory modal pops up when game has been won."
+        ],
+        "icons": {
+          "tech": [
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg",
+            "assets/images/icons/aws-svgrepo-com.svg",
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg"
+          ]
+        }
+      }
+    ]
+  ],
+  "mobileApps": [
+    [
+      {
+        "title": "Scan Me",
+        "statusColor": "green",
+        "statusText": "LIVE",
+        "subtitle": "QR Code Contact Manager App",
+        "description": "Scan Me is a mobile app designed to simplify contact sharing at conferences. Attendees wear name badges with QR codes containing their info, which can be scanned using the app. Users can view detailed profiles, save contacts to a local SQLite database, favorite people, add notes, and delete entries.",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/conference-4.webp",
+        "bgImage": "/assets/images/temp-latest/BG5.svg",
+        "link": "#stats-section-scan-me"
+      },
+      {
+        "title": "Scan Me",
+        "statusColor": "orange",
+        "statusText": "SCAN ME DETAILS",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "bgImage": "",
+        "link": "",
+        "cardId": "scan-me",
+        "iconKey": "scan-me",
+        "mockupWidth": 45,
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/scan-me6.webp",
+            "alt": "",
+            "caption": "Once QR is scanned successfully a detailed attendee profile is rendered within the app"
+          },
+          {
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/scan-me5.webp",
+            "alt": "",
+            "caption": "Clicking the dustbin icon activates a confirmation of profile deletion."
+          }
+        ],
+        "features": [
+          "QR code scanning for instant contact exchange at events",
+          "Detailed attendee profiles accessible directly within the app",
+          "Local SQLite storage for offline contact management",
+          "Favorite contacts and personal notes for quick reference",
+          "Full contact control with edit and delete functionality"
+        ],
+        "stats": [
+          {
+            "label": "Performance",
+            "value": "98%"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "4.8/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
+          },
+          {
+            "label": "Completion",
+            "value": "99.9%"
+          }
+        ],
+        "icons": {
+          "tech": [
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg",
+            "assets/images/icons/aws-svgrepo-com.svg",
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg"
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "title": "Simple Variometer",
+        "statusColor": "green",
+        "statusText": "LIVE",
+        "subtitle": "Altitude & Acceleration Tracker for Pilots",
+        "description": "Simple Variometer is a pilot-assist app that monitors vertical acceleration using a mobile device’s built-in sensors. Key features include speed, position, and heading display, altitude trend indicators, and continuous screen activation for flight readiness.",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/vario.webp",
+        "bgImage": "/assets/images/temp-latest/BG4.svg",
+        "link": "#stats-section-simple-variometer"
+      },
+      {
+        "title": "Simple Variometer",
+        "statusColor": "orange",
+        "statusText": "SIMPLE VARIOMETER DETAILS",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "bgImage": "",
+        "link": "",
+        "cardId": "simple-variometer",
+        "iconKey": "simple-vario",
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/simple-variom2.webp",
+            "alt": "",
+            "caption": "Upward acceleration is detected via the device accelerometer and reflected with responsive audio feedback."
+          },
+          {
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/simple-variom3.png",
+            "alt": "",
+            "caption": "Downward acceleration is identified in real time and communicated through distinct audio cues."
+          }
+        ],
+        "features": [
+          "Sensor-driven variometer functionality for pilot assistance",
+          "Live flight data including speed, position, and heading",
+          "Clear altitude trend visualization for real-time feedback",
+          "Always-on display designed for cockpit use",
+          "Minimal, dependable UI built for flight conditions"
+        ],
+        "stats": [
+          {
+            "label": "Performance",
+            "value": "98%"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "4/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
+          },
+          {
+            "label": "Completion",
+            "value": "99.9%"
+          },
+          {
+            "label": "Completion",
+            "value": "99.9%"
+          }
+        ],
+        "icons": {
+          "tech": [
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg",
+            "assets/images/icons/aws-svgrepo-com.svg",
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg"
+          ]
+        }
+      }
+    ],
+    [
+      {
+        "title": "Eco Collect",
+        "statusColor": "red",
+        "statusText": "IN DEVELOPMENT",
+        "subtitle": "Smart Waste Collection & Earnings Platform",
+        "description": "Eco Collect is a mobile platform that empowers independent waste collectors to earn income through organized, verified waste collection jobs. Collectors receive pickup requests, approve assignments, collect and deliver waste to designated locations, and receive secure payments upon completion",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/eco.webp",
+        "bgImage": "/assets/images/temp-latest/BG4.svg",
+        "link": "#stats-section-eco-collect",
+        "imgTransform": "rotate(3.5deg) scale(.8)"
+      },
+      {
+        "title": "Eco Collect Prototype Link",
+        "statusColor": "orange",
+        "statusText": "ECO COLLECT DETAILS",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "bgImage": "",
+        "link": "",
+        "cardId": "eco-collect",
+        "iconKey": "eco-collect",
+        "mockupWidth": 35,
+        "button": true,
+        "incomplete": "true",
+        "buttonText": "View Prototype",
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/eco-collect2.webp",
+            "alt": "",
+            "caption": "Separate registration flows for customers and collectors, tailored to distinct roles and permissions."
+          },
+          {
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/eco-collect3.webp",
+            "alt": "",
+            "caption": "Guided registration walkthrough providing step-by-step onboarding for first-time users."
+          }
+        ],
+        "features": [
+          "Digital marketplace connecting waste collectors to verified jobs",
+          "Structured pickup, approval, and delivery workflow",
+          "Real-time job status tracking and completion verification",
+          "Secure, reliable payments for completed collections",
+          "Sustainability-focused platform enabling income generation"
+        ],
+        "stats": [
+          {
+            "label": "Performance",
+            "value": "0"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "0"
+          },
+          {
+            "label": "Uptime",
+            "value": "0%"
+          },
+          {
+            "label": "Completion",
+            "value": "40%"
+          }
+        ],
+        "icons": {
+          "tech": [
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg",
+            "assets/images/icons/aws-svgrepo-com.svg",
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/html-5-svgrepo-com.svg",
+            "assets/images/icons/css-3-svgrepo-com.svg",
+            "assets/images/icons/javascript-svgrepo-com.svg",
+            "assets/images/icons/nodejs-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg",
+            "assets/images/icons/expo-svgrepo-com.svg",
+            "assets/images/icons/figma-svgrepo-com.svg"
+          ]
+        }
+      }
+    ]
+  ],
+  "appGames": []
+}

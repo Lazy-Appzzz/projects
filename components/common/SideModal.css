@@ -1,0 +1,49 @@
+/* Side Modal Styles */
+.side-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+}
+
+.side-modal-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 90%;
+  max-width: 600px;
+  height: 100vh;
+  background: transparent;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom scrollbar for side modal */
+.side-modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.side-modal-content::-webkit-scrollbar-track {
+  background: trn;
+}
+
+.side-modal-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.side-modal-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .side-modal-content {
+    width: 100%;
+    max-width: 100%;
+  }
+}
