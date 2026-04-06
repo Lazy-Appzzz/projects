@@ -1,20 +1,26 @@
 "use client";
 
 import FullWidthLayout from "@/components/layouts/FullWidthLayout";
-import NeatAltStack from "@/components/NeatAltStack";
+
+import EmailForm from "@/components/common/EmailForm";
+import SocialLinks from "@/components/common/SocialLinks";
 
 export default function Projects() {
   return (
     <FullWidthLayout
-      showHero={true}
+      showHero={false}
       showPersistentSidebar={false}
       heroProps={{
         title: "Get In Touch",
         subtitle:
           "For inquiries, collaborations, or more information, feel free to get in touch",
-        showIntro: true,
-        showCommentedSocialBlock: true,
+        showIntro: false,
+        showCommentedSocialBlock: false,
       }}
-    ></FullWidthLayout>
+    >
+      <section id="contact-form">
+        <EmailForm formspreeEndpoint="https://mail.api.lindocode.com/contact" />
+      </section>
+    </FullWidthLayout>
   );
 }
