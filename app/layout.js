@@ -4,11 +4,53 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Projects | Lindocode Digital",
-  description: "A modern, responsive stack cards component built with Next.js",
+  metadataBase: new URL("https://lindocode.com"),
+
+  title: {
+    default: "Projects | Lindocode Digital",
+    template: "%s | Lindocode Digital",
+  },
+
+  description:
+    "Explore projects by Lindocode Digital - Lazy Appz, featuring modern web applications, interactive UI components, and practical development solutions built with Next.js and modern technologies.",
+
+  alternates: {
+    canonical: "https://lindocode.com/projects",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "Projects | Lindocode Digital",
+    description:
+      "Explore projects by Lindocode Digital - Lazy Appz including modern web apps, UI components, and innovative development solutions.",
+    url: "https://lindocode.com/projects",
+    siteName: "Lindocode Digital",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Lindocode Digital Projects",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects | Lindocode Digital",
+    description:
+      "Explore projects by Lindocode Digital including modern web apps, UI components, and innovative development solutions.",
+    images: ["/og-image.png"],
+  },
+
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" }, // 👈 ADD THIS
+      { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
@@ -16,7 +58,6 @@ export const metadata = {
     other: [{ rel: "manifest", url: "/site.webmanifest" }],
   },
 };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
