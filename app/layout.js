@@ -12,7 +12,7 @@ export const metadata = {
   },
 
   description:
-    "Explore projects by Lindocode Digital - Lazy Appz, featuring modern web applications, interactive UI components, and practical development solutions built with Next.js and modern technologies.",
+    "Building modern web apps, UI components, and innovative development solutions.",
 
   alternates: {
     canonical: "https://lindocode.com/projects",
@@ -26,7 +26,7 @@ export const metadata = {
   openGraph: {
     title: "Projects | Lindocode Digital",
     description:
-      "Explore projects by Lindocode Digital - Lazy Appz including modern web apps, UI components, and innovative development solutions.",
+      "Building modern web apps, UI components, and innovative development solutions.",
     url: "https://lindocode.com/projects",
     siteName: "Lindocode Digital",
     images: [
@@ -44,7 +44,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Projects | Lindocode Digital",
     description:
-      "Explore projects by Lindocode Digital including modern web apps, UI components, and innovative development solutions.",
+      "Building modern web apps, UI components, and innovative development solutions.",
     images: ["/og-image.png"],
   },
 
