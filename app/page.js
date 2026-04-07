@@ -19,7 +19,7 @@ export default function Home() {
     >
       {" "}
       <div>
-        <h1
+        <h2
           className="lemon-font"
           style={{
             color: "#444444",
@@ -27,7 +27,7 @@ export default function Home() {
           }}
         >
           Web Applications
-        </h1>{" "}
+        </h2>{" "}
         <NeatAltStackGrouped
           cards={cardsData.webApps}
           multipleMockupWidth={100}
@@ -35,7 +35,7 @@ export default function Home() {
         />
       </div>{" "}
       <div>
-        <h1
+        <h2
           className="lemon-font"
           style={{
             color: "#444444",
@@ -43,7 +43,7 @@ export default function Home() {
           }}
         >
           Web Games
-        </h1>{" "}
+        </h2>{" "}
         <NeatAltStackGrouped
           cards={cardsData.webGames}
           multipleMockupWidth={100}
@@ -51,7 +51,7 @@ export default function Home() {
         />
       </div>{" "}
       <div>
-        <h1
+        <h2
           className="lemon-font"
           style={{
             color: "#444444",
@@ -59,7 +59,7 @@ export default function Home() {
           }}
         >
           Mobile Applications
-        </h1>{" "}
+        </h2>{" "}
         <NeatAltStackGrouped
           cards={cardsData.mobileApps}
           multipleMockupWidth={100}

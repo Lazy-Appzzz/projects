@@ -1,9 +1,7 @@
 "use client";
 
 import FullWidthLayout from "@/components/layouts/FullWidthLayout";
-
 import EmailForm from "@/components/common/EmailForm";
-import SocialLinks from "@/components/common/SocialLinks";
 
 export default function Projects() {
   return (
