@@ -2,14 +2,14 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 110px 24px 56px;
-  background:;
+  padding: 100px 24px 56px;
+  background: transparent;
   box-sizing: border-box;
 }
 
 .hero-shell {
   max-width: 1680px;
-  margin: 0 auto;
+  margin: -3rem auto auto auto;
 }
 
 .hero-content {
@@ -59,12 +59,9 @@
   width: 0;
   height: 3px;
   margin-top: 18px;
+
   border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    rgba(193, 18, 31, 0.95),
-    rgba(193, 18, 31, 0.18)
-  );
+  background: #c90907;
   animation: materializeLine 0.8s ease 0.35s forwards;
 }
 

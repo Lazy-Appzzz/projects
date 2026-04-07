@@ -34,11 +34,11 @@ export default function ChipBackground() {
           <circle className="node" cx="1100" cy="140" r="4" />
 
           {/* LEFT */}
-          <path className="trace" d="M0 240 H160 L210 290 H320" />
-          <circle className="node" cx="320" cy="290" r="4" />
+          {/* <path className="trace" d="M0 240 H160 L210 290 H320" /> */}
+          {/* <circle className="node" cx="320" cy="290" r="4" /> */}
 
-          <path className="trace" d="M0 400 H120 L170 450 H300" />
-          <circle className="node" cx="300" cy="450" r="4" />
+          {/* <path className="trace" d="M0 400 H120 L170 450 H300" /> */}
+          {/* <circle className="node" cx="300" cy="450" r="4" /> */}
 
           <path className="trace" d="M0 560 H140 L190 610 H310" />
           <circle className="node" cx="310" cy="610" r="4" />
@@ -50,8 +50,8 @@ export default function ChipBackground() {
           <path className="trace" d="M1440 260 H1280 L1230 310 H1120" />
           <circle className="node" cx="1120" cy="310" r="4" />
 
-          <path className="trace" d="M1440 420 H1300 L1250 470 H1150" />
-          <circle className="node" cx="1150" cy="470" r="4" />
+          {/* <path className="trace" d="M1440 420 H1300 L1250 470 H1150" /> */}
+          {/* <circle className="node" cx="1150" cy="470" r="4" /> */}
 
           <path className="trace" d="M1440 600 H1290 L1240 650 H1140" />
           <circle className="node" cx="1140" cy="650" r="4" />
