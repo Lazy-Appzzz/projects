@@ -1,5 +1,6 @@
 const nextConfig = {
   basePath: "/projects",
+  assetPrefix: "/projects",
   reactStrictMode: true,
   images: {
     remotePatterns: [

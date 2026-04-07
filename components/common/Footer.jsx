@@ -4,21 +4,12 @@ import Link from "next/link";
 import Logo from "./Logo";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import "./Footer.css";
-import EmailForm from "./EmailForm.jsx";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <>
-      <br />
-      <div id="contact-form">
-        {" "}
-        <h1 className="lemon-font" style={{ color: "#444444" }}>
-          Send Email
-        </h1>
-        <EmailForm formspreeEndpoint="https://mail.api.lindocode.com/contact" />
-      </div>
       <br />
       <footer className="footer">
         <div className="container">

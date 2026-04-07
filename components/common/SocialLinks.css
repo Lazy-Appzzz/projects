@@ -1,0 +1,59 @@
+.social-links-container {
+  padding: 1em 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: -2rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link.linkedin {
+  color: #6eb3d9;
+}
+
+.social-link.linkedin:hover {
+  color: #0077b5;
+  transform: translateY(-3px);
+}
+
+.social-link.github {
+  color: #8f8a8a;
+  border-radius: 50%;
+}
+
+.social-link.github:hover {
+  color: #5a5555;
+  transform: translateY(-3px);
+}
+
+.social-label {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .social-links-container {
+    padding: 1em 2em;
+  }
+
+  .social-links {
+    gap: 2rem;
+  }
+}
