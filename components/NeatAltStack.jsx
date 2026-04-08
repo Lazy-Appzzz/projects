@@ -61,7 +61,7 @@ const StackPair = ({
   const getProjectNumberStyle = (index) => {
     const styles = [
       {
-        color: "#C90907",
+        color: "#444444",
       },
     ];
     return styles[index % styles.length];
