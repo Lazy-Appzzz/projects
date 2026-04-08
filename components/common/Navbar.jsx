@@ -180,14 +180,6 @@ export default function Navbar() {
                   <span className="menu-dot" />
                   Mobile Apps
                 </Link>
-                <Link
-                  href="/contact"
-                  className={`menu-item-link ${isActive("/contact") ? "active" : ""}`}
-                  onClick={closeMenu}
-                >
-                  <span className="menu-dot" />
-                  Contact
-                </Link>
               </div>
 
               <div className="connect-panel">

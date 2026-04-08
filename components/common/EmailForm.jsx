@@ -108,7 +108,7 @@ const EmailForm = ({ endpoint = "https://mail.api.lindocode.com/contact" }) => {
   };
 
   return (
-    <section className="section-container email-section">
+    <section className="section-container email-section" id="contact-form">
       <div className="email-shell">
         <div className="email-header">
           <motion.span

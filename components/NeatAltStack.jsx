@@ -61,10 +61,7 @@ const StackPair = ({
   const getProjectNumberStyle = (index) => {
     const styles = [
       {
-        color: "#D4AF37",
-      },
-      {
-        color: "#111111",
+        color: "#C90907",
       },
     ];
     return styles[index % styles.length];
@@ -261,7 +258,7 @@ const StackPair = ({
       >
         <div className="project-number-container">
           <h2
-            className="press-start-font project-number "
+            className="lemon-font project-number "
             style={{
               color: projectStyle.color,
               margin: "1em",
