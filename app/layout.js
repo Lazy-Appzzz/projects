@@ -31,7 +31,7 @@ export const metadata = {
     siteName: "Lindocode Digital",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Lindocode Digital Projects",
@@ -45,7 +45,7 @@ export const metadata = {
     title: "Projects | Lindocode Digital",
     description:
       "Building modern web apps, UI components, and innovative development solutions.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 
   icons: {
