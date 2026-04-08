@@ -7,7 +7,7 @@
         "statusText": "IN DEVELOPMENT",
         "subtitle": "Linktree-style Portfolio Hub",
         "description": "Digital Hub is a web app currently in development, designed to function as a centralized hub for digital products, experiences, and capabilities through a refined interface, streamlined for better accessibility and presentation.",
-        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/hub.webp",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/hub3-4.webp",
         "bgImage": "/assets/images/temp-latest/BG5.svg",
         "link": "#mockup-section-creative-hub",
         "githubLink": "https://github.com/Lindocode-Digital/digital-hub"
@@ -28,9 +28,15 @@
         "mockupImages": [
           {
             "id": 1,
-            "src": "/assets/images/temp-latest/Mockups/creative-hub3.webp",
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/hub2-1.webp",
             "alt": "",
             "caption": "Homepage layout is responsive on a number of devices for convenience."
+          },
+          {
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/hub1-1.webp",
+            "alt": "",
+            "caption": "Layout can be toggled to render cards in preferred user interface view."
           }
         ],
         "features": [
