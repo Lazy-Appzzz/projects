@@ -8,6 +8,7 @@ import ChipBackground from "../common/ChipBackground";
 import PersistentSideModal from "../common/PersistentSidebar";
 import SideModalNeatAltStack from "../SideModalNeatAltStack.jsx";
 import Sidebar from "../common/Sidebar";
+import EmailForm from "@/components/common/EmailForm";
 import "./Layouts.css";
 
 const PERSISTENT_MODAL_BREAKPOINT = 1200;
@@ -98,7 +99,7 @@ export default function FullWidthLayout({
           )}
         </div>
       </main>
-
+      <EmailForm />
       <Footer />
     </div>
   );

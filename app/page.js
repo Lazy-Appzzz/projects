@@ -24,6 +24,7 @@ export default function Home() {
           style={{
             color: "#444444",
             marginBottom: "1em",
+            fontSize: "2em",
           }}
         >
           Web Applications

@@ -18,13 +18,12 @@ export default function Footer() {
               <h4>Quick Links</h4>
               <ul>
                 <li>
-                  <a href="/">Home</a>
+                  <Link href="https://lindocode.com">Home</Link>
                 </li>
                 <li>
-                  <Link href="/">Projects</Link>
-                </li>
-                <li>
-                  <Link href="/contact">Contact</Link>
+                  <Link href="https://lindocode.com/digitalhub">
+                    Digital Hub
+                  </Link>
                 </li>
               </ul>
             </div>
