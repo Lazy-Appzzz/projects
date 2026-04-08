@@ -2,15 +2,15 @@
   "webApps": [
     [
       {
-        "title": "Creativehub",
+        "title": "Digital Hub",
         "statusColor": "red",
         "statusText": "IN DEVELOPMENT",
         "subtitle": "Linktree-style Portfolio Hub",
-        "description": "creativehub is a web app currently in development, designed to function as a centralized hub for showcasing my work. I plan to fully migrate my existing portfolio into this streamlined platform for better accessibility and presentation.",
+        "description": "Digital Hub is a web app currently in development, designed to function as a centralized hub for digital products, experiences, and capabilities through a refined interface, streamlined for better accessibility and presentation.",
         "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/hub.webp",
         "bgImage": "/assets/images/temp-latest/BG5.svg",
         "link": "#mockup-section-creative-hub",
-        "githubLink": "https://github.com/Lindocode-Digital/creative-hub--"
+        "githubLink": "https://github.com/Lindocode-Digital/digital-hub"
       },
       {
         "title": "Creativehub Link",
@@ -20,10 +20,10 @@
         "description": "",
         "image": "",
         "bgImage": "",
-        "link": "/",
-        "iconKey": "creativehub",
-        "cardId": "creative-hub",
-        "githubLink": "https://github.com/Lindocode-Digital/creative-hub--",
+        "link": "https://lindocode.com/digitalhub",
+        "iconKey": "digitalhub",
+        "cardId": "digital-hub",
+        "githubLink": "https://github.com/Lindocode-Digital/digital-hub",
         "mockupWidth": 75,
         "mockupImages": [
           {
