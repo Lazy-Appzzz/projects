@@ -6,7 +6,7 @@ import "./NeatAltStack.css";
 import SideModal from "./common/SideModal.jsx";
 import SideModalNeatAltStack from "./SideModalNeatAltStack.jsx";
 import Logo from "./common/Logo";
-import ImageLoader from "./common/ImageLoader.jsx";
+import ImageLoader from "./common/ImageLoader";
 
 const PERSISTENT_MODAL_BREAKPOINT = 1200;
 
@@ -35,6 +35,7 @@ const PreviewCard = ({
   const [selectedPair, setSelectedPair] = useState(null);
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [descriptionExpanded, setDescriptionExpanded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const [previewCard] = pair;
   const projectNumber = String(globalIndex + 1).padStart(2, "0");
@@ -49,6 +50,12 @@ const PreviewCard = ({
     window.addEventListener("resize", checkResponsive);
 
     return () => window.removeEventListener("resize", checkResponsive);
+  }, []);
+
+  // Fade-in animation on mount
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
   }, []);
 
   const handlePreviewImageClick = () => {
@@ -66,17 +73,27 @@ const PreviewCard = ({
   };
 
   const description = previewCard?.description || "";
+  const imageContainerTransform =
+    previewCard?.imgTransform ||
+    (isExtraLg
+      ? "rotate(6deg) scale(0.95)"
+      : isMobile
+        ? "rotate(6deg) scale(0.85)"
+        : "rotate(6deg) scale(0.9)");
 
   return (
     <>
       <div
         data-theme="default"
-        className="stack-cards__item bg radius-lg shadow-md js-stack-cards__item preview-card"
+        className={`stack-cards__item bg radius-lg shadow-md js-stack-cards__item preview-card fade-in-up ${
+          isVisible ? "visible" : ""
+        }`}
         ref={cardRef}
         style={{
           top: `${stickyStartPosition}px`,
           boxShadow: "0 8px 15px rgba(0,0,0,0.6)",
           marginTop: "2em",
+          animationDelay: `${globalIndex * 0.1}s`,
         }}
       >
         <div className="project-number-container">
@@ -174,12 +191,15 @@ const PreviewCard = ({
               )}
             </div>
           </div>
+
           <div
             className="col-6 card-gucci-bg"
             style={{
               display: "flex",
               overflow: "visible",
               alignItems: "center",
+              justifyContent: "center",
+              padding: "20px",
             }}
           >
             <div
@@ -187,19 +207,17 @@ const PreviewCard = ({
               style={{
                 cursor: "pointer",
                 width: "100%",
-                transform:
-                  previewCard?.imgTransform ||
-                  (isExtraLg
-                    ? "rotate(6deg) scale(1)"
-                    : isMobile
-                      ? "rotate(6deg) scale(0.8)"
-                      : "rotate(6deg) scale(0.9)"),
+                transform: imageContainerTransform,
                 transition: "transform 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1)",
                 transformOrigin: "center center",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                overflow: "visible",
               }}
             >
               <ImageLoader
-                className="card-image block width-100% height-100% object-cover"
+                className="card-image"
                 src={previewCard?.image}
                 alt={previewCard?.title || "Project image"}
                 width={600}
@@ -208,12 +226,12 @@ const PreviewCard = ({
                   width: "100%",
                   height: "auto",
                   cursor: "pointer",
-                  minHeight: "200px",
-                  transform: "scale(1)", // Always scale 1, container handles the transform
+                  display: "block",
+                  objectFit: "contain",
                 }}
               />
             </div>
-          </div>{" "}
+          </div>
         </div>
       </div>
 
@@ -352,7 +370,10 @@ const StackGroup = ({ group, groupIndex, stickyStartPosition, startIndex }) => {
   }, [group, stickyStartPosition]);
 
   return (
-    <section className="stack-group-wrapper" data-group-index={groupIndex}>
+    <section
+      className="stack-group-wrapper fade-in-up"
+      data-group-index={groupIndex}
+    >
       <div className="stack-cards js-stack-cards" ref={containerRef}>
         {group.map((pair, pairIndex) => {
           const globalIndex = startIndex + pairIndex;
@@ -386,14 +407,19 @@ const NeatAltStackGrouped = ({
   const [isWideScreen, setIsWideScreen] = useState(false);
   const pathname = usePathname();
 
-  // Create a unique key for the current page + stack
   const dispatchKey = `${pathname}-stack-${stackOrder}`;
+  const [isVisible, setIsVisible] = useState(false);
 
   const groupedCards = useMemo(() => {
     return chunkArray(cards, normalizedStackLimit);
   }, [cards, normalizedStackLimit]);
 
-  // Track screen width changes
+  // Fade-in animation on mount
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     const checkScreenWidth = () => {
       setIsWideScreen(window.innerWidth > PERSISTENT_MODAL_BREAKPOINT);
@@ -405,18 +431,11 @@ const NeatAltStackGrouped = ({
     return () => window.removeEventListener("resize", checkScreenWidth);
   }, []);
 
-  // Dispatch first card when:
-  // 1. Screen is wide
-  // 2. This is the first stack (stackOrder === 0)
-  // 3. This specific page+stack hasn't dispatched yet
-  // 4. OR when screen becomes wide (resize)
   useEffect(() => {
     if (!cards.length) return;
     if (!isWideScreen) return;
 
-    // Only dispatch for the first stack
     if (stackOrder === 0) {
-      // Check if this specific page+stack has already dispatched
       if (!dispatchedStacks.has(dispatchKey)) {
         const timer = setTimeout(() => {
           const firstCard = cards[0];
@@ -436,7 +455,9 @@ const NeatAltStackGrouped = ({
   }, [cards, isWideScreen, stackOrder, dispatchKey]);
 
   return (
-    <>
+    <div
+      className={`neat-stack-container fade-in-up ${isVisible ? "visible" : ""}`}
+    >
       {groupedCards.map((group, groupIndex) => {
         const groupStartIndex = startIndex + groupIndex * normalizedStackLimit;
 
@@ -450,7 +471,7 @@ const NeatAltStackGrouped = ({
           />
         );
       })}
-    </>
+    </div>
   );
 };
 
