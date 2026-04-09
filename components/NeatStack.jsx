@@ -174,7 +174,6 @@ const PreviewCard = ({
               )}
             </div>
           </div>
-
           <div
             className="col-6 card-gucci-bg"
             style={{
@@ -185,7 +184,19 @@ const PreviewCard = ({
           >
             <div
               onClick={handlePreviewImageClick}
-              style={{ cursor: "pointer", width: "100%" }}
+              style={{
+                cursor: "pointer",
+                width: "100%",
+                transform:
+                  previewCard?.imgTransform ||
+                  (isExtraLg
+                    ? "rotate(6deg) scale(1)"
+                    : isMobile
+                      ? "rotate(6deg) scale(0.8)"
+                      : "rotate(6deg) scale(0.9)"),
+                transition: "transform 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1)",
+                transformOrigin: "center center",
+              }}
             >
               <ImageLoader
                 className="card-image block width-100% height-100% object-cover"
@@ -194,20 +205,15 @@ const PreviewCard = ({
                 width={600}
                 height={400}
                 style={{
-                  transform:
-                    previewCard?.imgTransform ||
-                    (isExtraLg
-                      ? "rotate(6deg) scale(1)"
-                      : isMobile
-                        ? "rotate(6deg) scale(.8)"
-                        : "rotate(6deg) scale(.9)"),
-                  transition: "transform 0.45s ease",
+                  width: "100%",
+                  height: "auto",
                   cursor: "pointer",
                   minHeight: "200px",
+                  transform: "scale(1)", // Always scale 1, container handles the transform
                 }}
               />
             </div>
-          </div>
+          </div>{" "}
         </div>
       </div>
 

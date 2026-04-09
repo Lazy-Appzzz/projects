@@ -139,7 +139,6 @@
   border-top: 4px solid #c90201;
   border-left: 4px solid #c90201;
   border-bottom: 4px solid #c90201;
-
   border-radius: 28px 0 0 28px;
   backdrop-filter: blur(10px);
 }
@@ -249,6 +248,19 @@
   background: #9aa3af;
 }
 
+.persistent-side-modal__body {
+  position: relative;
+}
+
+.persistent-side-modal__body > div {
+  width: 100%;
+  height: 100%;
+}
+
+.persistent-side-modal__body img {
+  transition: opacity 0.2s ease-in-out;
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
   .default-layout-grid {
@@ -261,19 +273,56 @@
   }
 }
 
-/* Add these to the end of your Layouts.css file */
+/* Smooth transitions - only on resize, not on initial load */
+@media (min-width: 1201px) {
+  .main-full-width-shell {
+    transition:
+      grid-template-columns 0.3s ease-out,
+      gap 0.3s ease-out;
+  }
 
-/* Simple fade transitions for sidebar content */
-.persistent-side-modal__body {
-  position: relative;
+  .main-full-width-sidebar {
+    transition: opacity 0.3s ease-out;
+  }
+} /* Content loader styles */
+.content-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
 }
 
-.persistent-side-modal__body > div {
-  width: 100%;
-  height: 100%;
+.content-loader .dot-flashing {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #c90201;
+  animation: dotFlashing 1s infinite linear alternate;
 }
 
-/* Optional: very subtle transition for the content */
-.persistent-side-modal__body img {
-  transition: opacity 0.2s ease-in-out;
+@keyframes dotFlashing {
+  0% {
+    background-color: #c90201;
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #c90201;
+    opacity: 1;
+    transform: scale(1.3);
+  }
+  100% {
+    background-color: #c90201;
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+.content-loader p {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
 }

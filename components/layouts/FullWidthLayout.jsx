@@ -14,6 +14,43 @@ import "./Layouts.css";
 
 const PERSISTENT_MODAL_BREAKPOINT = 1200;
 
+// Loading component
+const ContentLoader = () => (
+  <div className="content-loader">
+    <div className="dot-flashing"></div>
+    <p>Loading content...</p>
+    <style>
+      {`
+        .content-loader {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 400px;
+          gap: 1rem;
+        }
+        .dot-flashing {
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: #c90201;
+          animation: dotFlashing 1s infinite linear alternate;
+        }
+        @keyframes dotFlashing {
+          0% { background-color: #c90201; opacity: 0.3; transform: scale(1); }
+          50% { background-color: #c90201; opacity: 1; transform: scale(1.3); }
+          100% { background-color: #c90201; opacity: 0.3; transform: scale(1); }
+        }
+        .content-loader p {
+          color: #6b7280;
+          font-size: 0.9rem;
+          margin: 0;
+        }
+      `}
+    </style>
+  </div>
+);
+
 export default function FullWidthLayout({
   children,
   showHero = false,
@@ -22,20 +59,57 @@ export default function FullWidthLayout({
 }) {
   const [isWideScreen, setIsWideScreen] = useState(false);
   const [selectedPair, setSelectedPair] = useState(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [shouldRenderContent, setShouldRenderContent] = useState(true);
+  const [isInitialized, setIsInitialized] = useState(false);
 
-  // Track screen width changes
+  // Check initial screen width once on mount
   useEffect(() => {
+    const isWide = window.innerWidth > PERSISTENT_MODAL_BREAKPOINT;
+    setIsWideScreen(isWide);
+
+    // Only show loader on initial render if screen is wide (sidebar will appear)
+    if (isWide && showPersistentSidebar) {
+      setShouldRenderContent(false);
+      setTimeout(() => {
+        setShouldRenderContent(true);
+        setIsInitialized(true);
+      }, 300);
+    } else {
+      setShouldRenderContent(true);
+      setIsInitialized(true);
+    }
+  }, [showPersistentSidebar]);
+
+  // Track screen width changes only after initialization
+  useEffect(() => {
+    if (!isInitialized) return;
+
     const checkScreenWidth = () => {
-      setIsWideScreen(window.innerWidth > PERSISTENT_MODAL_BREAKPOINT);
+      const newIsWide = window.innerWidth > PERSISTENT_MODAL_BREAKPOINT;
+
+      if (newIsWide !== isWideScreen) {
+        // Hide content during transition
+        setShouldRenderContent(false);
+        setIsTransitioning(true);
+
+        setTimeout(() => {
+          setIsWideScreen(newIsWide);
+          // Show content after transition completes
+          setTimeout(() => {
+            setIsTransitioning(false);
+            setShouldRenderContent(true);
+          }, 300);
+        }, 150);
+      }
     };
 
-    checkScreenWidth();
     window.addEventListener("resize", checkScreenWidth);
 
     return () => {
       window.removeEventListener("resize", checkScreenWidth);
     };
-  }, []);
+  }, [isWideScreen, isInitialized]);
 
   // Listen for card selection events
   useEffect(() => {
@@ -61,12 +135,23 @@ export default function FullWidthLayout({
 
   const shouldShowPersistentSidebar = showPersistentSidebar && isWideScreen;
 
-  // Simple fade animation that doesn't affect layout
-  const fadeVariants = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { duration: 0.2 } },
-    exit: { opacity: 0, transition: { duration: 0.15 } },
-  };
+  // Don't render anything until initialized
+  if (!isInitialized) {
+    return (
+      <div className="full-width-layout">
+        <ChipBackground />
+        <Navbar />
+        {showHero && <Hero {...heroProps} />}
+        <main className="main-full-width">
+          <div className="main-full-width-shell">
+            <div className="main-full-width-content">
+              <ContentLoader />
+            </div>
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="full-width-layout">
@@ -80,7 +165,9 @@ export default function FullWidthLayout({
             shouldShowPersistentSidebar ? "with-persistent-side-modal" : ""
           }`}
         >
-          <div className="main-full-width-content">{children}</div>
+          <div className="main-full-width-content">
+            {shouldRenderContent ? children : <ContentLoader />}
+          </div>
 
           {shouldShowPersistentSidebar && (
             <div className="main-full-width-sidebar">
@@ -92,10 +179,10 @@ export default function FullWidthLayout({
                   {selectedPair ? (
                     <motion.div
                       key={selectedPair[0]?.title || "content"}
-                      variants={fadeVariants}
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.25 }}
                       style={{ width: "100%", height: "100%" }}
                     >
                       <SideModalNeatAltStack
@@ -106,10 +193,10 @@ export default function FullWidthLayout({
                   ) : (
                     <motion.div
                       key="empty"
-                      variants={fadeVariants}
-                      initial="initial"
-                      animate="animate"
-                      exit="exit"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
                       className="persistent-side-modal-empty-state"
                     >
                       <div>
