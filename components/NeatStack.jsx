@@ -12,6 +12,7 @@ const PERSISTENT_MODAL_BREAKPOINT = 1200;
 
 // Store which stack has dispatched per pathname
 const dispatchedStacks = new Map();
+let previousPathname = null;
 
 const chunkArray = (array = [], size = 3) => {
   if (!Array.isArray(array) || size <= 0) return [];
@@ -414,6 +415,15 @@ const NeatAltStackGrouped = ({
     return chunkArray(cards, normalizedStackLimit);
   }, [cards, normalizedStackLimit]);
 
+  // Clear dispatched stacks when pathname changes (navigation)
+  useEffect(() => {
+    if (previousPathname !== pathname) {
+      // Clear all dispatched stacks for the new page
+      dispatchedStacks.clear();
+      previousPathname = pathname;
+    }
+  }, [pathname]);
+
   // Fade-in animation on mount
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
@@ -431,28 +441,27 @@ const NeatAltStackGrouped = ({
     return () => window.removeEventListener("resize", checkScreenWidth);
   }, []);
 
+  // Dispatch first card when conditions are met
   useEffect(() => {
     if (!cards.length) return;
     if (!isWideScreen) return;
 
     if (stackOrder === 0) {
-      if (!dispatchedStacks.has(dispatchKey)) {
-        const timer = setTimeout(() => {
-          const firstCard = cards[0];
-          const firstPair = Array.isArray(firstCard) ? firstCard : [firstCard];
+      // Always dispatch for the first stack on mount
+      const timer = setTimeout(() => {
+        const firstCard = cards[0];
+        const firstPair = Array.isArray(firstCard) ? firstCard : [firstCard];
 
-          window.dispatchEvent(
-            new CustomEvent("preview-card:selected", {
-              detail: { pair: firstPair },
-            }),
-          );
-          dispatchedStacks.set(dispatchKey, true);
-        }, 100);
+        window.dispatchEvent(
+          new CustomEvent("preview-card:selected", {
+            detail: { pair: firstPair },
+          }),
+        );
+      }, 100);
 
-        return () => clearTimeout(timer);
-      }
+      return () => clearTimeout(timer);
     }
-  }, [cards, isWideScreen, stackOrder, dispatchKey]);
+  }, [cards, isWideScreen, stackOrder]);
 
   return (
     <div
