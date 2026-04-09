@@ -5,6 +5,26 @@ import NeatAltStack from "@/components/NeatAltStack";
 import NeatAltStackGrouped from "@/components/NeatStack";
 import cardsData from "@/data/projects.json";
 
+export const metadata = {
+  metadataBase: new URL("https://lindocode.com"),
+
+  title: {
+    default: "Web Games | Lindocode Digital",
+    template: "%s | Lindocode Digital",
+  },
+  description:
+    "Building modern web apps, UI components, and innovative development solutions.",
+
+  alternates: {
+    canonical: "https://lindocode.com/projects/web-games",
+  },
+
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function Projects() {
   return (
     <FullWidthLayout
