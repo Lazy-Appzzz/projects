@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "../common/Navbar";
 import Hero from "../common/Hero";
 import Footer from "../common/Footer";
@@ -22,6 +23,7 @@ export default function FullWidthLayout({
   const [isWideScreen, setIsWideScreen] = useState(false);
   const [selectedPair, setSelectedPair] = useState(null);
 
+  // Track screen width changes
   useEffect(() => {
     const checkScreenWidth = () => {
       setIsWideScreen(window.innerWidth > PERSISTENT_MODAL_BREAKPOINT);
@@ -35,6 +37,7 @@ export default function FullWidthLayout({
     };
   }, []);
 
+  // Listen for card selection events
   useEffect(() => {
     const handlePreviewSelection = (event) => {
       const pair = event?.detail?.pair ?? null;
@@ -58,6 +61,13 @@ export default function FullWidthLayout({
 
   const shouldShowPersistentSidebar = showPersistentSidebar && isWideScreen;
 
+  // Simple fade animation that doesn't affect layout
+  const fadeVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.2 } },
+    exit: { opacity: 0, transition: { duration: 0.15 } },
+  };
+
   return (
     <div className="full-width-layout">
       <ChipBackground />
@@ -78,22 +88,40 @@ export default function FullWidthLayout({
                 title={persistentTitle}
                 onClear={() => setSelectedPair(null)}
               >
-                {selectedPair ? (
-                  <SideModalNeatAltStack
-                    pair={selectedPair}
-                    multipleMockupWidth={100}
-                  />
-                ) : (
-                  <div className="persistent-side-modal-empty-state">
-                    <div>
-                      <h3>Select a project for preview</h3>
-                      <p>
-                        Click any preview image to load its related content into
-                        this panel.
-                      </p>
-                    </div>
-                  </div>
-                )}
+                <AnimatePresence mode="wait">
+                  {selectedPair ? (
+                    <motion.div
+                      key={selectedPair[0]?.title || "content"}
+                      variants={fadeVariants}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      style={{ width: "100%", height: "100%" }}
+                    >
+                      <SideModalNeatAltStack
+                        pair={selectedPair}
+                        multipleMockupWidth={100}
+                      />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="empty"
+                      variants={fadeVariants}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      className="persistent-side-modal-empty-state"
+                    >
+                      <div>
+                        <h3>Select a project for preview</h3>
+                        <p>
+                          Click any preview image to load its related content
+                          into this panel.
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </PersistentSideModal>
             </div>
           )}
