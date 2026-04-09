@@ -371,33 +371,43 @@ const NeatAltStackGrouped = ({
   stackLimit = 3,
 }) => {
   const normalizedStackLimit = Math.max(1, Number(stackLimit) || 1);
+  const [isWideScreen, setIsWideScreen] = useState(false);
 
   const groupedCards = useMemo(() => {
     return chunkArray(cards, normalizedStackLimit);
   }, [cards, normalizedStackLimit]);
 
-  // Fix: Ensure first card pair is always loaded on persistent sidebar initial render
+  // Track screen width changes
+  useEffect(() => {
+    const checkScreenWidth = () => {
+      setIsWideScreen(window.innerWidth > PERSISTENT_MODAL_BREAKPOINT);
+    };
+
+    checkScreenWidth();
+    window.addEventListener("resize", checkScreenWidth);
+
+    return () => window.removeEventListener("resize", checkScreenWidth);
+  }, []);
+
+  // Dispatch first card when screen becomes wide OR on initial mount if wide
   useEffect(() => {
     if (!cards.length) return;
+    if (!isWideScreen) return;
 
-    // Use setTimeout to ensure event listener is ready
+    // Small delay to ensure event listener is ready
     const timer = setTimeout(() => {
-      // Get the first card as a pair (wrap in array if needed)
       const firstCard = cards[0];
       const firstPair = Array.isArray(firstCard) ? firstCard : [firstCard];
 
-      // Only dispatch if on wide screen
-      if (window.innerWidth > PERSISTENT_MODAL_BREAKPOINT) {
-        window.dispatchEvent(
-          new CustomEvent("preview-card:selected", {
-            detail: { pair: firstPair },
-          }),
-        );
-      }
-    }, 0);
+      window.dispatchEvent(
+        new CustomEvent("preview-card:selected", {
+          detail: { pair: firstPair },
+        }),
+      );
+    }, 100);
 
     return () => clearTimeout(timer);
-  }, [cards]);
+  }, [cards, isWideScreen]); // Re-run when isWideScreen changes
 
   return (
     <>
