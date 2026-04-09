@@ -376,15 +376,27 @@ const NeatAltStackGrouped = ({
     return chunkArray(cards, normalizedStackLimit);
   }, [cards, normalizedStackLimit]);
 
+  // Fix: Ensure first card pair is always loaded on persistent sidebar initial render
   useEffect(() => {
     if (!cards.length) return;
-    if (window.innerWidth <= PERSISTENT_MODAL_BREAKPOINT) return;
 
-    window.dispatchEvent(
-      new CustomEvent("preview-card:selected", {
-        detail: { pair: cards[0] },
-      }),
-    );
+    // Use setTimeout to ensure event listener is ready
+    const timer = setTimeout(() => {
+      // Get the first card as a pair (wrap in array if needed)
+      const firstCard = cards[0];
+      const firstPair = Array.isArray(firstCard) ? firstCard : [firstCard];
+
+      // Only dispatch if on wide screen
+      if (window.innerWidth > PERSISTENT_MODAL_BREAKPOINT) {
+        window.dispatchEvent(
+          new CustomEvent("preview-card:selected", {
+            detail: { pair: firstPair },
+          }),
+        );
+      }
+    }, 0);
+
+    return () => clearTimeout(timer);
   }, [cards]);
 
   return (
