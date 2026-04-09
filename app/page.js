@@ -26,7 +26,7 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "Projects | Lindocode Digital",
+    title: "Featured Projects | Lindocode Digital",
     description:
       "Building modern web apps, UI components, and innovative development solutions.",
     url: "https://lindocode.com/projects",
@@ -44,7 +44,7 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Projects | Lindocode Digital",
+    title: "Featured Projects | Lindocode Digital",
     description:
       "Building modern web apps, UI components, and innovative development solutions.",
     images: ["/og-image.jpg"],
