@@ -135,7 +135,7 @@ p {
     linear-gradient(180deg, #bcd7db 0%, #d7d6d1 45%, #f2a07c 100%);
   overflow: visible !important;
   justify-content: center;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 24px 24px 0;
 }
 
 .card-image {
