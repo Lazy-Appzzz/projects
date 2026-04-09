@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import ImageLoader from "./common/ImageLoader";
 import technologyIcons from "@/data/lazy_appz.json";
 
 const staggerContainer = {
@@ -228,7 +228,7 @@ export default function SideModalNeatAltStack({
           </div>
 
           <div>
-            <Image
+            <ImageLoader
               src={previewCard.image}
               alt={previewCard.title}
               width={700}
@@ -237,8 +237,9 @@ export default function SideModalNeatAltStack({
                 width: "100%",
                 height: "auto",
                 objectFit: "cover",
+                borderRadius: "12px",
               }}
-            />
+            />{" "}
           </div>
         </div>
       </motion.div>
@@ -428,7 +429,7 @@ export default function SideModalNeatAltStack({
                     }}
                     className="info-image-item "
                   >
-                    <Image
+                    <ImageLoader
                       src={mockup.src}
                       alt={mockup.alt}
                       width={500}
@@ -439,7 +440,7 @@ export default function SideModalNeatAltStack({
                         objectFit: "cover",
                         display: "block",
                       }}
-                    />
+                    />{" "}
                     <div
                       style={{
                         padding: "0.9rem 1rem",
