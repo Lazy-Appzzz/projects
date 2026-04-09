@@ -48,6 +48,7 @@ const StackPair = ({
 
   const [isMobile, setIsMobile] = useState(false);
   const [isExtraLg, setIsExtraLg] = useState(false);
+  const [isHoveringImage, setIsHoveringImage] = useState(false);
 
   const [selectedPair, setSelectedPair] = useState(null);
   const [imageModalOpen, setImageModalOpen] = useState(false);
@@ -70,6 +71,7 @@ const StackPair = ({
   const projectStyle = getProjectNumberStyle(globalProjectIndex);
 
   const description = previewCard?.description || "";
+
   useEffect(() => {
     const checkResponsive = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -285,7 +287,9 @@ const StackPair = ({
           ref={(el) => (itemsRef.current[0] = el)}
           style={{
             top: `${stickyStartPosition}px`,
-            boxShadow: "0 8px 15px rgba(0,0,0,0.6)",
+            boxShadow: "0 20px 35px -12px rgba(0, 0, 0, 0.25)",
+            borderRadius: "28px",
+            background: "#ffffff",
           }}
         >
           <div className={`grid ${pairIndex % 2 === 1 ? "reverse-grid" : ""}`}>
@@ -299,8 +303,27 @@ const StackPair = ({
                 >
                   {previewCard.statusText}
                 </span>
-                <h2>{previewCard.title}</h2>
-                <h4 style={{ color: "#7B776E" }}>{previewCard.subtitle}</h4>
+                <h2
+                  style={{
+                    fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)",
+                    fontWeight: 600,
+                    letterSpacing: "-0.02em",
+                    color: "#0f172a",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  {previewCard.title}
+                </h2>
+                <h4
+                  style={{
+                    color: "#5f6b7a",
+                    fontWeight: 500,
+                    fontSize: "clamp(1rem, 1.2vw, 1.1rem)",
+                    marginBottom: "1.25rem",
+                  }}
+                >
+                  {previewCard.subtitle}
+                </h4>
                 {previewCard.description && (
                   <div style={{ position: "relative" }}>
                     <p
@@ -309,29 +332,43 @@ const StackPair = ({
                         WebkitBoxOrient: "vertical",
                         WebkitLineClamp: descriptionExpanded ? "unset" : 4,
                         overflow: "hidden",
-                        lineHeight: "1.6",
+                        lineHeight: "1.7",
                         marginBottom: "0.5rem",
                         transition: "all 0.3s ease",
+                        color: "#667085",
+                        fontSize: "0.98rem",
                       }}
                     >
                       {description}
                     </p>
                   </div>
                 )}
-                <p>{previewCard.details}</p>
+                <p style={{ color: "#667085", fontSize: "0.95rem" }}>
+                  {previewCard.details}
+                </p>
                 {previewCard.githubLink && (
                   <div
                     style={{
                       display: "flex",
                       justifyContent: "center",
                       gap: "1rem",
-                      marginTop: "20px",
+                      marginTop: "28px",
                     }}
                   >
                     <a
                       href={previewCard.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      style={{
+                        transition: "transform 0.2s ease",
+                        display: "inline-block",
+                      }}
+                      onMouseEnter={(e) =>
+                        (e.currentTarget.style.transform = "scale(1.05)")
+                      }
+                      onMouseLeave={(e) =>
+                        (e.currentTarget.style.transform = "scale(1)")
+                      }
                     >
                       <svg
                         width={isMobile ? 25 : 28}
@@ -350,7 +387,7 @@ const StackPair = ({
                       display: "flex",
                       justifyContent: "center",
                       gap: "1rem",
-                      marginTop: "20px",
+                      marginTop: "28px",
                     }}
                   >
                     <Logo
@@ -381,10 +418,14 @@ const StackPair = ({
                 overflow: "visible",
                 alignItems: "center",
                 justifyContent: "center",
+                padding: "28px",
+                position: "relative",
               }}
             >
               <div
                 onClick={handlePreviewImageClick}
+                onMouseEnter={() => setIsHoveringImage(true)}
+                onMouseLeave={() => setIsHoveringImage(false)}
                 style={{
                   cursor: "pointer",
                   width: "100%",
@@ -395,6 +436,7 @@ const StackPair = ({
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  position: "relative",
                 }}
               >
                 <ImageLoader
@@ -408,8 +450,174 @@ const StackPair = ({
                     height: "auto",
                     cursor: "pointer",
                     display: "block",
+                    borderRadius: "16px",
+
+                    transition: "all 0.3s ease",
                   }}
                 />
+
+                {/* Click prompt overlay - round shopping sticker */}
+                {previewCard.sticker ? (
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "20px",
+                      right: "20px",
+                      opacity: 1,
+                      transform: isHoveringImage
+                        ? "translateY(0) scale(1)"
+                        : "translateY(10px) scale(0.85)",
+                      transition: "all 0.3s cubic-bezier(0.34, 1.2, 0.64, 1)",
+                      pointerEvents: "none",
+                      zIndex: 10,
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "relative",
+                        width: "70px",
+                        height: "70px",
+                        borderRadius: "50%",
+                        background:
+                          "radial-gradient(circle at 30% 30%, #fff9e8, #f5e6c8)",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: "4px",
+                        boxShadow:
+                          "0 4px 12px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.8)",
+                        border: "1px solid rgba(220, 180, 100, 0.5)",
+                        fontFamily: "system-ui, -apple-system, sans-serif",
+                      }}
+                    >
+                      {/* Shine effect */}
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: "8px",
+                          left: "12px",
+                          width: "20px",
+                          height: "20px",
+                          borderRadius: "50%",
+                          background:
+                            "radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)",
+                          pointerEvents: "none",
+                        }}
+                      />
+
+                      {/* Price tag style - red circle badge */}
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: "-8px",
+                          right: "-8px",
+                          width: "28px",
+                          height: "28px",
+                          borderRadius: "50%",
+                          background:
+                            "radial-gradient(circle at 30% 30%, #e63946, #c1121f)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
+                          border: "1px solid rgba(255,255,255,0.3)",
+                        }}
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <circle cx="12" cy="12" r="3" />
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        </svg>
+                      </div>
+
+                      {/* Main text */}
+                      <span
+                        style={{
+                          fontSize: "0.7rem",
+                          fontWeight: 800,
+                          color: "#2c1810",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.5px",
+                          marginTop: "4px",
+                        }}
+                      >
+                        CLICK
+                      </span>
+                      <span
+                        style={{
+                          fontSize: "0.55rem",
+                          fontWeight: 600,
+                          color: "#8b5e3c",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.3px",
+                        }}
+                      >
+                        for more
+                      </span>
+
+                      {/* Dashed border ring */}
+                      <div
+                        style={{
+                          position: "absolute",
+                          inset: "3px",
+                          borderRadius: "50%",
+                          border: "1px dashed rgba(200, 160, 100, 0.4)",
+                          pointerEvents: "none",
+                        }}
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: "16px",
+                      right: "16px",
+                      background: "rgba(0, 0, 0, 0.65)",
+                      backdropFilter: "blur(8px)",
+                      padding: "8px 14px",
+                      borderRadius: "40px",
+                      color: "white",
+                      fontSize: "0.75rem",
+                      fontWeight: 500,
+                      letterSpacing: "0.3px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      opacity: 1,
+                      transform: isHoveringImage
+                        ? "translateY(0)"
+                        : "translateY(8px)",
+                      transition: "all 0.25s ease",
+                      pointerEvents: "none",
+                      fontFamily: "system-ui, -apple-system, sans-serif",
+                    }}
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    Click for more
+                  </div>
+                )}
               </div>
             </div>
           </div>
