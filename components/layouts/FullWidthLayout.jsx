@@ -15,7 +15,6 @@ import "./Layouts.css";
 
 const PERSISTENT_MODAL_BREAKPOINT = 1200;
 
-// Loading component with Logo animation
 const ContentLoader = () => (
   <div className="content-loader">
     <div className="logo-pulse">
@@ -92,12 +91,10 @@ export default function FullWidthLayout({
   const [shouldRenderContent, setShouldRenderContent] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  // Check initial screen width once on mount
   useEffect(() => {
     const isWide = window.innerWidth > PERSISTENT_MODAL_BREAKPOINT;
     setIsWideScreen(isWide);
 
-    // Only show loader on initial render if screen is wide (sidebar will appear)
     if (isWide && showPersistentSidebar) {
       setShouldRenderContent(false);
       setTimeout(() => {
@@ -110,7 +107,6 @@ export default function FullWidthLayout({
     }
   }, [showPersistentSidebar]);
 
-  // Track screen width changes only after initialization
   useEffect(() => {
     if (!isInitialized) return;
 
@@ -118,7 +114,6 @@ export default function FullWidthLayout({
       const newIsWide = window.innerWidth > PERSISTENT_MODAL_BREAKPOINT;
 
       if (newIsWide !== isWideScreen) {
-        // Hide content during transition
         setShouldRenderContent(false);
         setIsTransitioning(true);
 
