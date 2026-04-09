@@ -133,7 +133,7 @@ p {
       transparent 75%
     ),
     linear-gradient(180deg, #bcd7db 0%, #d7d6d1 45%, #f2a07c 100%);
-  overflow: hidden;
+  overflow: visible !important;
   justify-content: center;
   border-radius: 0 8px 8px 0;
 }
@@ -144,6 +144,7 @@ p {
   height: auto;
   object-fit: cover;
   transition: transform 0.45s ease;
+  overflow: visible !important;
 }
 
 .card-image:hover {
@@ -349,6 +350,23 @@ p {
   .card-gucci-bg {
     border-radius: 8px 8px 0 0;
   }
+  .card-gucci-bg {
+    min-height: 250px;
+    padding: 20px;
+  }
+
+  .card-gucci-bg > div {
+    min-height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Ensure the image container has fixed minimum height */
+  .card-gucci-bg [style*="position: relative"] {
+    min-height: 180px;
+  }
 }
 
 /* Desktop Styles */
@@ -492,4 +510,72 @@ p {
 
 .stack-group-wrapper:last-child {
   margin-bottom: 0;
+} /* Fade-in-up animation matching Hero.jsx */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(26px);
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.neat-stack-container {
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+.neat-stack-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.stack-group-wrapper {
+  opacity: 0;
+  transform: translateY(26px);
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: calc(var(--group-index, 0) * 0.1s);
+}
+
+.preview-card {
+  opacity: 0;
+  transform: translateY(26px);
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animations for cards */
+.stack-group-wrapper:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.stack-group-wrapper:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.stack-group-wrapper:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Persistent sidebar fade-in */
+.persistent-side-modal {
+  opacity: 0;
+  transform: translateY(26px);
+  animation: fadeInUp 0.7s ease forwards;
+  animation-delay: 0.2s;
 }

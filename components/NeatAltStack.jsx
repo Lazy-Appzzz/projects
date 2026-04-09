@@ -2,12 +2,12 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import "./NeatAltStack.css";
 import technologyIcons from "@/data/lazy_appz.json";
 import SideModal from "./common/SideModal.jsx";
 import SideModalNeatAltStack from "./SideModalNeatAltStack.jsx";
 import Logo from "./common/Logo";
+import ImageLoader from "./common/ImageLoader";
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -249,6 +249,11 @@ const StackPair = ({
     setImageModalOpen(true);
   };
 
+  // Calculate transform based on screen size - moved to container
+  const imageContainerTransform =
+    previewCard.imgTransform ||
+    (isExtraLg ? "rotate(3.5deg) scale(0.95)" : "rotate(3.5deg) scale(0.85)");
+
   return (
     <>
       <div
@@ -375,26 +380,34 @@ const StackPair = ({
                 display: "flex",
                 overflow: "visible",
                 alignItems: "center",
+                justifyContent: "center",
               }}
             >
               <div
                 onClick={handlePreviewImageClick}
-                style={{ cursor: "pointer" }}
+                style={{
+                  cursor: "pointer",
+                  width: "100%",
+                  transform: imageContainerTransform,
+                  transition:
+                    "transform 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1)",
+                  transformOrigin: "center center",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
               >
-                <Image
-                  className="card-image block width-100% height-100% object-cover"
+                <ImageLoader
+                  className="card-image"
                   src={previewCard.image}
                   alt={previewCard.title}
                   width={600}
                   height={400}
                   style={{
-                    transform:
-                      previewCard.imgTransform ||
-                      (isExtraLg
-                        ? "rotate(3.5deg) scale(.9)"
-                        : "rotate(3.5deg) scale(.8)"),
-                    transition: "transform 0.45s ease",
+                    width: "100%",
+                    height: "auto",
                     cursor: "pointer",
+                    display: "block",
                   }}
                 />
               </div>

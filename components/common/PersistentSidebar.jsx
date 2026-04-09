@@ -8,7 +8,7 @@ export default function PersistentSideModal({
   onClear,
 }) {
   return (
-    <div className="persistent-side-modal" aria-label={title}>
+    <div className="persistent-side-modal slide-in-right" aria-label={title}>
       <div className="persistent-side-modal__header">
         <a href="/" className="brand">
           <Logo

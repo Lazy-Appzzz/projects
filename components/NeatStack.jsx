@@ -1,13 +1,17 @@
 "use client";
 
 import { useRef, useEffect, useState, useMemo } from "react";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
 import "./NeatAltStack.css";
 import SideModal from "./common/SideModal.jsx";
 import SideModalNeatAltStack from "./SideModalNeatAltStack.jsx";
 import Logo from "./common/Logo";
+import ImageLoader from "./common/ImageLoader";
 
 const PERSISTENT_MODAL_BREAKPOINT = 1200;
+
+// Store which stack has dispatched per pathname
+const dispatchedStacks = new Map();
 
 const chunkArray = (array = [], size = 3) => {
   if (!Array.isArray(array) || size <= 0) return [];
@@ -31,6 +35,7 @@ const PreviewCard = ({
   const [selectedPair, setSelectedPair] = useState(null);
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [descriptionExpanded, setDescriptionExpanded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const [previewCard] = pair;
   const projectNumber = String(globalIndex + 1).padStart(2, "0");
@@ -45,6 +50,12 @@ const PreviewCard = ({
     window.addEventListener("resize", checkResponsive);
 
     return () => window.removeEventListener("resize", checkResponsive);
+  }, []);
+
+  // Fade-in animation on mount
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
   }, []);
 
   const handlePreviewImageClick = () => {
@@ -62,17 +73,27 @@ const PreviewCard = ({
   };
 
   const description = previewCard?.description || "";
+  const imageContainerTransform =
+    previewCard?.imgTransform ||
+    (isExtraLg
+      ? "rotate(6deg) scale(0.95)"
+      : isMobile
+        ? "rotate(6deg) scale(0.85)"
+        : "rotate(6deg) scale(0.9)");
 
   return (
     <>
       <div
         data-theme="default"
-        className="stack-cards__item bg radius-lg shadow-md js-stack-cards__item preview-card"
+        className={`stack-cards__item bg radius-lg shadow-md js-stack-cards__item preview-card fade-in-up ${
+          isVisible ? "visible" : ""
+        }`}
         ref={cardRef}
         style={{
           top: `${stickyStartPosition}px`,
           boxShadow: "0 8px 15px rgba(0,0,0,0.6)",
           marginTop: "2em",
+          animationDelay: `${globalIndex * 0.1}s`,
         }}
       >
         <div className="project-number-container">
@@ -177,28 +198,36 @@ const PreviewCard = ({
               display: "flex",
               overflow: "visible",
               alignItems: "center",
+              justifyContent: "center",
+              padding: "20px",
             }}
           >
             <div
               onClick={handlePreviewImageClick}
-              style={{ cursor: "pointer" }}
+              style={{
+                cursor: "pointer",
+                width: "100%",
+                transform: imageContainerTransform,
+                transition: "transform 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1)",
+                transformOrigin: "center center",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                overflow: "visible",
+              }}
             >
-              <Image
-                className="card-image block width-100% height-100% object-cover"
+              <ImageLoader
+                className="card-image"
                 src={previewCard?.image}
                 alt={previewCard?.title || "Project image"}
                 width={600}
                 height={400}
                 style={{
-                  transform:
-                    previewCard?.imgTransform ||
-                    (isExtraLg
-                      ? "rotate(6deg) scale(1)"
-                      : isMobile
-                        ? "rotate(6deg) scale(.8)"
-                        : "rotate(6deg) scale(.9)"),
-                  transition: "transform 0.45s ease",
+                  width: "100%",
+                  height: "auto",
                   cursor: "pointer",
+                  display: "block",
+                  objectFit: "contain",
                 }}
               />
             </div>
@@ -341,7 +370,10 @@ const StackGroup = ({ group, groupIndex, stickyStartPosition, startIndex }) => {
   }, [group, stickyStartPosition]);
 
   return (
-    <section className="stack-group-wrapper" data-group-index={groupIndex}>
+    <section
+      className="stack-group-wrapper fade-in-up"
+      data-group-index={groupIndex}
+    >
       <div className="stack-cards js-stack-cards" ref={containerRef}>
         {group.map((pair, pairIndex) => {
           const globalIndex = startIndex + pairIndex;
@@ -369,26 +401,63 @@ const NeatAltStackGrouped = ({
   stickyStartPosition = 100,
   startIndex = 0,
   stackLimit = 3,
+  stackOrder = 0,
 }) => {
   const normalizedStackLimit = Math.max(1, Number(stackLimit) || 1);
+  const [isWideScreen, setIsWideScreen] = useState(false);
+  const pathname = usePathname();
+
+  const dispatchKey = `${pathname}-stack-${stackOrder}`;
+  const [isVisible, setIsVisible] = useState(false);
 
   const groupedCards = useMemo(() => {
     return chunkArray(cards, normalizedStackLimit);
   }, [cards, normalizedStackLimit]);
 
+  // Fade-in animation on mount
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const checkScreenWidth = () => {
+      setIsWideScreen(window.innerWidth > PERSISTENT_MODAL_BREAKPOINT);
+    };
+
+    checkScreenWidth();
+    window.addEventListener("resize", checkScreenWidth);
+
+    return () => window.removeEventListener("resize", checkScreenWidth);
+  }, []);
+
   useEffect(() => {
     if (!cards.length) return;
-    if (window.innerWidth <= PERSISTENT_MODAL_BREAKPOINT) return;
+    if (!isWideScreen) return;
 
-    window.dispatchEvent(
-      new CustomEvent("preview-card:selected", {
-        detail: { pair: cards[0] },
-      }),
-    );
-  }, [cards]);
+    if (stackOrder === 0) {
+      if (!dispatchedStacks.has(dispatchKey)) {
+        const timer = setTimeout(() => {
+          const firstCard = cards[0];
+          const firstPair = Array.isArray(firstCard) ? firstCard : [firstCard];
+
+          window.dispatchEvent(
+            new CustomEvent("preview-card:selected", {
+              detail: { pair: firstPair },
+            }),
+          );
+          dispatchedStacks.set(dispatchKey, true);
+        }, 100);
+
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [cards, isWideScreen, stackOrder, dispatchKey]);
 
   return (
-    <>
+    <div
+      className={`neat-stack-container fade-in-up ${isVisible ? "visible" : ""}`}
+    >
       {groupedCards.map((group, groupIndex) => {
         const groupStartIndex = startIndex + groupIndex * normalizedStackLimit;
 
@@ -402,7 +471,7 @@ const NeatAltStackGrouped = ({
           />
         );
       })}
-    </>
+    </div>
   );
 };
 
