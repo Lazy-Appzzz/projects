@@ -10,15 +10,38 @@ import PersistentSideModal from "../common/PersistentSidebar";
 import SideModalNeatAltStack from "../SideModalNeatAltStack.jsx";
 import Sidebar from "../common/Sidebar";
 import EmailForm from "@/components/common/EmailForm";
+import Logo from "../common/Logo";
 import "./Layouts.css";
 
 const PERSISTENT_MODAL_BREAKPOINT = 1200;
 
-// Loading component
+// Loading component with Logo animation
 const ContentLoader = () => (
   <div className="content-loader">
-    <div className="dot-flashing"></div>
-    <p>Loading content...</p>
+    <div className="logo-pulse">
+      <Logo
+        size="medium"
+        scale={0.8}
+        postWidth={0.9}
+        lampHeight={30}
+        dotWidth={1.5}
+        bulbWidth={0.7}
+        headWidth={2.3}
+        headPos={-1.7}
+        rayPos={-0.7}
+        postMargin={33}
+        headColor="#000000"
+        postColor="#000000"
+        bulbColor="#000000"
+        rayColor="#000000"
+        dotColor="#FF0700"
+      />
+    </div>
+    <div>
+      <span className="brand-text1 lemon-font">Loading</span>
+      <span className="brand-text2 lemon-font">Content...</span>
+    </div>
+
     <style>
       {`
         .content-loader {
@@ -27,24 +50,30 @@ const ContentLoader = () => (
           align-items: center;
           justify-content: center;
           min-height: 400px;
-          gap: 1rem;
+          gap: 1.5rem;
         }
-        .dot-flashing {
-          width: 15px;
-          height: 15px;
-          border-radius: 50%;
-          background-color: #c90201;
-          animation: dotFlashing 1s infinite linear alternate;
+        .logo-pulse {
+          animation: pulse 1.5s ease-in-out infinite;
         }
-        @keyframes dotFlashing {
-          0% { background-color: #c90201; opacity: 0.3; transform: scale(1); }
-          50% { background-color: #c90201; opacity: 1; transform: scale(1.3); }
-          100% { background-color: #c90201; opacity: 0.3; transform: scale(1); }
+        @keyframes pulse {
+          0% { 
+            opacity: 0.4;
+            transform: scale(0.95);
+          }
+          50% { 
+            opacity: 1;
+            transform: scale(1.05);
+          }
+          100% { 
+            opacity: 0.4;
+            transform: scale(0.95);
+          }
         }
         .content-loader p {
           color: #6b7280;
           font-size: 0.9rem;
           margin: 0;
+          font-weight: 500;
         }
       `}
     </style>

@@ -32,15 +32,7 @@ const ImageLoader = ({ src, alt, width, height, style, className }) => {
               animation: "dotFlashing 1s infinite linear alternate",
             }}
           />
-          {/* <p */}
-          {/*   style={{ */}
-          {/*     color: "black", */}
-          {/*     margin: 0, */}
-          {/*     fontSize: ".5em", */}
-          {/*   }} */}
-          {/* > */}
-          {/*   Loading... */}
-          {/* </p> */}
+
           <style>
             {`
               @keyframes dotFlashing {

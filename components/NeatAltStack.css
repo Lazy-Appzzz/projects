@@ -133,7 +133,7 @@ p {
       transparent 75%
     ),
     linear-gradient(180deg, #bcd7db 0%, #d7d6d1 45%, #f2a07c 100%);
-  overflow: hidden;
+  overflow: visible !important;
   justify-content: center;
   border-radius: 0 8px 8px 0;
 }
@@ -144,6 +144,7 @@ p {
   height: auto;
   object-fit: cover;
   transition: transform 0.45s ease;
+  overflow: visible !important;
 }
 
 .card-image:hover {

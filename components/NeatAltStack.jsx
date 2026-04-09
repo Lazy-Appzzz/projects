@@ -249,6 +249,11 @@ const StackPair = ({
     setImageModalOpen(true);
   };
 
+  // Calculate transform based on screen size - moved to container
+  const imageContainerTransform =
+    previewCard.imgTransform ||
+    (isExtraLg ? "rotate(3.5deg) scale(0.95)" : "rotate(3.5deg) scale(0.85)");
+
   return (
     <>
       <div
@@ -375,27 +380,34 @@ const StackPair = ({
                 display: "flex",
                 overflow: "visible",
                 alignItems: "center",
+                justifyContent: "center",
               }}
             >
               <div
                 onClick={handlePreviewImageClick}
-                style={{ cursor: "pointer", width: "100%" }}
+                style={{
+                  cursor: "pointer",
+                  width: "100%",
+                  transform: imageContainerTransform,
+                  transition:
+                    "transform 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1)",
+                  transformOrigin: "center center",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
               >
                 <ImageLoader
-                  className="card-image block width-100% height-100% object-cover"
+                  className="card-image"
                   src={previewCard.image}
                   alt={previewCard.title}
                   width={600}
                   height={400}
                   style={{
-                    transform:
-                      previewCard.imgTransform ||
-                      (isExtraLg
-                        ? "rotate(3.5deg) scale(.9)"
-                        : "rotate(3.5deg) scale(.8)"),
-                    transition: "transform 0.45s ease",
+                    width: "100%",
+                    height: "auto",
                     cursor: "pointer",
-                    minHeight: "200px",
+                    display: "block",
                   }}
                 />
               </div>
