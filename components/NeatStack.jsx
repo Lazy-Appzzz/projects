@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState, useMemo } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import "./NeatAltStack.css";
 import SideModal from "./common/SideModal.jsx";
 import SideModalNeatAltStack from "./SideModalNeatAltStack.jsx";
@@ -9,8 +10,8 @@ import Logo from "./common/Logo";
 
 const PERSISTENT_MODAL_BREAKPOINT = 1200;
 
-// Global flag to track if first card has been dispatched
-let hasDispatchedInitialCard = false;
+// Store which stack has dispatched per pathname
+const dispatchedStacks = new Map();
 
 const chunkArray = (array = [], size = 3) => {
   if (!Array.isArray(array) || size <= 0) return [];
@@ -372,10 +373,14 @@ const NeatAltStackGrouped = ({
   stickyStartPosition = 100,
   startIndex = 0,
   stackLimit = 3,
-  stackOrder = 0, // Add stackOrder prop to determine priority (0 = first, 1 = second, etc.)
+  stackOrder = 0,
 }) => {
   const normalizedStackLimit = Math.max(1, Number(stackLimit) || 1);
   const [isWideScreen, setIsWideScreen] = useState(false);
+  const pathname = usePathname();
+
+  // Create a unique key for the current page + stack
+  const dispatchKey = `${pathname}-stack-${stackOrder}`;
 
   const groupedCards = useMemo(() => {
     return chunkArray(cards, normalizedStackLimit);
@@ -393,28 +398,44 @@ const NeatAltStackGrouped = ({
     return () => window.removeEventListener("resize", checkScreenWidth);
   }, []);
 
-  // Dispatch first card only for the first stack (stackOrder === 0) and only once
+  // Reset dispatched flag when pathname changes (navigation)
+  useEffect(() => {
+    // Clear the dispatched flag for this specific page+stack combination
+    // This allows the first card to be dispatched again on new page
+    return () => {
+      // Optional: cleanup if needed
+    };
+  }, [pathname]);
+
+  // Dispatch first card when:
+  // 1. Screen is wide
+  // 2. This is the first stack (stackOrder === 0)
+  // 3. This specific page+stack hasn't dispatched yet
+  // 4. OR when screen becomes wide (resize)
   useEffect(() => {
     if (!cards.length) return;
     if (!isWideScreen) return;
 
-    // Only dispatch for the first stack (Web Apps) and only if not dispatched before
-    if (stackOrder === 0 && !hasDispatchedInitialCard) {
-      const timer = setTimeout(() => {
-        const firstCard = cards[0];
-        const firstPair = Array.isArray(firstCard) ? firstCard : [firstCard];
+    // Only dispatch for the first stack
+    if (stackOrder === 0) {
+      // Check if this specific page+stack has already dispatched
+      if (!dispatchedStacks.has(dispatchKey)) {
+        const timer = setTimeout(() => {
+          const firstCard = cards[0];
+          const firstPair = Array.isArray(firstCard) ? firstCard : [firstCard];
 
-        window.dispatchEvent(
-          new CustomEvent("preview-card:selected", {
-            detail: { pair: firstPair },
-          }),
-        );
-        hasDispatchedInitialCard = true; // Mark as dispatched
-      }, 100);
+          window.dispatchEvent(
+            new CustomEvent("preview-card:selected", {
+              detail: { pair: firstPair },
+            }),
+          );
+          dispatchedStacks.set(dispatchKey, true);
+        }, 100);
 
-      return () => clearTimeout(timer);
+        return () => clearTimeout(timer);
+      }
     }
-  }, [cards, isWideScreen, stackOrder]);
+  }, [cards, isWideScreen, stackOrder, dispatchKey]);
 
   return (
     <>

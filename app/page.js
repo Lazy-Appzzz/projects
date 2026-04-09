@@ -8,11 +8,21 @@ import NeatAltStackGrouped from "@/components/NeatStack";
 export default function Home() {
   const [selectedPair, setSelectedPair] = useState(null);
 
-  // Set initial selected pair from first card on mount
+  // Listen for custom event from NeatAltStackGrouped
   useEffect(() => {
-    if (cardsData.webApps?.[0]) {
-      setSelectedPair([cardsData.webApps[0]]);
-    }
+    const handlePreviewSelection = (event) => {
+      const pair = event?.detail?.pair ?? null;
+      setSelectedPair(pair);
+    };
+
+    window.addEventListener("preview-card:selected", handlePreviewSelection);
+
+    return () => {
+      window.removeEventListener(
+        "preview-card:selected",
+        handlePreviewSelection,
+      );
+    };
   }, []);
 
   return (
@@ -44,9 +54,6 @@ export default function Home() {
           multipleMockupWidth={100}
           stickyStartPosition={100}
           stackOrder={0}
-          onSelectPair={(pair) => {
-            setSelectedPair(pair);
-          }}
         />
       </div>
       <div>
@@ -65,9 +72,6 @@ export default function Home() {
           multipleMockupWidth={100}
           stickyStartPosition={100}
           stackOrder={1}
-          onSelectPair={(pair) => {
-            setSelectedPair(pair);
-          }}
         />
       </div>
       <div>
@@ -86,9 +90,6 @@ export default function Home() {
           multipleMockupWidth={100}
           stickyStartPosition={100}
           stackOrder={2}
-          onSelectPair={(pair) => {
-            setSelectedPair(pair);
-          }}
         />
       </div>
     </FullWidthLayout>
