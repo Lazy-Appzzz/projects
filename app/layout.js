@@ -7,7 +7,7 @@ export const metadata = {
   metadataBase: new URL("https://lindocode.com"),
 
   title: {
-    default: "Projects | Lindocode Digital",
+    default: "Featured Projects | Lindocode Digital",
     template: "%s | Lindocode Digital",
   },
 
@@ -24,7 +24,7 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "Projects | Lindocode Digital",
+    title: "Featured Projects | Lindocode Digital",
     description:
       "Building modern web apps, UI components, and innovative development solutions.",
     url: "https://lindocode.com/projects",
@@ -42,7 +42,7 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Projects | Lindocode Digital",
+    title: "Featured Projects | Lindocode Digital",
     description:
       "Building modern web apps, UI components, and innovative development solutions.",
     images: ["/og-image.jpg"],
@@ -58,6 +58,7 @@ export const metadata = {
     other: [{ rel: "manifest", url: "/site.webmanifest" }],
   },
 };
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
