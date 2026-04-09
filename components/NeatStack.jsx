@@ -9,6 +9,9 @@ import Logo from "./common/Logo";
 
 const PERSISTENT_MODAL_BREAKPOINT = 1200;
 
+// Global flag to track if first card has been dispatched
+let hasDispatchedInitialCard = false;
+
 const chunkArray = (array = [], size = 3) => {
   if (!Array.isArray(array) || size <= 0) return [];
 
@@ -369,6 +372,7 @@ const NeatAltStackGrouped = ({
   stickyStartPosition = 100,
   startIndex = 0,
   stackLimit = 3,
+  stackOrder = 0, // Add stackOrder prop to determine priority (0 = first, 1 = second, etc.)
 }) => {
   const normalizedStackLimit = Math.max(1, Number(stackLimit) || 1);
   const [isWideScreen, setIsWideScreen] = useState(false);
@@ -389,25 +393,28 @@ const NeatAltStackGrouped = ({
     return () => window.removeEventListener("resize", checkScreenWidth);
   }, []);
 
-  // Dispatch first card when screen becomes wide OR on initial mount if wide
+  // Dispatch first card only for the first stack (stackOrder === 0) and only once
   useEffect(() => {
     if (!cards.length) return;
     if (!isWideScreen) return;
 
-    // Small delay to ensure event listener is ready
-    const timer = setTimeout(() => {
-      const firstCard = cards[0];
-      const firstPair = Array.isArray(firstCard) ? firstCard : [firstCard];
+    // Only dispatch for the first stack (Web Apps) and only if not dispatched before
+    if (stackOrder === 0 && !hasDispatchedInitialCard) {
+      const timer = setTimeout(() => {
+        const firstCard = cards[0];
+        const firstPair = Array.isArray(firstCard) ? firstCard : [firstCard];
 
-      window.dispatchEvent(
-        new CustomEvent("preview-card:selected", {
-          detail: { pair: firstPair },
-        }),
-      );
-    }, 100);
+        window.dispatchEvent(
+          new CustomEvent("preview-card:selected", {
+            detail: { pair: firstPair },
+          }),
+        );
+        hasDispatchedInitialCard = true; // Mark as dispatched
+      }, 100);
 
-    return () => clearTimeout(timer);
-  }, [cards, isWideScreen]); // Re-run when isWideScreen changes
+      return () => clearTimeout(timer);
+    }
+  }, [cards, isWideScreen, stackOrder]);
 
   return (
     <>
