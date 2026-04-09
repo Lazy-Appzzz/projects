@@ -2,12 +2,12 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import "./NeatAltStack.css";
 import technologyIcons from "@/data/lazy_appz.json";
 import SideModal from "./common/SideModal.jsx";
 import SideModalNeatAltStack from "./SideModalNeatAltStack.jsx";
 import Logo from "./common/Logo";
+import ImageLoader from "./common/ImageLoader";
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -379,9 +379,9 @@ const StackPair = ({
             >
               <div
                 onClick={handlePreviewImageClick}
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer", width: "100%" }}
               >
-                <Image
+                <ImageLoader
                   className="card-image block width-100% height-100% object-cover"
                   src={previewCard.image}
                   alt={previewCard.title}
@@ -395,6 +395,7 @@ const StackPair = ({
                         : "rotate(3.5deg) scale(.8)"),
                     transition: "transform 0.45s ease",
                     cursor: "pointer",
+                    minHeight: "200px",
                   }}
                 />
               </div>

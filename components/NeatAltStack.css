@@ -349,6 +349,23 @@ p {
   .card-gucci-bg {
     border-radius: 8px 8px 0 0;
   }
+  .card-gucci-bg {
+    min-height: 250px;
+    padding: 20px;
+  }
+
+  .card-gucci-bg > div {
+    min-height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Ensure the image container has fixed minimum height */
+  .card-gucci-bg [style*="position: relative"] {
+    min-height: 180px;
+  }
 }
 
 /* Desktop Styles */

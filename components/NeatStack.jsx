@@ -1,12 +1,12 @@
 "use client";
 
 import { useRef, useEffect, useState, useMemo } from "react";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import "./NeatAltStack.css";
 import SideModal from "./common/SideModal.jsx";
 import SideModalNeatAltStack from "./SideModalNeatAltStack.jsx";
 import Logo from "./common/Logo";
+import ImageLoader from "./common/ImageLoader.jsx";
 
 const PERSISTENT_MODAL_BREAKPOINT = 1200;
 
@@ -185,9 +185,9 @@ const PreviewCard = ({
           >
             <div
               onClick={handlePreviewImageClick}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", width: "100%" }}
             >
-              <Image
+              <ImageLoader
                 className="card-image block width-100% height-100% object-cover"
                 src={previewCard?.image}
                 alt={previewCard?.title || "Project image"}
@@ -203,6 +203,7 @@ const PreviewCard = ({
                         : "rotate(6deg) scale(.9)"),
                   transition: "transform 0.45s ease",
                   cursor: "pointer",
+                  minHeight: "200px",
                 }}
               />
             </div>
@@ -397,15 +398,6 @@ const NeatAltStackGrouped = ({
 
     return () => window.removeEventListener("resize", checkScreenWidth);
   }, []);
-
-  // Reset dispatched flag when pathname changes (navigation)
-  useEffect(() => {
-    // Clear the dispatched flag for this specific page+stack combination
-    // This allows the first card to be dispatched again on new page
-    return () => {
-      // Optional: cleanup if needed
-    };
-  }, [pathname]);
 
   // Dispatch first card when:
   // 1. Screen is wide
