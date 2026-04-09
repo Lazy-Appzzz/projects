@@ -12,6 +12,7 @@
   --persistent-side-modal-top: 100px;
   --persistent-side-modal-bottom: 24px;
 }
+
 .desktop {
   display: block;
 }
@@ -103,11 +104,18 @@
     top: var(--persistent-side-modal-top);
     align-self: start;
     min-width: 0;
-    padding-right: 24px;
     height: calc(
       100vh - var(--persistent-side-modal-top) -
         var(--persistent-side-modal-bottom)
     );
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .others {
+    display: block;
   }
 }
 
@@ -250,19 +258,5 @@
 
   .main {
     padding: 20px 0;
-  }
-}
-
-@media (min-width: 1201px) {
-  .main-full-width-sidebar {
-    margin-right: -24px;
-  }
-
-  .desktop {
-    display: none;
-  }
-
-  .others {
-    display: block;
   }
 }
