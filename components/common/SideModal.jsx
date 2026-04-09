@@ -1,12 +1,19 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import "./SideModal.css";
 import Logo from "./Logo.jsx";
 
 export default function SideModal({ isOpen, onClose, children, title }) {
   const modalRef = useRef(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -34,7 +41,9 @@ export default function SideModal({ isOpen, onClose, children, title }) {
     if (e.target === e.currentTarget) onClose();
   };
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <>
@@ -117,6 +126,7 @@ export default function SideModal({ isOpen, onClose, children, title }) {
           </motion.aside>
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 }

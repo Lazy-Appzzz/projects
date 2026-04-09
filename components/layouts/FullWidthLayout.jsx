@@ -84,12 +84,19 @@ export default function FullWidthLayout({
   showHero = false,
   heroProps = {},
   showPersistentSidebar = true,
+  selectedPair: externalSelectedPair = null,
+  onSelectPair = () => {},
 }) {
   const [isWideScreen, setIsWideScreen] = useState(false);
-  const [selectedPair, setSelectedPair] = useState(null);
+  const [internalSelectedPair, setInternalSelectedPair] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [shouldRenderContent, setShouldRenderContent] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
+
+  // Use external selectedPair if provided, otherwise use internal
+  const selectedPair =
+    externalSelectedPair !== null ? externalSelectedPair : internalSelectedPair;
+  const setSelectedPair = onSelectPair || setInternalSelectedPair;
 
   useEffect(() => {
     const isWide = window.innerWidth > PERSISTENT_MODAL_BREAKPOINT;
@@ -119,7 +126,6 @@ export default function FullWidthLayout({
 
         setTimeout(() => {
           setIsWideScreen(newIsWide);
-          // Show content after transition completes
           setTimeout(() => {
             setIsTransitioning(false);
             setShouldRenderContent(true);
@@ -135,11 +141,13 @@ export default function FullWidthLayout({
     };
   }, [isWideScreen, isInitialized]);
 
-  // Listen for card selection events
+  // Listen for card selection events (only for internal state)
   useEffect(() => {
+    if (externalSelectedPair !== null) return; // Skip if using external state
+
     const handlePreviewSelection = (event) => {
       const pair = event?.detail?.pair ?? null;
-      setSelectedPair(pair);
+      setInternalSelectedPair(pair);
     };
 
     window.addEventListener("preview-card:selected", handlePreviewSelection);
@@ -150,7 +158,7 @@ export default function FullWidthLayout({
         handlePreviewSelection,
       );
     };
-  }, []);
+  }, [externalSelectedPair]);
 
   const persistentTitle = useMemo(() => {
     const previewCard = Array.isArray(selectedPair) ? selectedPair[0] : null;

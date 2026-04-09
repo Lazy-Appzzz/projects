@@ -431,7 +431,8 @@
         "description": "Scan Me is a mobile app designed to simplify contact sharing at conferences. Attendees wear name badges with QR codes containing their info, which can be scanned using the app. Users can view detailed profiles, save contacts to a local SQLite database, favorite people, add notes, and delete entries.",
         "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/conference-4.webp",
         "bgImage": "/assets/images/temp-latest/BG5.svg",
-        "link": "#stats-section-scan-me"
+        "link": "#stats-section-scan-me",
+        "sticker": "circle"
       },
       {
         "title": "Scan Me",
@@ -518,7 +519,8 @@
         "description": "Simple Variometer is a pilot-assist app that monitors vertical acceleration using a mobile device’s built-in sensors. Key features include speed, position, and heading display, altitude trend indicators, and continuous screen activation for flight readiness.",
         "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/vario.webp",
         "bgImage": "/assets/images/temp-latest/BG4.svg",
-        "link": "#stats-section-simple-variometer"
+        "link": "#stats-section-simple-variometer",
+        "sticker": "circle"
       },
       {
         "title": "Simple Variometer",
@@ -609,7 +611,8 @@
         "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/eco.webp",
         "bgImage": "/assets/images/temp-latest/BG4.svg",
         "link": "#stats-section-eco-collect",
-        "imgTransform": "rotate(3.5deg) scale(.8)"
+        "imgTransform": "rotate(3.5deg) scale(.8)",
+        "sticker": "circle"
       },
       {
         "title": "Eco Collect Prototype Link",

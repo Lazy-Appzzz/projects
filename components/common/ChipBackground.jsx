@@ -47,8 +47,8 @@ export default function ChipBackground() {
           <circle className="node" cx="260" cy="770" r="4" />
 
           {/* RIGHT */}
-          <path className="trace" d="M1440 260 H1280 L1230 310 H1120" />
-          <circle className="node" cx="1120" cy="310" r="4" />
+          {/* <path className="trace" d="M1440 260 H1280 L1230 310 H1120" /> */}
+          {/* <circle className="node" cx="1120" cy="310" r="4" /> */}
 
           {/* <path className="trace" d="M1440 420 H1300 L1250 470 H1150" /> */}
           {/* <circle className="node" cx="1150" cy="470" r="4" /> */}
