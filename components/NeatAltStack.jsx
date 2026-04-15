@@ -71,6 +71,7 @@ const StackPair = ({
   const projectStyle = getProjectNumberStyle(globalProjectIndex);
 
   const description = previewCard?.description || "";
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   useEffect(() => {
     const checkResponsive = () => {
@@ -443,6 +444,7 @@ const StackPair = ({
                   alt={previewCard.title}
                   width={600}
                   height={400}
+                  onLoadingChange={setIsImageLoading}
                   style={{
                     width: "100%",
                     height: "auto",
@@ -453,7 +455,7 @@ const StackPair = ({
                   }}
                 />
 
-                {previewCard.sticker ? (
+                {!isImageLoading && previewCard.sticker ? (
                   <div
                     style={{
                       position: "absolute",
@@ -579,7 +581,7 @@ const StackPair = ({
                       />
                     </div>
                   </div>
-                ) : (
+                ) : !isImageLoading ? (
                   <div
                     style={{
                       position: "absolute",
@@ -620,7 +622,7 @@ const StackPair = ({
                     </svg>
                     Click for more
                   </div>
-                )}
+                ) : null}
               </div>
             </div>
           </div>

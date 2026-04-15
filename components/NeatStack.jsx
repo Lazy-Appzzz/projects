@@ -41,6 +41,7 @@ const PreviewCard = ({
 
   const [previewCard] = pair;
   const projectNumber = String(globalIndex + 1).padStart(2, "0");
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   useEffect(() => {
     const checkResponsive = () => {
@@ -264,6 +265,7 @@ const PreviewCard = ({
                 alt={previewCard?.title || "Project image"}
                 width={600}
                 height={400}
+                onLoadingChange={setIsImageLoading}
                 style={{
                   width: "100%",
                   height: "auto",
@@ -276,7 +278,7 @@ const PreviewCard = ({
                 }}
               />
               {/* Click prompt overlay - appears on hover */}
-              {previewCard.sticker ? (
+              {!isImageLoading && previewCard.sticker ? (
                 <div
                   style={{
                     position: "absolute",
@@ -395,7 +397,7 @@ const PreviewCard = ({
                     />
                   </div>
                 </div>
-              ) : (
+              ) : !isImageLoading ? (
                 <div
                   style={{
                     position: "absolute",
@@ -436,7 +438,7 @@ const PreviewCard = ({
                   </svg>
                   Click for more
                 </div>
-              )}{" "}
+              ) : null}{" "}
             </div>
           </div>
         </div>

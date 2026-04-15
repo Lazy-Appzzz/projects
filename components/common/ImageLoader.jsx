@@ -3,8 +3,21 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const ImageLoader = ({ src, alt, width, height, style, className }) => {
+const ImageLoader = ({
+  src,
+  alt,
+  width,
+  height,
+  style,
+  className,
+  onLoadingChange,
+}) => {
   const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoad = () => {
+    setIsLoading(false);
+    onLoadingChange?.(false); // 👈 notify parent
+  };
 
   return (
     <div style={{ position: "relative", width: "100%" }}>
@@ -55,7 +68,7 @@ const ImageLoader = ({ src, alt, width, height, style, className }) => {
           transition: "opacity 0.2s ease",
         }}
         className={className}
-        onLoad={() => setIsLoading(false)}
+        onLoad={handleLoad}
       />
     </div>
   );
