@@ -70,7 +70,11 @@ export default function SideModal({ isOpen, onClose, children, title }) {
             <div className="side-modal-glow side-modal-glow-two" />
 
             <header className="side-modal-header">
-              <a href="/" className="side-modal-brand" onClick={onClose}>
+              <a
+                href="https://lindocode.com"
+                className="side-modal-brand"
+                onClick={onClose}
+              >
                 <Logo
                   size="medium"
                   scale={0.6}

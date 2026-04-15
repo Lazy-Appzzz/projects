@@ -316,7 +316,7 @@ export default function SideModalNeatAltStack({
                     style={{
                       fontSize: "1.6rem",
                       fontWeight: "700",
-                      color: "#ffffff",
+                      color: "#000000",
                     }}
                   >
                     {stat.value}
@@ -324,7 +324,7 @@ export default function SideModalNeatAltStack({
                   <div
                     style={{
                       fontSize: "0.9rem",
-                      color: "#ffffff",
+                      color: "#525252",
                       marginTop: "0.25rem",
                     }}
                   >
