@@ -10,7 +10,7 @@ export default function PersistentSideModal({
   return (
     <div className="persistent-side-modal slide-in-right" aria-label={title}>
       <div className="persistent-side-modal__header">
-        <a href="/" className="brand">
+        <a href="https://lindocode.com" className="brand">
           <Logo
             size="medium"
             scale={0.6}
