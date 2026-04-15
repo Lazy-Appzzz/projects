@@ -18,7 +18,7 @@ const staggerContainer = {
 };
 
 const statItemVar = {
-  hidden: { opacity: 0, scale: 0.9, y: 20 },
+  hidden: { opacity: 0, scale: 0.96, y: 20 },
   visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4 } },
 };
 
@@ -31,7 +31,7 @@ const statsStagger = {
 };
 
 const techItemVar = {
-  hidden: { opacity: 0, scale: 0.9, y: 12 },
+  hidden: { opacity: 0, scale: 0.95, y: 12 },
   visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.35 } },
 };
 
@@ -251,7 +251,6 @@ const StackPair = ({
     setImageModalOpen(true);
   };
 
-  // Calculate transform based on screen size - moved to container
   const imageContainerTransform =
     previewCard.imgTransform ||
     (isExtraLg ? "rotate(3.5deg) scale(0.95)" : "rotate(3.5deg) scale(0.85)");
@@ -268,10 +267,9 @@ const StackPair = ({
             className="lemon-font project-number "
             style={{
               color: projectStyle.color,
-              margin: "1em",
+              margin: "3em 1em 1em 1em",
             }}
           >
-            {" "}
             PROJECT {projectNumber}
           </h2>
           {previewCard.projectType && (
@@ -451,12 +449,10 @@ const StackPair = ({
                     cursor: "pointer",
                     display: "block",
                     borderRadius: "16px",
-
                     transition: "all 0.3s ease",
                   }}
                 />
 
-                {/* Click prompt overlay - round shopping sticker */}
                 {previewCard.sticker ? (
                   <div
                     style={{
@@ -491,7 +487,6 @@ const StackPair = ({
                         fontFamily: "system-ui, -apple-system, sans-serif",
                       }}
                     >
-                      {/* Shine effect */}
                       <div
                         style={{
                           position: "absolute",
@@ -506,7 +501,6 @@ const StackPair = ({
                         }}
                       />
 
-                      {/* Price tag style - red circle badge */}
                       <div
                         style={{
                           position: "absolute",
@@ -539,7 +533,6 @@ const StackPair = ({
                         </svg>
                       </div>
 
-                      {/* Main text */}
                       <span
                         style={{
                           fontSize: "0.7rem",
@@ -564,7 +557,6 @@ const StackPair = ({
                         for more
                       </span>
 
-                      {/* Dashed border ring */}
                       <div
                         style={{
                           position: "absolute",
@@ -625,7 +617,7 @@ const StackPair = ({
 
         <div
           data-theme="secondary"
-          className="stack-cards__item-large bg radius-lg shadow-lg js-stack-cards__item"
+          className="stack-cards__item-large details-card bg radius-lg shadow-lg js-stack-cards__item"
           ref={(el) => (itemsRef.current[1] = el)}
           style={{
             top: `${stickyStartPosition}px`,
@@ -633,9 +625,9 @@ const StackPair = ({
             "--stack-cards-gap": "-1rem",
           }}
         >
-          <div className="info-rich-layout">
+          <div className="info-rich-layout details-card-layout">
             <span
-              className="live-badge left"
+              className="live-badge left details-card-badge"
               style={{
                 top: "0",
                 "--badge-color": detailsCard.statusColor,
@@ -650,15 +642,13 @@ const StackPair = ({
                 data-index={0}
                 className={`content-section ${isVisible(0) ? "visible" : ""}`}
               >
-                <h2
-                  className="h2-brush"
-                  style={{ color: "#333", marginBottom: "20px" }}
-                >
-                  Metrics Summary
-                </h2>
+                <div className="details-card-header">
+                  <span className="details-card-eyebrow">Project Details</span>
+                  <h2 className="details-card-title">Metrics Summary</h2>
+                </div>
 
                 <motion.div
-                  className="stats-grid"
+                  className="stats-grid details-stats-grid"
                   variants={staggerContainer}
                   initial="hidden"
                   animate={isVisible(0) ? "visible" : "hidden"}
@@ -666,27 +656,17 @@ const StackPair = ({
                   {detailsCard.stats?.map((stat, statIndex) => (
                     <motion.div
                       key={statIndex}
-                      className="stat-item"
+                      className="stat-item details-stat-item"
                       variants={statItemVar}
                     >
-                      <div style={{ fontSize: "2rem", fontWeight: "bold" }}>
-                        {stat.value}
-                      </div>
-                      <div style={{ fontSize: "0.9rem", opacity: 0.9 }}>
-                        {stat.label}
-                      </div>
+                      <div className="details-stat-value">{stat.value}</div>
+                      <div className="details-stat-label">{stat.label}</div>
                     </motion.div>
                   ))}
                 </motion.div>
 
                 <motion.div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    flexWrap: "wrap",
-                    gap: isMobile ? "20px" : "5em",
-                    marginTop: isMobile ? "25px" : "50px",
-                  }}
+                  className="details-tech-list"
                   variants={statsStagger}
                   initial="hidden"
                   animate={isVisible(0) ? "visible" : "hidden"}
@@ -702,34 +682,28 @@ const StackPair = ({
                       target="_blank"
                       rel="noopener noreferrer"
                       variants={techItemVar}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "8px",
-                        textDecoration: "none",
-                        color: tech.color,
-                        fontSize: isMobile ? "1rem" : "1.1rem",
-                        fontWeight: "500",
-                        transition: "all 0.3s ease",
-                        backgroundColor: "transparent",
-                      }}
+                      className="details-tech-pill"
                       onMouseEnter={(e) => {
                         const link = e.currentTarget;
-                        link.style.transform = "scale(1.15)";
-                        link.style.color = tech.hoverColor;
+                        link.style.transform = "translateY(-2px)";
+                        link.style.borderColor = "rgba(193, 18, 31, 0.22)";
+                        link.style.boxShadow =
+                          "0 12px 28px rgba(15, 23, 42, 0.08)";
                       }}
                       onMouseLeave={(e) => {
                         const link = e.currentTarget;
-                        link.style.transform = "scale(1)";
-                        link.style.color = tech.color;
+                        link.style.transform = "translateY(0)";
+                        link.style.borderColor = "rgba(15, 23, 42, 0.08)";
+                        link.style.boxShadow = "none";
                       }}
                     >
                       {tech.path && (
                         <svg
-                          width={isMobile ? "2em" : "3em"}
-                          height={isMobile ? "2em" : "3em"}
+                          width={isMobile ? "1.2em" : "1.3em"}
+                          height={isMobile ? "1.2em" : "1.3em"}
                           viewBox="0 0 24 24"
                           fill="currentColor"
+                          style={{ color: tech.color, flexShrink: 0 }}
                         >
                           <path d={tech.path} />
                         </svg>
@@ -741,9 +715,10 @@ const StackPair = ({
               </motion.div>
             </section>
           </div>
-          <div className="hero-buttons" style={{ margin: "2rem" }}>
+
+          <div className="hero-buttons details-card-actions">
             <button
-              className="btn btn-primary"
+              className="btn btn-primary details-card-button"
               onClick={handlePreviewImageClick}
               style={{ cursor: "pointer" }}
             >
