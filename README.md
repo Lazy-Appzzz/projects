@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Featured Projects
 
-## Getting Started
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-20-green?style=flat-square&logo=node.js)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express.js-API-orange?style=flat-square&logo=express)](https://expressjs.com/)
+[![Docker](https://img.shields.io/badge/Docker-Container-blue?style=flat-square&logo=docker)](https://www.docker.com/)
+[![Caddy](https://img.shields.io/badge/Caddy-Web_Server-1F8C44?style=flat-square&logo=caddy)](https://caddyserver.com/)
+[![Cloudflare](https://img.shields.io/badge/Cloudflare-Workers-F38020?style=flat-square&logo=cloudflare)](https://workers.cloudflare.com/)
+[![AWS](https://img.shields.io/badge/AWS-SES-FF9900?style=flat-square&logo=amazon-aws)](https://aws.amazon.com/ses/)
+[![Oracle Cloud](https://img.shields.io/badge/Oracle_Cloud-VM-F80000?style=flat-square&logo=oracle)](https://www.oracle.com/cloud/)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![Home](https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/featured.png)
+
+---
+
+## 📖 About
+
+**Featured Projects** is an extension page to display different projects and their details, with clear categories e.g. Web Apps, Mobile Apps & Web Games.
+
+Showcasing services across web development, mobile applications, databases, APIs, and full-stack digital solutions.
+
+> 🔧 Modular, route-based architecture  
+> 💡 Fully responsive and optimized for scalability  
+> 📫 Includes integrated contact form and smooth scrolling sections
+
+---
+
+## 🌐 Live Demo
+
+> 🔗 [Visit Featured Projects](https://lindocode.com/projects)
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+| Technology           | Purpose                                                 |
+| -------------------- | ------------------------------------------------------- |
+| **Next.js**          | React framework for SSR, routing, and page optimization |
+| **JavaScript / JSX** | Core language and component syntax                      |
+| **Base & Rewrites**  | Project scaling and clean URL management                |
+
+### Backend (Self-hosted on Oracle VM)
+
+| Technology            | Purpose                                                    |
+| --------------------- | ---------------------------------------------------------- |
+| **Node.js + Express** | Custom API backend for form handling and internal services |
+| **AWS SES**           | Email delivery for contact forms                           |
+| **Caddy**             | Web server with automatic HTTPS                            |
+| **Docker**            | Containerized deployment and service isolation             |
+
+### Media & Performance
+
+| Technology             | Purpose                                              |
+| ---------------------- | ---------------------------------------------------- |
+| **Cloudflare Workers** | Image optimization, video streaming, and CDN caching |
+
+### Infrastructure
+
+| Technology          | Purpose                          |
+| ------------------- | -------------------------------- |
+| **Oracle Cloud VM** | Hosting gateway for all services |
+| **Git**             | Version control                  |
+
+---
+
+## 📁 Project Structure
+
+````
+lazy-apps-website/
+├── app/
+│ ├── page.jsx
+│ ├── mobile-appa/...
+│ ├── web-apps/...
+│ ├── web-games/...
+│ └── layout.js
+├── components/...
+├── public/...
+├── next.config.mjs
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## ⚙️ Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ✅ **Base Path Support** — Scalable project structure for multi-environment deployment
+- ✅ **URL Rewrites** — Clean routing between frontend and backend services
+- ✅ **Cloudflare Workers** — Optimized media delivery without origin strain
+- ✅ **AWS SES Integration** — Reliable email form submissions
+- ✅ **Dockerized Deployment** — Consistent environment across dev and prod
+- ✅ **Caddy Auto-HTTPS** — Zero-config SSL certificates
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Deployment Architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+User Request
+↓
+Cloudflare (CDN + Workers for images/videos)
+↓
+Caddy (Reverse Proxy + Auto-HTTPS)
+↓
+Docker Container (Next.js App)
+↓
+Express API (Node.js on same VM)
+↓
+AWS SES (Email sending)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 👨‍💻 Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Lindocode Digital**
+_Trading as Lazy Apps_
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+_Apps That Work, So You Don't Have To._
+
+---
+
+## 📄 License
+
+All rights reserved © Lindocode Digital
+
+---
+
+## ⭐ Support
+
+_If this project helped you or you just like it, consider giving it a star ⭐ on GitHub!_
+
+````
+
+```
+
+```
+
+```
+
+```
