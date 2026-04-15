@@ -457,8 +457,8 @@ const StackPair = ({
                   <div
                     style={{
                       position: "absolute",
-                      bottom: "20px",
-                      right: "20px",
+                      bottom: isMobile ? "12px" : "20px",
+                      right: isMobile ? "12px" : "20px",
                       opacity: 1,
                       transform: isHoveringImage
                         ? "translateY(0) scale(1)"
@@ -466,13 +466,18 @@ const StackPair = ({
                       transition: "all 0.3s cubic-bezier(0.34, 1.2, 0.64, 1)",
                       pointerEvents: "none",
                       zIndex: 10,
+                      overflow: "visible",
                     }}
                   >
                     <div
                       style={{
                         position: "relative",
-                        width: "70px",
-                        height: "70px",
+                        width: isMobile ? "58px" : "70px",
+                        height: isMobile ? "58px" : "70px",
+                        minWidth: isMobile ? "58px" : "70px",
+                        minHeight: isMobile ? "58px" : "70px",
+                        maxWidth: isMobile ? "58px" : "70px",
+                        maxHeight: isMobile ? "58px" : "70px",
                         borderRadius: "50%",
                         background:
                           "radial-gradient(circle at 30% 30%, #fff9e8, #f5e6c8)",
@@ -480,20 +485,23 @@ const StackPair = ({
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
-                        gap: "4px",
+                        gap: isMobile ? "2px" : "4px",
                         boxShadow:
                           "0 4px 12px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.8)",
                         border: "1px solid rgba(220, 180, 100, 0.5)",
                         fontFamily: "system-ui, -apple-system, sans-serif",
+                        flexShrink: 0,
+                        overflow: "visible",
+                        boxSizing: "border-box",
                       }}
                     >
                       <div
                         style={{
                           position: "absolute",
-                          top: "8px",
-                          left: "12px",
-                          width: "20px",
-                          height: "20px",
+                          top: isMobile ? "6px" : "8px",
+                          left: isMobile ? "10px" : "12px",
+                          width: isMobile ? "16px" : "20px",
+                          height: isMobile ? "16px" : "20px",
                           borderRadius: "50%",
                           background:
                             "radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)",
@@ -504,10 +512,10 @@ const StackPair = ({
                       <div
                         style={{
                           position: "absolute",
-                          top: "-8px",
-                          right: "-8px",
-                          width: "28px",
-                          height: "28px",
+                          top: isMobile ? "-6px" : "-8px",
+                          right: isMobile ? "-6px" : "-8px",
+                          width: isMobile ? "22px" : "28px",
+                          height: isMobile ? "22px" : "28px",
                           borderRadius: "50%",
                           background:
                             "radial-gradient(circle at 30% 30%, #e63946, #c1121f)",
@@ -519,8 +527,8 @@ const StackPair = ({
                         }}
                       >
                         <svg
-                          width="14"
-                          height="14"
+                          width={isMobile ? "11" : "14"}
+                          height={isMobile ? "11" : "14"}
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="white"
@@ -535,23 +543,26 @@ const StackPair = ({
 
                       <span
                         style={{
-                          fontSize: "0.7rem",
+                          fontSize: isMobile ? "0.56rem" : "0.7rem",
                           fontWeight: 800,
                           color: "#2c1810",
                           textTransform: "uppercase",
-                          letterSpacing: "0.5px",
-                          marginTop: "4px",
+                          letterSpacing: "0.4px",
+                          marginTop: isMobile ? "1px" : "4px",
+                          lineHeight: 1,
                         }}
                       >
                         CLICK
                       </span>
+
                       <span
                         style={{
-                          fontSize: "0.55rem",
+                          fontSize: isMobile ? "0.4rem" : "0.55rem",
                           fontWeight: 600,
                           color: "#8b5e3c",
                           textTransform: "uppercase",
-                          letterSpacing: "0.3px",
+                          letterSpacing: "0.2px",
+                          lineHeight: 1,
                         }}
                       >
                         for more
