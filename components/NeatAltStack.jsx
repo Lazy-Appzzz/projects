@@ -643,8 +643,8 @@ const StackPair = ({
                 className={`content-section ${isVisible(0) ? "visible" : ""}`}
               >
                 <div className="details-card-header">
-                  <span className="details-card-eyebrow">Project Details</span>
-                  <h2 className="details-card-title">Metrics Summary</h2>
+                  <h2 className="details-card-title">Metrics Summary</h2>{" "}
+                  <span className="details-card-eyebrow">Details</span>
                 </div>
 
                 <motion.div
@@ -699,8 +699,8 @@ const StackPair = ({
                     >
                       {tech.path && (
                         <svg
-                          width={isMobile ? "1.2em" : "1.3em"}
-                          height={isMobile ? "1.2em" : "1.3em"}
+                          width={isMobile ? "1.2em" : "2em"}
+                          height={isMobile ? "1.2em" : "2em"}
                           viewBox="0 0 24 24"
                           fill="currentColor"
                           style={{ color: tech.color, flexShrink: 0 }}
