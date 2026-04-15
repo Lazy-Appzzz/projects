@@ -17,13 +17,13 @@
 
 ## 📖 About
 
-**Featured Projects** is an extension page to display different projects and their details, with clear categories e.g. Web Apps, Mobile Apps & Web Games.
+**Featured Projects** is an extension page designed to showcase different projects and their details, with clear categories such as **Web Apps**, **Mobile Apps**, and **Web Games**.
 
-Showcasing services across web development, mobile applications, databases, APIs, and full-stack digital solutions.
+It highlights services across web development, mobile applications, databases, APIs, and full-stack digital solutions.
 
 > 🔧 Modular, route-based architecture  
 > 💡 Fully responsive and optimized for scalability  
-> 📫 Includes integrated contact form and smooth scrolling sections
+> 📫 Includes an integrated contact form and smooth scrolling sections
 
 ---
 
@@ -37,11 +37,11 @@ Showcasing services across web development, mobile applications, databases, APIs
 
 ### Frontend
 
-| Technology           | Purpose                                                 |
-| -------------------- | ------------------------------------------------------- |
-| **Next.js**          | React framework for SSR, routing, and page optimization |
-| **JavaScript / JSX** | Core language and component syntax                      |
-| **Base & Rewrites**  | Project scaling and clean URL management                |
+| Technology               | Purpose                                                 |
+| ------------------------ | ------------------------------------------------------- |
+| **Next.js**              | React framework for SSR, routing, and page optimization |
+| **JavaScript / JSX**     | Core language and component syntax                      |
+| **Base Path & Rewrites** | Project scaling and clean URL management                |
 
 ### Backend (Self-hosted on Oracle VM)
 
@@ -69,16 +69,16 @@ Showcasing services across web development, mobile applications, databases, APIs
 
 ## 📁 Project Structure
 
-````
+```text
 lazy-apps-website/
 ├── app/
-│ ├── page.jsx
-│ ├── mobile-appa/...
-│ ├── web-apps/...
-│ ├── web-games/...
-│ └── layout.js
-├── components/...
-├── public/...
+│   ├── page.jsx
+│   ├── mobile-apps/
+│   ├── web-apps/
+│   ├── web-games/
+│   └── layout.js
+├── components/
+├── public/
 ├── next.config.mjs
 └── README.md
 ```
@@ -91,30 +91,32 @@ lazy-apps-website/
 - ✅ **URL Rewrites** — Clean routing between frontend and backend services
 - ✅ **Cloudflare Workers** — Optimized media delivery without origin strain
 - ✅ **AWS SES Integration** — Reliable email form submissions
-- ✅ **Dockerized Deployment** — Consistent environment across dev and prod
+- ✅ **Dockerized Deployment** — Consistent environment across development and production
 - ✅ **Caddy Auto-HTTPS** — Zero-config SSL certificates
 
 ---
 
 ## 🚀 Deployment Architecture
 
+```text
 User Request
-↓
+   ↓
 Cloudflare (CDN + Workers for images/videos)
-↓
+   ↓
 Caddy (Reverse Proxy + Auto-HTTPS)
-↓
+   ↓
 Docker Container (Next.js App)
-↓
+   ↓
 Express API (Node.js on same VM)
-↓
+   ↓
 AWS SES (Email sending)
+```
 
 ---
 
 ## 👨‍💻 Author
 
-**Lindocode Digital**
+**Lindocode Digital**  
 _Trading as Lazy Apps_
 
 _Apps That Work, So You Don't Have To._
@@ -129,14 +131,4 @@ All rights reserved © Lindocode Digital
 
 ## ⭐ Support
 
-_If this project helped you or you just like it, consider giving it a star ⭐ on GitHub!_
-
-````
-
-```
-
-```
-
-```
-
-```
+_If this project helped you or you like it, consider giving it a star ⭐ on GitHub!_
