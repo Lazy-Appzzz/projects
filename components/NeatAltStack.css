@@ -669,6 +669,33 @@ p {
   .card-gucci-bg [style*="position: relative"] {
     min-height: 180px;
   }
+  .details-card-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 2.2rem;
+  }
+
+  .details-tech-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .details-tech-pill {
+    width: auto;
+    max-width: 100%;
+    flex: 0 0 auto;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
 }
 
 /* Desktop Styles */
