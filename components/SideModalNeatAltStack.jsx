@@ -281,16 +281,15 @@ export default function SideModalNeatAltStack({
               marginBottom: "2rem",
             }}
           >
-            <h3
+            <h2
               className="h2-brush"
               style={{
-                marginBottom: "1rem",
-                fontSize: "1.25rem",
+                marginBottom: "2rem",
                 color: "#222",
               }}
             >
               Key Metrics
-            </h3>
+            </h2>
 
             <motion.div
               style={{
@@ -309,6 +308,8 @@ export default function SideModalNeatAltStack({
                   style={{
                     borderRadius: "16px",
                     padding: "1rem",
+                    border: "1px solid #E3DFDF",
+                    boxShadow: "0 10px 24px rgba(15, 23, 42, 0.08)",
                   }}
                   className="stat-item"
                 >
@@ -392,16 +393,15 @@ export default function SideModalNeatAltStack({
 
         {detailsCard.mockupImages?.length > 0 && (
           <section style={{ marginBottom: "2rem" }}>
-            <h3
+            <h2
               className="h2-brush"
               style={{
-                marginBottom: "1rem",
-                fontSize: "1.25rem",
+                marginBottom: "2rem",
                 color: "#222",
               }}
             >
               Interface Mockups
-            </h3>
+            </h2>
 
             <motion.div
               style={{
@@ -443,8 +443,8 @@ export default function SideModalNeatAltStack({
                     />{" "}
                     <div
                       style={{
-                        padding: "0.9rem 1rem",
-                        fontSize: "0.9rem",
+                        padding: "2rem",
+                        fontSize: "0.85em",
                         color: "#ffffff",
                         fontWeight: 500,
                       }}
