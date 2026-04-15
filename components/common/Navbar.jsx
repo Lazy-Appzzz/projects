@@ -223,7 +223,7 @@ export default function Navbar() {
                 </div>
 
                 <a
-                  href="#contact-form"
+                  href="https://lindocode.com/contact"
                   className="contact-button"
                   onClick={closeMenu}
                 >

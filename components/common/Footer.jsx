@@ -32,13 +32,12 @@ export default function Footer() {
               <h4>Resources</h4>
               <ul>
                 <li>
-                  <a href="#">Documentation</a>
+                  <a href="https://lindocode.com/privacy">
+                    Privacy & POPIA Policy
+                  </a>
                 </li>
                 <li>
-                  <a href="#">API Reference</a>
-                </li>
-                <li>
-                  <a href="#">Examples</a>
+                  <a href="https://lindocode.com/terms">Terms & Conditions</a>
                 </li>
               </ul>
             </div>
