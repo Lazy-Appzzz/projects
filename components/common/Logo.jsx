@@ -132,7 +132,9 @@ export default function Logo({
   const headStyle = {
     width: `${cfg.headWidth * s}rem`,
     height: `${1 * s}rem`,
-    bottom: `${-cfg.headPos * s}rem`,
+    left: "50%",
+    transform: "translateX(-50%)",
+    bottom: `${cfg.headPos * s}rem`,
     backgroundColor: headColor,
     zIndex: 3,
   };
@@ -140,11 +142,13 @@ export default function Logo({
   const bulbStyle = {
     width: `${cfg.bulbWidth * s}rem`,
     height: `${0.8 * s}rem`,
-    bottom: `${-0.2 * s}rem`,
+    left: "50%",
+    transform: "translateX(-50%)",
+    bottom: `${(cfg.headPos - 0.3) * s}rem`, // 👈 follows head
     backgroundColor: bulbColor,
+    borderRadius: "999px",
     zIndex: 2,
   };
-
   const raysStyle = {
     bottom: `${-cfg.rayPos * s}rem`,
     width: `${1 * s}rem`,
@@ -166,9 +170,8 @@ export default function Logo({
         <span className="tm-logo-lamp-dot" style={dotStyle}></span>
       </span>
 
-      <span className="tm-logo-lamp-head" style={headStyle}>
-        <span className="tm-logo-lamp-bulb" style={bulbStyle}></span>
-      </span>
+      <span className="tm-logo-lamp-head" style={headStyle}></span>
+      <span className="tm-logo-lamp-bulb" style={bulbStyle}></span>
 
       <span className="tm-logo-lamp-rays" style={raysStyle}>
         <span className="tm-logo-ray left" style={rayStyle}></span>

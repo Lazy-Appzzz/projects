@@ -4,7 +4,7 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   color: white;
   position: sticky;
   top: 10;
@@ -46,6 +46,17 @@
   margin-left: 5px;
 }
 
+.brand-text1,
+.brand-text2 {
+  display: flex;
+  align-items: center;
+}
+
+.brand > div {
+  display: flex;
+  align-items: center;
+}
+
 /* Desktop nav */
 .desktop-nav {
   display: flex;
@@ -80,7 +91,7 @@
 
 .menu-button {
   background: white;
-  border: 2px solid rgba(252, 20, 20, 0.1);
+  border: 2px solid #e3dfdf;
   border-radius: 40px;
   padding: 10px 20px;
   color: black;
@@ -103,19 +114,10 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(252, 20, 20, 0.2),
-    rgba(252, 20, 20, 0.3),
-    rgba(252, 20, 20, 0.2),
-    transparent
-  );
 }
 
 .menu-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(252, 20, 20, 0.1);
 }
 
 .menu-button:active {
@@ -480,6 +482,18 @@ body.side-modal-open .navbar {
   pointer-events: none;
   transform: translateY(-10px);
   transition: all 0.25s ease;
+}
+@media (max-width: 380px) {
+  .brand > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .brand-text2 {
+    margin-left: 0;
+  }
 }
 
 /* .brand { */
