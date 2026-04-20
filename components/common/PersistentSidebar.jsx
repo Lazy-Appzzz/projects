@@ -16,9 +16,10 @@ export default function PersistentSideModal({
             scale={0.6}
             postWidth={0.9}
             dotWidth={1.5}
+            lampHeight={25}
             bulbWidth={0.7}
             headWidth={2.3}
-            headPos={-1.7}
+            headPos={1.7}
             rayPos={-0.7}
             postMargin={33}
             headColor="#000000"

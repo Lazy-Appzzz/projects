@@ -159,7 +159,7 @@ body .chip-bg {
 
 body .chip-bg svg {
   position: absolute;
-  top: 45%;
+  top: calc(45% + var(--scroll-offset, 0px));
   left: 50%;
   width: min(2600px, 120vw);
   height: auto;
@@ -171,16 +171,28 @@ body .chip-bg svg {
 
 #chip-bg .trace {
   fill: none;
-  stroke: var(--chip-red);
+  stroke: var(--trace-default, #c90907);
   stroke-width: 2.5;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
-  opacity: 0.9;
+  opacity: var(--trace-opacity, 0.9);
   animation:
     chip-draw 3s ease forwards,
     chip-pulse 2.8s ease-in-out 3s;
+}
+
+#chip-bg .trace.accent-primary {
+  stroke: var(--trace-accent-primary, #a07c4f);
+}
+
+#chip-bg .trace.accent-secondary {
+  stroke: var(--trace-accent-secondary, #c90907);
+}
+
+#chip-bg .trace.accent-tertiary {
+  stroke: var(--trace-accent-tertiary, #9a727d);
 }
 
 #chip-bg .trace.delay-1 {
@@ -192,9 +204,10 @@ body .chip-bg svg {
 }
 
 #chip-bg .node {
-  fill: black;
-  stroke: black;
+  fill: var(--node-black, #27313b);
+  stroke: var(--node-highlight, #a07c4f);
   stroke-width: 2;
+  opacity: var(--node-opacity, 0.9);
   transform-origin: center;
   animation: node-pulse 2.4s ease-in-out;
 }
@@ -311,20 +324,20 @@ body .chip-bg svg {
 }
 
 /* responsive SVG variants */
-#chip-bg .mobile-only {
+#chip-bg .mobile-trace {
   display: none;
 }
 
-#chip-bg .desktop-only {
+#chip-bg .desktop-trace {
   display: inline;
 }
 
 @media (max-width: 768px) {
-  #chip-bg .mobile-only {
+  #chip-bg .mobile-trace {
     display: inline;
   }
 
-  #chip-bg .desktop-only {
+  #chip-bg .desktop-trace {
     display: none;
   }
 }

@@ -77,12 +77,13 @@ export default function SideModal({ isOpen, onClose, children, title }) {
               >
                 <Logo
                   size="medium"
-                  scale={0.6}
+                  scale={0.7}
+                  lampHeight={20}
                   postWidth={0.9}
                   dotWidth={1.5}
                   bulbWidth={0.7}
                   headWidth={2.3}
-                  headPos={-1.7}
+                  headPos={1.7}
                   rayPos={-0.7}
                   postMargin={33}
                   headColor="#000000"
