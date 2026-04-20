@@ -12,6 +12,7 @@
   right: 0;
   width: min(92vw, 760px);
   height: 100vh;
+  height: 100dvh;
   z-index: 1001;
   overflow: hidden;
   display: flex;

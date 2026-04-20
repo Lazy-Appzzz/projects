@@ -22,11 +22,11 @@ const ContentLoader = () => (
         size="medium"
         scale={0.8}
         postWidth={0.9}
-        lampHeight={30}
+        lampHeight={20}
         dotWidth={1.5}
         bulbWidth={0.7}
         headWidth={2.3}
-        headPos={-1.7}
+        headPos={1.7}
         rayPos={-0.7}
         postMargin={33}
         headColor="#000000"

@@ -120,32 +120,7 @@ const EmailForm = ({ endpoint = "https://mail.api.lindocode.com/contact" }) => {
           >
             Contact
           </motion.span>
-
-          <div className="email-header-grid">
-            <motion.h2
-              className="email-title"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55 }}
-              viewport={{ once: true }}
-            >
-              Let’s build something that feels exceptional.
-            </motion.h2>
-
-            <motion.p
-              className="email-subtitle"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.05 }}
-              viewport={{ once: true }}
-            >
-              Tell us about your product, your goals, or the challenge you are
-              trying to solve. We will reply with clarity, direction, and a
-              thoughtful next step.
-            </motion.p>
-          </div>
         </div>
-
         <div className="email-grid">
           <motion.div
             className="email-side-card"
@@ -158,29 +133,65 @@ const EmailForm = ({ endpoint = "https://mail.api.lindocode.com/contact" }) => {
               <span className="email-side-kicker">Start a conversation</span>
 
               <h3>
-                Premium digital products begin with a clear, thoughtful brief.
+                Strong products start with clear direction and the right
+                information.
               </h3>
 
               <p>
-                Whether you need strategy, design, engineering, or a full
-                product partner, we shape every engagement around quality,
-                usability, and long-term value.
+                Share the essentials, and we’ll handle the strategy, design, and
+                build with precision and focus.
               </p>
 
               <div className="email-side-points">
                 <div className="email-side-point">
                   <span>01</span>
-                  <p>Clear discovery and aligned project direction</p>
+                  <p>
+                    <span
+                      style={{
+                        fontWeight: "bold",
+                        color: "#000000",
+                        fontSize: ".9em",
+                      }}
+                    >
+                      Submit your brief:
+                    </span>{" "}
+                    What you’re building, goals, key features, and audience
+                  </p>
                 </div>
 
                 <div className="email-side-point">
                   <span>02</span>
-                  <p>Elegant design thinking with technical precision</p>
+                  <p>
+                    <span
+                      style={{
+                        fontWeight: "bold",
+                        color: "#000000",
+                        fontSize: ".9em",
+                      }}
+                    >
+                      We review and define scope:{" "}
+                    </span>{" "}
+                    Refine requirements, confirm approach, timelines,
+                    deliverables and budget
+                  </p>
                 </div>
 
                 <div className="email-side-point">
                   <span>03</span>
-                  <p>Fast, focused communication from first contact</p>
+                  <p>
+                    {" "}
+                    <span
+                      style={{
+                        fontWeight: "bold",
+                        color: "#000000",
+                        fontSize: ".9em",
+                      }}
+                    >
+                      Kickoff and build:{" "}
+                    </span>{" "}
+                    Structured execution with regular updates and fast, direct
+                    communication
+                  </p>
                 </div>
               </div>
 
@@ -190,8 +201,7 @@ const EmailForm = ({ endpoint = "https://mail.api.lindocode.com/contact" }) => {
                 <span>Development</span>
               </div>
             </div>
-          </motion.div>
-
+          </motion.div>{" "}
           <motion.form
             onSubmit={handleSubmit}
             className="email-form-card"

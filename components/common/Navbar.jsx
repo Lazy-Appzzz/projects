@@ -91,12 +91,13 @@ export default function Navbar() {
             >
               <Logo
                 size="medium"
-                scale={0.6}
-                postWidth={0.9}
-                dotWidth={1.5}
+                scale={0.65}
+                lampHeight={20}
+                postWidth={0.95}
+                dotWidth={1.6}
                 bulbWidth={0.7}
                 headWidth={2.3}
-                headPos={-1.7}
+                headPos={1.7}
                 rayPos={-0.7}
                 postMargin={33}
                 headColor="#000000"
@@ -106,8 +107,18 @@ export default function Navbar() {
                 dotColor="#C90201"
               />
               <div>
-                <span className="brand-text1 lemon-font">Lindocode</span>
-                <span className="brand-text2 lemon-font">Digital</span>
+                <span
+                  className="brand-text1"
+                  style={{ fontFamily: "sans-serif" }}
+                >
+                  LINDOCODE
+                </span>
+                <span
+                  className="brand-text2"
+                  style={{ fontFamily: "sans-serif" }}
+                >
+                  DIGITAL
+                </span>
               </div>
             </a>
 

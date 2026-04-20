@@ -391,12 +391,12 @@ const StackPair = ({
                   >
                     <Logo
                       size="compact"
-                      scale={0.5}
+                      scale={0.45}
                       postWidth={0.9}
                       dotWidth={1.5}
                       bulbWidth={0.7}
                       headWidth={2.3}
-                      headPos={-1.7}
+                      headPos={1.7}
                       rayPos={-0.7}
                       postMargin={33}
                       headColor="#7B766D"
@@ -422,11 +422,12 @@ const StackPair = ({
               }}
             >
               <div
-                onClick={handlePreviewImageClick}
-                onMouseEnter={() => setIsHoveringImage(true)}
+                onClick={!isImageLoading ? handlePreviewImageClick : undefined}
+                onMouseEnter={() => !isImageLoading && setIsHoveringImage(true)}
                 onMouseLeave={() => setIsHoveringImage(false)}
                 style={{
-                  cursor: "pointer",
+                  cursor: isImageLoading ? "not-allowed" : "pointer",
+                  pointerEvents: isImageLoading ? "none" : "auto",
                   width: "100%",
                   transform: imageContainerTransform,
                   transition:
@@ -436,8 +437,10 @@ const StackPair = ({
                   justifyContent: "center",
                   alignItems: "center",
                   position: "relative",
+                  opacity: isImageLoading ? 0.85 : 1, // subtle visual cue
                 }}
               >
+                {" "}
                 <ImageLoader
                   className="card-image"
                   src={previewCard.image}
@@ -454,7 +457,6 @@ const StackPair = ({
                     transition: "all 0.3s ease",
                   }}
                 />
-
                 {!isImageLoading && previewCard.sticker ? (
                   <div
                     style={{
@@ -729,15 +731,17 @@ const StackPair = ({
             </section>
           </div>
 
-          <div className="hero-buttons details-card-actions">
-            <button
-              className="btn btn-primary details-card-button"
-              onClick={handlePreviewImageClick}
-              style={{ cursor: "pointer" }}
-            >
-              View More
-            </button>
-          </div>
+          {!isImageLoading && (
+            <div className="hero-buttons details-card-actions">
+              <button
+                className="btn btn-primary details-card-button"
+                onClick={handlePreviewImageClick}
+                style={{ cursor: "pointer" }}
+              >
+                View More
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
