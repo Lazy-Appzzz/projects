@@ -100,10 +100,10 @@ export default function Navbar() {
                 headPos={1.7}
                 rayPos={-0.7}
                 postMargin={33}
-                headColor="#000000"
-                postColor="#000000"
-                bulbColor="#000000"
-                rayColor="#000000"
+                headColor="#fff"
+                postColor="#fff"
+                bulbColor="#fff"
+                rayColor="#fff"
                 dotColor="#C90201"
               />
               <div>
