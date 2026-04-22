@@ -350,3 +350,12 @@ body .chip-bg svg {
 .page-theme.theme-minimal {
   --navbar-logo-color: #000000;
 }
+.page-theme {
+  --chip-node-fill: #000000;
+  --chip-node-stroke: #000000;
+}
+
+.page-theme.theme-minimal-black {
+  --chip-node-fill: #ffffff;
+  --chip-node-stroke: #ffffff;
+}

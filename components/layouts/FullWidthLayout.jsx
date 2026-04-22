@@ -186,7 +186,7 @@ export default function FullWidthLayout({
 
   return (
     <div className={`full-width-layout page-theme ${pageThemeClass}`}>
-      <ChipBackground />
+      <ChipBackground theme={theme} />
       <Navbar theme={theme} />
       {showHero && <Hero {...heroProps} />}
 
