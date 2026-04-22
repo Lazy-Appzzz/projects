@@ -1,97 +1,17 @@
-"use client";
+import HomePageClient from "./HomePageClient";
 
-import { useState, useEffect } from "react";
-import FullWidthLayout from "@/components/layouts/FullWidthLayout";
-import cardsData from "@/data/projects.json";
-import NeatAltStackGrouped from "@/components/NeatStack";
+const ALLOWED_THEMES = new Set([
+  "black",
+  "white",
+  "red",
+  "glass",
+  "minimal",
+  "minimal-black",
+]);
 
-export default function Home() {
-  const [selectedPair, setSelectedPair] = useState(null);
+export default async function Page({ searchParams }) {
+  const params = await searchParams;
+  const theme = ALLOWED_THEMES.has(params?.theme) ? params.theme : "";
 
-  // Listen for custom event from NeatAltStackGrouped
-  useEffect(() => {
-    const handlePreviewSelection = (event) => {
-      const pair = event?.detail?.pair ?? null;
-      setSelectedPair(pair);
-    };
-
-    window.addEventListener("preview-card:selected", handlePreviewSelection);
-
-    return () => {
-      window.removeEventListener(
-        "preview-card:selected",
-        handlePreviewSelection,
-      );
-    };
-  }, []);
-
-  return (
-    <FullWidthLayout
-      showHero={true}
-      heroProps={{
-        title: "Featured Projects",
-        subtitle:
-          "A selection of projects across web, mobile, and gaming. This section highlights different types of work and approaches used in building digital solutions",
-        showIntro: true,
-        showCommentedSocialBlock: false,
-      }}
-      selectedPair={selectedPair}
-      onSelectPair={setSelectedPair}
-    >
-      <div>
-        <h2
-          className="lemon-font"
-          style={{
-            color: "#444444",
-            marginBottom: "1em",
-            fontSize: "2em",
-          }}
-        >
-          Web Applications
-        </h2>
-        <NeatAltStackGrouped
-          cards={cardsData.webApps}
-          multipleMockupWidth={100}
-          stickyStartPosition={100}
-          stackOrder={0}
-        />
-      </div>
-      <div>
-        <h2
-          className="lemon-font"
-          style={{
-            color: "#444444",
-            marginBottom: "1em",
-            fontSize: "2em",
-          }}
-        >
-          Web Games
-        </h2>
-        <NeatAltStackGrouped
-          cards={cardsData.webGames}
-          multipleMockupWidth={100}
-          stickyStartPosition={100}
-          stackOrder={1}
-        />
-      </div>
-      <div>
-        <h2
-          className="lemon-font"
-          style={{
-            color: "#444444",
-            marginBottom: "1em",
-            fontSize: "2em",
-          }}
-        >
-          Mobile Applications
-        </h2>
-        <NeatAltStackGrouped
-          cards={cardsData.mobileApps}
-          multipleMockupWidth={100}
-          stickyStartPosition={100}
-          stackOrder={2}
-        />
-      </div>
-    </FullWidthLayout>
-  );
+  return <HomePageClient theme={theme} />;
 }

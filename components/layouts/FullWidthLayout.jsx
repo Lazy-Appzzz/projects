@@ -88,6 +88,7 @@ const ContentLoader = () => (
 
 export default function FullWidthLayout({
   children,
+  theme = "",
   showHero = false,
   heroProps = {},
   showPersistentSidebar = true,
@@ -100,7 +101,6 @@ export default function FullWidthLayout({
   const [shouldRenderContent, setShouldRenderContent] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  // Use external selectedPair if provided, otherwise use internal
   const selectedPair =
     externalSelectedPair !== null ? externalSelectedPair : internalSelectedPair;
   const setSelectedPair = onSelectPair || setInternalSelectedPair;
@@ -148,9 +148,8 @@ export default function FullWidthLayout({
     };
   }, [isWideScreen, isInitialized]);
 
-  // Listen for card selection events (only for internal state)
   useEffect(() => {
-    if (externalSelectedPair !== null) return; // Skip if using external state
+    if (externalSelectedPair !== null) return;
 
     const handlePreviewSelection = (event) => {
       const pair = event?.detail?.pair ?? null;
@@ -173,13 +172,13 @@ export default function FullWidthLayout({
   }, [selectedPair]);
 
   const shouldShowPersistentSidebar = showPersistentSidebar && isWideScreen;
+  const pageThemeClass = theme ? `theme-${theme}` : "";
 
-  // Don't render anything until initialized
   if (!isInitialized) {
     return (
-      <div className="full-width-layout">
+      <div className={`full-width-layout page-theme ${pageThemeClass}`}>
         <ChipBackground />
-        <Navbar />
+        <Navbar theme={theme} />
         {showHero && <Hero {...heroProps} />}
         <main className="main-full-width">
           <div className="main-full-width-shell">
@@ -193,9 +192,9 @@ export default function FullWidthLayout({
   }
 
   return (
-    <div className="full-width-layout">
+    <div className={`full-width-layout page-theme ${pageThemeClass}`}>
       <ChipBackground />
-      <Navbar />
+      <Navbar theme={theme} />
       {showHero && <Hero {...heroProps} />}
 
       <main className="main-full-width">
@@ -259,11 +258,13 @@ export default function FullWidthLayout({
   );
 }
 
-export function DefaultLayout({ children }) {
+export function DefaultLayout({ children, theme = "" }) {
+  const pageThemeClass = theme ? `theme-${theme}` : "";
+
   return (
-    <div className="default-layout">
+    <div className={`default-layout page-theme ${pageThemeClass}`}>
       <ChipBackground />
-      <Navbar />
+      <Navbar theme={theme} />
       <main className="main">
         <div className="container">
           <div className="default-layout-grid">

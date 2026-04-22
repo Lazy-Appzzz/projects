@@ -5,9 +5,10 @@ import NeatAltStack from "@/components/NeatAltStack";
 import NeatAltStackGrouped from "@/components/NeatStack";
 import cardsData from "@/data/projects.json";
 
-export default function Projects() {
+export default function WebGamesPageClient({ theme = "" }) {
   return (
     <FullWidthLayout
+      theme={theme}
       showHero={true}
       heroProps={{
         title: "Web Games",
