@@ -94,7 +94,12 @@ export default function SideModal({ isOpen, onClose, children, title }) {
                 />
 
                 <div className="side-modal-brand-text">
-                  <span className="brand-text1 lemon-font">Lindocode</span>
+                  <span
+                    className="brand-text1 lemon-font"
+                    style={{ color: "black" }}
+                  >
+                    Lindocode
+                  </span>
                   <span className="brand-text2 lemon-font">Digital</span>
                 </div>
               </a>

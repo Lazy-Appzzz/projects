@@ -60,6 +60,12 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: "#f5f5f5",
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
