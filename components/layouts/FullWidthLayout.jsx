@@ -29,10 +29,10 @@ const ContentLoader = () => (
         headPos={1.7}
         rayPos={-0.7}
         postMargin={33}
-        headColor="#000000"
-        postColor="#000000"
-        bulbColor="#000000"
-        rayColor="#000000"
+        headColor="var(--navbar-logo-color, #000)"
+        postColor="var(--navbar-logo-color, #000)"
+        bulbColor="var(--navbar-logo-color, #000)"
+        rayColor="var(--navbar-logo-color, #000)"
         dotColor="#FF0700"
       />
     </div>
