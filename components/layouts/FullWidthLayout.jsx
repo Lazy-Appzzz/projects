@@ -29,23 +29,16 @@ const ContentLoader = () => (
         headPos={1.7}
         rayPos={-0.7}
         postMargin={33}
-        headColor="var(--navbar-logo-color, #000)"
-        postColor="var(--navbar-logo-color, #000)"
-        bulbColor="var(--navbar-logo-color, #000)"
-        rayColor="var(--navbar-logo-color, #000)"
+        headColor="var(--navbar-logo-color, #fff)"
+        postColor="var(--navbar-logo-color, #fff)"
+        bulbColor="var(--navbar-logo-color, #fff)"
+        rayColor="var(--navbar-logo-color, #fff)"
         dotColor="#FF0700"
       />
     </div>
-    <div>
-      <span
-        className="brand-text1"
-        style={{ color: "black", fontFamily: "sans-serif" }}
-      >
-        Loading
-      </span>
-      <span className="brand-text2" style={{ fontFamily: "sans-serif" }}>
-        Content...
-      </span>
+    <div style={{ display: "flex", gap: "4px" }}>
+      <span className="loader-text-primary">Loading</span>
+      <span className="loader-text-secondary">Content...</span>
     </div>
 
     <style>

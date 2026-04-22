@@ -317,3 +317,36 @@ body .chip-bg svg {
   position: relative;
   z-index: 1;
 }
+.loader-text-primary {
+  font-family: sans-serif;
+  color: #111;
+  font-weight: 600;
+}
+
+.loader-text-secondary {
+  font-family: sans-serif;
+  color: #6b7280;
+}
+
+/* 🔥 DARK THEME */
+.page-theme.theme-minimal-black .loader-text-primary {
+  color: #ffffff;
+}
+
+.page-theme.theme-minimal-black .loader-text-secondary {
+  color: red;
+}
+.page-theme.theme-minimal .loader-text-primary {
+  color: #000;
+}
+
+.page-theme.theme-minimal .loader-text-secondary {
+  color: red;
+}
+.page-theme.theme-minimal-black {
+  --navbar-logo-color: #ffffff;
+}
+
+.page-theme.theme-minimal {
+  --navbar-logo-color: #000000;
+}
