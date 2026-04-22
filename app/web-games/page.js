@@ -17,6 +17,18 @@ export const metadata = {
   },
 };
 
-export default function Page() {
-  return <WebGamesPageClient />;
+const ALLOWED_THEMES = new Set([
+  "black",
+  "white",
+  "red",
+  "glass",
+  "minimal",
+  "minimal-black",
+]);
+
+export default async function Page({ searchParams }) {
+  const params = await searchParams;
+  const theme = ALLOWED_THEMES.has(params?.theme) ? params.theme : "";
+
+  return <WebGamesPageClient theme={theme} />;
 }

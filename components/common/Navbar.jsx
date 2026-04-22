@@ -7,7 +7,7 @@ import ChipBackground from "./ChipBackgroundModal.jsx";
 import Logo from "./Logo";
 import "./Navbar.css";
 
-export default function Navbar() {
+export default function Navbar({ theme = "" }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [menuVisible, setMenuVisible] = useState(false);
@@ -18,9 +18,10 @@ export default function Navbar() {
   const menuContentRef = useRef(null);
 
   const isActive = (path) => pathname === path;
+  const themeClass = theme ? `navbar-theme-${theme}` : "";
 
   useEffect(() => {
-    const hideAt = 120; // adjust this threshold as needed
+    const hideAt = 120;
 
     const handleScroll = () => {
       setShowLogo(window.scrollY <= hideAt);
@@ -80,10 +81,9 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="navbar">
+      <header className={`navbar ${themeClass}`}>
         <div className="container">
           <div className="navbar-content">
-            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <div
               className={`brand ${showLogo ? "brand-visible" : "brand-hidden"}`}
             >
@@ -118,7 +118,8 @@ export default function Navbar() {
                   DIGITAL
                 </span>
               </div>
-            </div>{" "}
+            </div>
+
             <div ref={menuWrapRef} className="navbar-menu-wrap">
               <button
                 className="menu-button navbar-menu-toggle"
@@ -172,6 +173,7 @@ export default function Navbar() {
                   <span className="menu-dot" />
                   Web Apps
                 </Link>
+
                 <Link
                   href="/web-games"
                   className={`menu-item-link ${isActive("/web-games") ? "active" : ""}`}
@@ -180,6 +182,7 @@ export default function Navbar() {
                   <span className="menu-dot" />
                   Web Games
                 </Link>
+
                 <Link
                   href="/mobile-apps"
                   className={`menu-item-link ${isActive("/mobile-apps") ? "active" : ""}`}

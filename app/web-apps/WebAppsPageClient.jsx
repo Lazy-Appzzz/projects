@@ -5,9 +5,10 @@ import NeatAltStackGrouped from "@/components/NeatStack";
 import NeatAltStack from "@/components/NeatAltStack";
 import cardsData from "@/data/projects.json";
 
-export default function Projects() {
+export default function WebAppsPageClient({ theme = "" }) {
   return (
     <FullWidthLayout
+      theme={theme}
       showHero={true}
       heroProps={{
         title: "Web Applications",

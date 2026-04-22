@@ -29,23 +29,16 @@ const ContentLoader = () => (
         headPos={1.7}
         rayPos={-0.7}
         postMargin={33}
-        headColor="#000000"
-        postColor="#000000"
-        bulbColor="#000000"
-        rayColor="#000000"
+        headColor="var(--navbar-logo-color, #fff)"
+        postColor="var(--navbar-logo-color, #fff)"
+        bulbColor="var(--navbar-logo-color, #fff)"
+        rayColor="var(--navbar-logo-color, #fff)"
         dotColor="#FF0700"
       />
     </div>
-    <div>
-      <span
-        className="brand-text1"
-        style={{ color: "black", fontFamily: "sans-serif" }}
-      >
-        Loading
-      </span>
-      <span className="brand-text2" style={{ fontFamily: "sans-serif" }}>
-        Content...
-      </span>
+    <div style={{ display: "flex", gap: "4px" }}>
+      <span className="loader-text-primary">Loading</span>
+      <span className="loader-text-secondary">Content...</span>
     </div>
 
     <style>
@@ -88,6 +81,7 @@ const ContentLoader = () => (
 
 export default function FullWidthLayout({
   children,
+  theme = "",
   showHero = false,
   heroProps = {},
   showPersistentSidebar = true,
@@ -100,7 +94,6 @@ export default function FullWidthLayout({
   const [shouldRenderContent, setShouldRenderContent] = useState(true);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  // Use external selectedPair if provided, otherwise use internal
   const selectedPair =
     externalSelectedPair !== null ? externalSelectedPair : internalSelectedPair;
   const setSelectedPair = onSelectPair || setInternalSelectedPair;
@@ -148,9 +141,8 @@ export default function FullWidthLayout({
     };
   }, [isWideScreen, isInitialized]);
 
-  // Listen for card selection events (only for internal state)
   useEffect(() => {
-    if (externalSelectedPair !== null) return; // Skip if using external state
+    if (externalSelectedPair !== null) return;
 
     const handlePreviewSelection = (event) => {
       const pair = event?.detail?.pair ?? null;
@@ -173,13 +165,13 @@ export default function FullWidthLayout({
   }, [selectedPair]);
 
   const shouldShowPersistentSidebar = showPersistentSidebar && isWideScreen;
+  const pageThemeClass = theme ? `theme-${theme}` : "";
 
-  // Don't render anything until initialized
   if (!isInitialized) {
     return (
-      <div className="full-width-layout">
+      <div className={`full-width-layout page-theme ${pageThemeClass}`}>
         <ChipBackground />
-        <Navbar />
+        <Navbar theme={theme} />
         {showHero && <Hero {...heroProps} />}
         <main className="main-full-width">
           <div className="main-full-width-shell">
@@ -193,9 +185,9 @@ export default function FullWidthLayout({
   }
 
   return (
-    <div className="full-width-layout">
-      <ChipBackground />
-      <Navbar />
+    <div className={`full-width-layout page-theme ${pageThemeClass}`}>
+      <ChipBackground theme={theme} />
+      <Navbar theme={theme} />
       {showHero && <Hero {...heroProps} />}
 
       <main className="main-full-width">
@@ -259,11 +251,13 @@ export default function FullWidthLayout({
   );
 }
 
-export function DefaultLayout({ children }) {
+export function DefaultLayout({ children, theme = "" }) {
+  const pageThemeClass = theme ? `theme-${theme}` : "";
+
   return (
-    <div className="default-layout">
+    <div className={`default-layout page-theme ${pageThemeClass}`}>
       <ChipBackground />
-      <Navbar />
+      <Navbar theme={theme} />
       <main className="main">
         <div className="container">
           <div className="default-layout-grid">

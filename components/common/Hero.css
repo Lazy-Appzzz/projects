@@ -247,3 +247,20 @@
     width: 200px;
   }
 }
+html[data-nav-theme="minimal-black"] .hero-eyebrow {
+  background: #b27b32;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+html[data-nav-theme="minimal-black"] .hero-title {
+  color: #ffffff;
+}
+
+html[data-nav-theme="minimal-black"] .hero-subtitle {
+  color: #a1a1aa;
+}
+
+html[data-nav-theme="minimal-black"] .hero-title::after {
+  background: #ff3b3b;
+}
