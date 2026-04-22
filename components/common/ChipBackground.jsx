@@ -68,16 +68,16 @@ export default function ChipBackground() {
       >
         <g className="pcb-frame">
           {/* TOP */}
-          <path
-            className="trace accent-primary desktop-trace delay-1"
-            d="M0 60 H180 L220 190 H340"
-          />
-          <circle
-            className="node desktop-trace delay-1"
-            cx="340"
-            cy="190"
-            r="4"
-          />
+          {/* <path */}
+          {/*   className="trace accent-primary desktop-trace delay-1" */}
+          {/*   d="M0 60 H180 L220 190 H340" */}
+          {/* /> */}
+          {/* <circle */}
+          {/*   className="node desktop-trace delay-1" */}
+          {/*   cx="340" */}
+          {/*   cy="190" */}
+          {/*   r="4" */}
+          {/* /> */}
 
           <path
             className="trace accent-primary mobile-trace delay-1"
@@ -90,28 +90,28 @@ export default function ChipBackground() {
             r="4"
           />
 
-          <path
-            className="trace accent-secondary desktop-trace delay-2"
-            d="M240 0 V60 L300 120 H420"
-          />
-          <circle
-            className="node desktop-trace delay-2"
-            cx="420"
-            cy="120"
-            r="4"
-          />
+          {/* <path */}
+          {/*   className="trace accent-secondary desktop-trace delay-2" */}
+          {/*   d="M240 0 V60 L300 120 H420" */}
+          {/* /> */}
+          {/* <circle */}
+          {/*   className="node desktop-trace delay-2" */}
+          {/*   cx="420" */}
+          {/*   cy="120" */}
+          {/*   r="4" */}
+          {/* /> */}
 
-          <path
-            className="trace accent-primary delay-1"
-            d="M760 0 V70 L820 130 H940"
-          />
-          <circle className="node delay-1" cx="940" cy="130" r="4" />
-
-          <path
-            className="trace accent-secondary delay-2"
-            d="M1440 80 H1260 L1210 140 H1100"
-          />
-          <circle className="node delay-2" cx="1100" cy="140" r="4" />
+          {/* <path */}
+          {/*   className="trace accent-primary delay-1" */}
+          {/*   d="M760 0 V70 L820 130 H940" */}
+          {/* /> */}
+          {/* <circle className="node delay-1" cx="940" cy="130" r="4" /> */}
+          {/**/}
+          {/* <path */}
+          {/*   className="trace accent-secondary delay-2" */}
+          {/*   d="M1440 80 H1260 L1210 140 H1100" */}
+          {/* /> */}
+          {/* <circle className="node delay-2" cx="1100" cy="140" r="4" /> */}
 
           {/* LEFT */}
           <path

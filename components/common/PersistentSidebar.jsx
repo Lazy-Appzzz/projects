@@ -29,7 +29,9 @@ export default function PersistentSideModal({
             dotColor="#C90201"
           />
           <div>
-            <span className="brand-text1 lemon-font">Lindocode</span>
+            <span className="brand-text1 lemon-font" style={{ color: "black" }}>
+              Lindocode
+            </span>
             <span className="brand-text2 lemon-font">Digital</span>
           </div>
         </a>

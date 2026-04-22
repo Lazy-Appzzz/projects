@@ -37,8 +37,15 @@ const ContentLoader = () => (
       />
     </div>
     <div>
-      <span className="brand-text1 lemon-font">Loading</span>
-      <span className="brand-text2 lemon-font">Content...</span>
+      <span
+        className="brand-text1"
+        style={{ color: "black", fontFamily: "sans-serif" }}
+      >
+        Loading
+      </span>
+      <span className="brand-text2" style={{ fontFamily: "sans-serif" }}>
+        Content...
+      </span>
     </div>
 
     <style>

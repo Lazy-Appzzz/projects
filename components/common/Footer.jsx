@@ -74,12 +74,12 @@ export default function Footer() {
             <h4>Resources</h4>
             <ul>
               <li>
-                <Link href="https://lindocode.com/privacy">
+                <Link href="https://lindocode.com/privacy#minimal">
                   Privacy & POPIA Policy
                 </Link>
               </li>
               <li>
-                <Link href="https://lindocode.com/terms">
+                <Link href="https://lindocode.com/terms#minimal">
                   Terms & Conditions
                 </Link>
               </li>
@@ -96,7 +96,7 @@ export default function Footer() {
                 <a href="mailto:info@lindocode.com">info@lindocode.com</a>
               </li>
               <li>
-                <Link href="https://lindocode.com/contact">
+                <Link href="https://lindocode.com/contact#minimal">
                   Start a project
                 </Link>
               </li>
