@@ -1,7 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar {
   margin: 0 0.5em;
   border-radius: 25px;
-  background: rgba(15, 15, 18, 0.65);
+  background: rgba(15, 15, 18, 0.9);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -34,24 +38,18 @@
 }
 
 .brand-text1 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1;
-  color: #fff;
+  color: var(--navbar-brand-color, #fff);
 }
 
 .brand-text2 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   line-height: 1;
-  color: #fff;
+  color: red;
   margin-left: 5px;
-}
-
-.brand-text1,
-.brand-text2 {
-  display: flex;
-  align-items: center;
 }
 
 .brand > div {
@@ -496,6 +494,75 @@ body.side-modal-open .navbar {
   .brand-text2 {
     margin-left: 0;
   }
+}
+:root {
+  --navbar-logo-color: #ffffff;
+  --navbar-logo-dot-color: #c90201;
+  --navbar-brand-color: #ffffff;
+}
+
+/* initial hide until hash theme is resolved */
+html:not(.nav-theme-ready) .navbar {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+html.nav-theme-ready .navbar {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+/* black theme */
+html.nav-theme-black {
+  --navbar-logo-color: #ffffff;
+  --navbar-brand-color: #ffffff;
+}
+
+html.nav-theme-black .navbar {
+  background: #000000;
+}
+
+/* minimal theme */
+html.nav-theme-minimal {
+  --navbar-logo-color: #000000;
+  --navbar-brand-color: transparent;
+}
+
+html.nav-theme-minimal .navbar {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  position: relative !important;
+  top: 0 !important;
+  padding: 0 !important;
+  margin-top: 0.5em !important;
+}
+
+html.nav-theme-minimal .brand > div {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+html.nav-theme-minimal .brand-text2 {
+  margin-left: 5px;
+}
+
+html.nav-theme-minimal .brand-text1,
+html.nav-theme-minimal .brand-text2 {
+  color: var(--navbar-brand-color) !important;
+}
+
+html.nav-theme-minimal .navbar-menu-wrap,
+html.nav-theme-minimal .menu-button,
+html.nav-theme-minimal .navbar-menu-toggle {
+  display: none !important;
+  pointer-events: none !important;
 }
 
 /* .brand { */

@@ -84,10 +84,8 @@ export default function Navbar() {
         <div className="container">
           <div className="navbar-content">
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-            <a
-              href="/"
+            <div
               className={`brand ${showLogo ? "brand-visible" : "brand-hidden"}`}
-              onClick={closeMenu}
             >
               <Logo
                 size="medium"
@@ -100,13 +98,13 @@ export default function Navbar() {
                 headPos={1.7}
                 rayPos={-0.7}
                 postMargin={33}
-                headColor="#fff"
-                postColor="#fff"
-                bulbColor="#fff"
-                rayColor="#fff"
-                dotColor="#C90201"
+                headColor="var(--navbar-logo-color, #fff)"
+                postColor="var(--navbar-logo-color, #fff)"
+                bulbColor="var(--navbar-logo-color, #fff)"
+                rayColor="var(--navbar-logo-color, #fff)"
+                dotColor="var(--navbar-logo-dot-color, #C90201)"
               />
-              <div>
+              <div className="brand-text">
                 <span
                   className="brand-text1"
                   style={{ fontFamily: "sans-serif" }}
@@ -120,8 +118,7 @@ export default function Navbar() {
                   DIGITAL
                 </span>
               </div>
-            </a>
-
+            </div>{" "}
             <div ref={menuWrapRef} className="navbar-menu-wrap">
               <button
                 className="menu-button navbar-menu-toggle"

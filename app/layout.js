@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,8 +62,54 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <Script id="nav-theme-init" strategy="beforeInteractive">
+          {`
+            (function () {
+              try {
+                var allowed = {
+                  black: true,
+                  white: true,
+                  red: true,
+                  glass: true,
+                  minimal: true
+                };
+
+                var root = document.documentElement;
+
+                function applyTheme() {
+                  var hash = window.location.hash.replace('#', '').trim().toLowerCase();
+                  var theme = allowed[hash] ? hash : '';
+
+                  root.classList.remove(
+                    'nav-theme-black',
+                    'nav-theme-white',
+                    'nav-theme-red',
+                    'nav-theme-glass',
+                    'nav-theme-minimal'
+                  );
+
+                  if (theme) {
+                    root.classList.add('nav-theme-' + theme);
+                  }
+
+                  root.classList.add('nav-theme-ready');
+                }
+
+                window.__applyNavTheme = applyTheme;
+
+                applyTheme();
+                window.addEventListener('hashchange', applyTheme, { passive: true });
+              } catch (e) {
+                document.documentElement.classList.add('nav-theme-ready');
+              }
+            })();
+          `}
+        </Script>
+
+        {children}
+      </body>
     </html>
   );
 }
