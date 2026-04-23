@@ -8,6 +8,11 @@
   align-items: center;
   overflow: visible;
 }
+.stack-cards.js-stack-cards .stack-cards__item.preview-card {
+  left: 0;
+  right: 0;
+  transform-origin: center top;
+}
 
 h1,
 h2,
@@ -38,8 +43,8 @@ p {
 
 .stack-cards__item {
   position: sticky !important;
-  width: 90%;
-  max-width: 90%;
+  width: 95%;
+  max-width: 95%;
   margin: 0 auto var(--stack-cards-gap) auto;
   background: white;
   border-radius: 8px;
@@ -702,8 +707,8 @@ p {
 @media (min-width: 1025px) {
   .stack-cards__item {
     width: 70%;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .text-component.padding-md {

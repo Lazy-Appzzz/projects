@@ -88,7 +88,7 @@ const PreviewCard = ({
     <>
       <div
         data-theme="default"
-        className={`stack-cards__item bg radius-lg shadow-md js-stack-cards__item preview-card fade-in-up ${
+        className={`stack-cards__item bg radius-lg shadow-md js-stack-cards__item preview-card ${
           isVisible ? "visible" : ""
         }`}
         ref={cardRef}
@@ -478,32 +478,55 @@ const StackGroup = ({ group, groupIndex, stickyStartPosition, startIndex }) => {
     const container = containerRef.current;
     let scrollingFn = false;
     let scrolling = false;
-    let marginY = 50;
-    let elementHeight = 0;
-    let cardTop = stickyStartPosition;
-    let cardHeight = 0;
     let resizeTimeout;
 
+    let cardTop = stickyStartPosition;
+    let cardHeight = 0;
+
+    const WIDTH_STEP = 3; // 1st narrower, 2nd wider, 3rd widest
+    const BASE_WIDTH = 88; // first card width %
+    const VISIBLE_PERCENT = 0.24; // how much of previous card stays visible
+    const MIN_VISIBLE_PX = 110;
+    const MAX_VISIBLE_PX = 180;
+    const SCALE_STEP = 0.035;
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+    const getBaseScale = (index, total) => {
+      const reversedIndex = total - 1 - index;
+      return 1 - reversedIndex * SCALE_STEP;
+    };
+
+    const getWidthPercent = (index) => {
+      return BASE_WIDTH + index * WIDTH_STEP;
+    };
+
     const setStackCards = () => {
-      const gapValue = getComputedStyle(container)
-        .getPropertyValue("--stack-cards-gap")
-        .trim();
-
-      const parsedGap = parseInt(gapValue.replace(/[^-\d]/g, ""), 10);
-      marginY = Number.isNaN(parsedGap) ? 50 : parsedGap;
-
       const items = itemsRef.current.filter(Boolean);
       if (!items.length) return;
 
-      elementHeight = container.offsetHeight;
       cardTop = stickyStartPosition;
       cardHeight = items[0].offsetHeight;
 
-      container.style.paddingBottom = `${Math.max(marginY, 0) * Math.max(items.length - 1, 0)}px`;
+      const visibleOffset = clamp(
+        cardHeight * VISIBLE_PERCENT,
+        MIN_VISIBLE_PX,
+        MAX_VISIBLE_PX,
+      );
+
+      container.style.paddingBottom = `${visibleOffset * Math.max(items.length - 1, 0)}px`;
+      container.dataset.visibleOffset = String(visibleOffset);
 
       items.forEach((item, i) => {
+        const baseScale = getBaseScale(i, items.length);
+        const widthPercent = getWidthPercent(i);
+
         item.style.top = `${stickyStartPosition}px`;
-        item.style.transform = `translateY(${marginY * i}px)`;
+        item.style.width = `${widthPercent}%`;
+        item.style.maxWidth = `${widthPercent}%`;
+        item.style.marginLeft = "auto";
+        item.style.marginRight = "auto";
+        item.style.transform = `translateY(${visibleOffset * i}px) scale(${baseScale})`;
         item.style.zIndex = String(i + 1);
       });
     };
@@ -516,19 +539,17 @@ const StackGroup = ({ group, groupIndex, stickyStartPosition, startIndex }) => {
       }
 
       const top = container.getBoundingClientRect().top;
+      const visibleOffset = Number(container.dataset.visibleOffset || 140);
 
       items.forEach((item, i) => {
-        const scrollingPos = cardTop - top - i * marginY;
+        const baseScale = getBaseScale(i, items.length);
+        const scrollingPos = cardTop - top - i * visibleOffset;
 
         if (scrollingPos > 0) {
-          const scaling =
-            i === items.length - 1
-              ? 1
-              : Math.max(0.86, (cardHeight - scrollingPos * 0.05) / cardHeight);
-
-          item.style.transform = `translateY(${marginY * i}px) scale(${scaling})`;
+          const scaleBoost = Math.min(scrollingPos * 0.0003, 0.03);
+          item.style.transform = `translateY(${visibleOffset * i}px) scale(${Math.min(baseScale + scaleBoost, 1)})`;
         } else {
-          item.style.transform = `translateY(${marginY * i}px) scale(1)`;
+          item.style.transform = `translateY(${visibleOffset * i}px) scale(${baseScale})`;
         }
       });
 
