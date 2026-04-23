@@ -29,10 +29,10 @@ const ContentLoader = () => (
         headPos={1.7}
         rayPos={-0.7}
         postMargin={33}
-        headColor="var(--navbar-logo-color, #000)"
-        postColor="var(--navbar-logo-color, #000)"
-        bulbColor="var(--navbar-logo-color, #000)"
-        rayColor="var(--navbar-logo-color, #000)"
+        headColor="var(--pulsing-logo-color, #000)"
+        postColor="var(--pulsing-logo-color, #000)"
+        bulbColor="var(--pulsing-logo-color, #000)"
+        rayColor="var(--pulsing-logo-color, #000)"
         dotColor="#FF0700"
       />
     </div>
@@ -170,7 +170,6 @@ export default function FullWidthLayout({
   if (!isInitialized) {
     return (
       <div className={`full-width-layout page-theme ${pageThemeClass}`}>
-        <ChipBackground />
         <Navbar theme={theme} />
         {showHero && <Hero {...heroProps} />}
         <main className="main-full-width">
