@@ -49,10 +49,11 @@ export default function HomePageClient({ theme = "" }) {
         >
           Web Applications
         </h2>
+
         <NeatAltStackGrouped
+          theme={theme}
           cards={cardsData.webApps}
           multipleMockupWidth={100}
-          stickyStartPosition={100}
           stackOrder={0}
         />
       </div>
@@ -68,10 +69,11 @@ export default function HomePageClient({ theme = "" }) {
         >
           Web Games
         </h2>
+
         <NeatAltStackGrouped
+          theme={theme}
           cards={cardsData.webGames}
           multipleMockupWidth={100}
-          stickyStartPosition={100}
           stackOrder={1}
         />
       </div>
@@ -87,10 +89,11 @@ export default function HomePageClient({ theme = "" }) {
         >
           Mobile Applications
         </h2>
+
         <NeatAltStackGrouped
+          theme={theme}
           cards={cardsData.mobileApps}
           multipleMockupWidth={100}
-          stickyStartPosition={100}
           stackOrder={2}
         />
       </div>

@@ -9,8 +9,8 @@ import Logo from "./common/Logo";
 import ImageLoader from "./common/ImageLoader";
 
 const PERSISTENT_MODAL_BREAKPOINT = 1200;
+const MOBILE_MEDIA_QUERY = "(max-width: 768px)";
 
-// Store which stack has dispatched per pathname
 const dispatchedStacks = new Map();
 let previousPathname = null;
 
@@ -24,6 +24,25 @@ const chunkArray = (array = [], size = 3) => {
   return result;
 };
 
+const getStackConfig = (theme = "", isMobile = false) => {
+  const isMinimal = theme === "minimal-black" || theme === "minimal";
+
+  if (isMobile) {
+    console.log("beef", isMinimal);
+    return {
+      stickyStartPosition: isMinimal ? 20 : 90,
+      minVisiblePx: 30,
+      maxVisiblePx: 40,
+    };
+  }
+
+  return {
+    stickyStartPosition: isMinimal ? 50 : 130,
+    minVisiblePx: 110,
+    maxVisiblePx: 180,
+  };
+};
+
 const PreviewCard = ({
   pair,
   pairIndex,
@@ -35,27 +54,33 @@ const PreviewCard = ({
   const [isExtraLg, setIsExtraLg] = useState(false);
   const [selectedPair, setSelectedPair] = useState(null);
   const [imageModalOpen, setImageModalOpen] = useState(false);
-  const [descriptionExpanded, setDescriptionExpanded] = useState(false);
+  const [descriptionExpanded, _setDescriptionExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isHoveringImage, setIsHoveringImage] = useState(false);
+  const [_isHoveringImage, setIsHoveringImage] = useState(false);
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   const [previewCard] = pair;
   const projectNumber = String(globalIndex + 1).padStart(2, "0");
-  const [isImageLoading, setIsImageLoading] = useState(true);
 
   useEffect(() => {
-    const checkResponsive = () => {
-      setIsMobile(window.innerWidth <= 768);
-      setIsExtraLg(window.innerWidth >= 1200);
+    const mobileMq = window.matchMedia(MOBILE_MEDIA_QUERY);
+    const xlMq = window.matchMedia("(min-width: 1200px)");
+
+    const update = () => {
+      setIsMobile(mobileMq.matches);
+      setIsExtraLg(xlMq.matches);
     };
 
-    checkResponsive();
-    window.addEventListener("resize", checkResponsive);
+    update();
+    mobileMq.addEventListener("change", update);
+    xlMq.addEventListener("change", update);
 
-    return () => window.removeEventListener("resize", checkResponsive);
+    return () => {
+      mobileMq.removeEventListener("change", update);
+      xlMq.removeEventListener("change", update);
+    };
   }, []);
 
-  // Fade-in animation on mount
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
@@ -88,7 +113,7 @@ const PreviewCard = ({
     <>
       <div
         data-theme="default"
-        className={`stack-cards__item bg radius-lg shadow-md js-stack-cards__item preview-card fade-in-up ${
+        className={`stack-cards__item bg radius-lg shadow-md js-stack-cards__item preview-card ${
           isVisible ? "visible" : ""
         }`}
         ref={cardRef}
@@ -166,7 +191,7 @@ const PreviewCard = ({
                 {previewCard?.details}
               </p>
 
-              {previewCard?.githubLink && (
+              {previewCard?.githubLink ? (
                 <div
                   style={{
                     display: "flex",
@@ -200,8 +225,7 @@ const PreviewCard = ({
                     </svg>
                   </a>
                 </div>
-              )}
-              {!previewCard.githubLink && (
+              ) : (
                 <div
                   style={{
                     display: "flex",
@@ -258,10 +282,9 @@ const PreviewCard = ({
                 justifyContent: "center",
                 alignItems: "center",
                 position: "relative",
-                opacity: isImageLoading ? 0.85 : 1, // subtle visual cue
+                opacity: isImageLoading ? 0.85 : 1,
               }}
             >
-              {" "}
               <ImageLoader
                 className="card-image"
                 src={previewCard?.image}
@@ -276,178 +299,9 @@ const PreviewCard = ({
                   display: "block",
                   objectFit: "contain",
                   borderRadius: "16px",
-
                   transition: "all 0.3s ease",
                 }}
               />
-              {!isImageLoading && previewCard.sticker ? (
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: isMobile ? "12px" : "20px",
-                    right: isMobile ? "12px" : "20px",
-                    opacity: 1,
-                    transform: isHoveringImage
-                      ? "translateY(0) scale(1)"
-                      : "translateY(10px) scale(0.85)",
-                    transition: "all 0.3s cubic-bezier(0.34, 1.2, 0.64, 1)",
-                    pointerEvents: "none",
-                    zIndex: 10,
-                    overflow: "visible",
-                  }}
-                >
-                  <div
-                    style={{
-                      position: "relative",
-                      width: isMobile ? "58px" : "70px",
-                      height: isMobile ? "58px" : "70px",
-                      minWidth: isMobile ? "58px" : "70px",
-                      minHeight: isMobile ? "58px" : "70px",
-                      maxWidth: isMobile ? "58px" : "70px",
-                      maxHeight: isMobile ? "58px" : "70px",
-                      borderRadius: "50%",
-                      background:
-                        "radial-gradient(circle at 30% 30%, #fff9e8, #f5e6c8)",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: isMobile ? "2px" : "4px",
-                      boxShadow:
-                        "0 4px 12px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.8)",
-                      border: "1px solid rgba(220, 180, 100, 0.5)",
-                      fontFamily: "system-ui, -apple-system, sans-serif",
-                      flexShrink: 0,
-                      overflow: "visible",
-                      boxSizing: "border-box",
-                    }}
-                  >
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: isMobile ? "6px" : "8px",
-                        left: isMobile ? "10px" : "12px",
-                        width: isMobile ? "16px" : "20px",
-                        height: isMobile ? "16px" : "20px",
-                        borderRadius: "50%",
-                        background:
-                          "radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%)",
-                        pointerEvents: "none",
-                      }}
-                    />
-
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: isMobile ? "-6px" : "-8px",
-                        right: isMobile ? "-6px" : "-8px",
-                        width: isMobile ? "22px" : "28px",
-                        height: isMobile ? "22px" : "28px",
-                        borderRadius: "50%",
-                        background:
-                          "radial-gradient(circle at 30% 30%, #e63946, #c1121f)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
-                        border: "1px solid rgba(255,255,255,0.3)",
-                      }}
-                    >
-                      <svg
-                        width={isMobile ? "11" : "14"}
-                        height={isMobile ? "11" : "14"}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="white"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <circle cx="12" cy="12" r="3" />
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                      </svg>
-                    </div>
-
-                    <span
-                      style={{
-                        fontSize: isMobile ? "0.56rem" : "0.7rem",
-                        fontWeight: 800,
-                        color: "#2c1810",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.4px",
-                        marginTop: isMobile ? "1px" : "4px",
-                        lineHeight: 1,
-                      }}
-                    >
-                      CLICK
-                    </span>
-
-                    <span
-                      style={{
-                        fontSize: isMobile ? "0.4rem" : "0.55rem",
-                        fontWeight: 600,
-                        color: "#8b5e3c",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.2px",
-                        lineHeight: 1,
-                      }}
-                    >
-                      for more
-                    </span>
-
-                    <div
-                      style={{
-                        position: "absolute",
-                        inset: "3px",
-                        borderRadius: "50%",
-                        border: "1px dashed rgba(200, 160, 100, 0.4)",
-                        pointerEvents: "none",
-                      }}
-                    />
-                  </div>
-                </div>
-              ) : !isImageLoading ? (
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "16px",
-                    right: "16px",
-                    background: "rgba(0, 0, 0, 0.65)",
-                    backdropFilter: "blur(8px)",
-                    padding: "8px 14px",
-                    borderRadius: "40px",
-                    color: "white",
-                    fontSize: "0.75rem",
-                    fontWeight: 500,
-                    letterSpacing: "0.3px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    opacity: 1,
-                    transform: isHoveringImage
-                      ? "translateY(0)"
-                      : "translateY(8px)",
-                    transition: "all 0.25s ease",
-                    pointerEvents: "none",
-                    fontFamily: "system-ui, -apple-system, sans-serif",
-                  }}
-                >
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                    <circle cx="12" cy="12" r="3" />
-                  </svg>
-                  Click for more
-                </div>
-              ) : null}
             </div>
           </div>
         </div>
@@ -468,7 +322,14 @@ const PreviewCard = ({
   );
 };
 
-const StackGroup = ({ group, groupIndex, stickyStartPosition, startIndex }) => {
+const StackGroup = ({
+  group,
+  groupIndex,
+  stickyStartPosition,
+  minVisiblePx,
+  maxVisiblePx,
+  startIndex,
+}) => {
   const containerRef = useRef(null);
   const itemsRef = useRef([]);
 
@@ -478,32 +339,47 @@ const StackGroup = ({ group, groupIndex, stickyStartPosition, startIndex }) => {
     const container = containerRef.current;
     let scrollingFn = false;
     let scrolling = false;
-    let marginY = 50;
-    let elementHeight = 0;
-    let cardTop = stickyStartPosition;
-    let cardHeight = 0;
     let resizeTimeout;
 
+    const WIDTH_STEP = 3;
+    const BASE_WIDTH = 88;
+    const VISIBLE_PERCENT = 0.24;
+    const SCALE_STEP = 0.035;
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+    const getBaseScale = (index, total) => {
+      const reversedIndex = total - 1 - index;
+      return 1 - reversedIndex * SCALE_STEP;
+    };
+
+    const getWidthPercent = (index) => BASE_WIDTH + index * WIDTH_STEP;
+
     const setStackCards = () => {
-      const gapValue = getComputedStyle(container)
-        .getPropertyValue("--stack-cards-gap")
-        .trim();
-
-      const parsedGap = parseInt(gapValue.replace(/[^-\d]/g, ""), 10);
-      marginY = Number.isNaN(parsedGap) ? 50 : parsedGap;
-
       const items = itemsRef.current.filter(Boolean);
       if (!items.length) return;
 
-      elementHeight = container.offsetHeight;
-      cardTop = stickyStartPosition;
-      cardHeight = items[0].offsetHeight;
+      const cardHeight = items[0].offsetHeight;
+      const visibleOffset = clamp(
+        cardHeight * VISIBLE_PERCENT,
+        minVisiblePx,
+        maxVisiblePx,
+      );
 
-      container.style.paddingBottom = `${Math.max(marginY, 0) * Math.max(items.length - 1, 0)}px`;
+      container.style.paddingBottom = "80px";
+      container.dataset.visibleOffset = String(visibleOffset);
 
       items.forEach((item, i) => {
-        item.style.top = `${stickyStartPosition}px`;
-        item.style.transform = `translateY(${marginY * i}px)`;
+        const baseScale = getBaseScale(i, items.length);
+        const widthPercent = getWidthPercent(i);
+        const individualTop = stickyStartPosition + visibleOffset * i;
+
+        item.style.top = `${individualTop}px`;
+        item.style.width = `${widthPercent}%`;
+        item.style.maxWidth = `${widthPercent}%`;
+        item.style.marginLeft = "auto";
+        item.style.marginRight = "auto";
+        item.style.transform = `scale(${baseScale})`;
         item.style.zIndex = String(i + 1);
       });
     };
@@ -515,20 +391,19 @@ const StackGroup = ({ group, groupIndex, stickyStartPosition, startIndex }) => {
         return;
       }
 
-      const top = container.getBoundingClientRect().top;
+      const containerTop = container.getBoundingClientRect().top;
+      const visibleOffset = Number(container.dataset.visibleOffset || 140);
 
       items.forEach((item, i) => {
-        const scrollingPos = cardTop - top - i * marginY;
+        const baseScale = getBaseScale(i, items.length);
+        const individualTop = stickyStartPosition + visibleOffset * i;
+        const scrollingPos = individualTop - containerTop;
 
         if (scrollingPos > 0) {
-          const scaling =
-            i === items.length - 1
-              ? 1
-              : Math.max(0.86, (cardHeight - scrollingPos * 0.05) / cardHeight);
-
-          item.style.transform = `translateY(${marginY * i}px) scale(${scaling})`;
+          const scaleBoost = Math.min(scrollingPos * 0.0003, 0.03);
+          item.style.transform = `scale(${Math.min(baseScale + scaleBoost, 1)})`;
         } else {
-          item.style.transform = `translateY(${marginY * i}px) scale(1)`;
+          item.style.transform = `scale(${baseScale})`;
         }
       });
 
@@ -570,7 +445,7 @@ const StackGroup = ({ group, groupIndex, stickyStartPosition, startIndex }) => {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
         container.dispatchEvent(new CustomEvent("resize-stack-cards"));
-      }, 200);
+      }, 120);
     };
 
     window.addEventListener("resize", handleResize);
@@ -616,55 +491,62 @@ const StackGroup = ({ group, groupIndex, stickyStartPosition, startIndex }) => {
 
 const NeatAltStackGrouped = ({
   cards = [],
-  stickyStartPosition = 100,
+  theme = "",
   startIndex = 0,
   stackLimit = 3,
   stackOrder = 0,
 }) => {
   const normalizedStackLimit = Math.max(1, Number(stackLimit) || 1);
   const [isWideScreen, setIsWideScreen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
   const pathname = usePathname();
 
-  const dispatchKey = `${pathname}-stack-${stackOrder}`;
-  const [isVisible, setIsVisible] = useState(false);
+  const stackConfig = useMemo(() => {
+    return getStackConfig(theme, isMobile);
+  }, [theme, isMobile]);
 
   const groupedCards = useMemo(() => {
     return chunkArray(cards, normalizedStackLimit);
   }, [cards, normalizedStackLimit]);
 
-  // Clear dispatched stacks when pathname changes (navigation)
   useEffect(() => {
     if (previousPathname !== pathname) {
-      // Clear all dispatched stacks for the new page
       dispatchedStacks.clear();
       previousPathname = pathname;
     }
   }, [pathname]);
 
-  // Fade-in animation on mount
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
-    const checkScreenWidth = () => {
-      setIsWideScreen(window.innerWidth > PERSISTENT_MODAL_BREAKPOINT);
+    const mobileMq = window.matchMedia(MOBILE_MEDIA_QUERY);
+    const wideMq = window.matchMedia("(min-width: 1201px)");
+
+    const update = () => {
+      setIsMobile(mobileMq.matches);
+      setIsWideScreen(wideMq.matches);
     };
 
-    checkScreenWidth();
-    window.addEventListener("resize", checkScreenWidth);
+    update();
+    mobileMq.addEventListener("change", update);
+    wideMq.addEventListener("change", update);
 
-    return () => window.removeEventListener("resize", checkScreenWidth);
+    return () => {
+      mobileMq.removeEventListener("change", update);
+      wideMq.removeEventListener("change", update);
+    };
   }, []);
 
-  // Dispatch first card when conditions are met
   useEffect(() => {
     if (!cards.length) return;
     if (!isWideScreen) return;
 
     if (stackOrder === 0) {
-      // Always dispatch for the first stack on mount
       const timer = setTimeout(() => {
         const firstCard = cards[0];
         const firstPair = Array.isArray(firstCard) ? firstCard : [firstCard];
@@ -692,7 +574,9 @@ const NeatAltStackGrouped = ({
             key={`stack-group-${groupIndex}`}
             group={group}
             groupIndex={groupIndex}
-            stickyStartPosition={stickyStartPosition}
+            stickyStartPosition={stackConfig.stickyStartPosition}
+            minVisiblePx={stackConfig.minVisiblePx}
+            maxVisiblePx={stackConfig.maxVisiblePx}
             startIndex={groupStartIndex}
           />
         );
