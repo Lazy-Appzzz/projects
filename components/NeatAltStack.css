@@ -45,7 +45,7 @@ p {
   position: sticky !important;
   width: 95%;
   max-width: 95%;
-  margin: 0 auto var(--stack-cards-gap) auto;
+  margin: 0 auto;
   background: white;
   border-radius: 8px;
   transform-origin: center top;
@@ -595,7 +595,7 @@ p {
   .stack-cards__item {
     width: 90% !important;
     max-width: 100% !important;
-    margin: 0 0 var(--stack-cards-gap) 0 !important;
+    margin: 0 auto !important;
   }
 
   .grid {
