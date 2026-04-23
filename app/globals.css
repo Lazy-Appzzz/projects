@@ -308,7 +308,7 @@ body .chip-bg svg {
 
 .loader-text-secondary {
   font-family: sans-serif;
-  color: #6b7280;
+  color: red;
 }
 
 .page-theme.theme-minimal-black .loader-text-primary {
@@ -325,6 +325,11 @@ body .chip-bg svg {
 .page-theme.theme-minimal .loader-text-secondary {
   color: red;
 }
+
+.page-theme {
+  --navbar-logo-color: #fff;
+}
+
 .page-theme.theme-minimal-black {
   --navbar-logo-color: #ffffff;
 }
@@ -340,4 +345,16 @@ body .chip-bg svg {
 .page-theme.theme-minimal-black {
   --chip-node-fill: #ffffff;
   --chip-node-stroke: #ffffff;
+}
+
+.page-theme {
+  --pulsing-logo-color: #000;
+}
+
+.page-theme.theme-minimal-black {
+  --pulsing-logo-color: #ffffff;
+}
+
+.page-theme.theme-minimal {
+  --pulsing-logo-color: #000000;
 }
