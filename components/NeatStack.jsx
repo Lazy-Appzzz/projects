@@ -9,8 +9,6 @@ import Logo from "./common/Logo";
 import ImageLoader from "./common/ImageLoader";
 
 const PERSISTENT_MODAL_BREAKPOINT = 1200;
-
-// Store which stack has dispatched per pathname
 const dispatchedStacks = new Map();
 let previousPathname = null;
 
@@ -35,7 +33,7 @@ const PreviewCard = ({
   const [isExtraLg, setIsExtraLg] = useState(false);
   const [selectedPair, setSelectedPair] = useState(null);
   const [imageModalOpen, setImageModalOpen] = useState(false);
-  const [descriptionExpanded, setDescriptionExpanded] = useState(false);
+  const [descriptionExpanded, _setDescriptionExpanded] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isHoveringImage, setIsHoveringImage] = useState(false);
 
@@ -55,7 +53,7 @@ const PreviewCard = ({
     return () => window.removeEventListener("resize", checkResponsive);
   }, []);
 
-  // Fade-in animation on mount
+  
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(timer);
@@ -258,7 +256,7 @@ const PreviewCard = ({
                 justifyContent: "center",
                 alignItems: "center",
                 position: "relative",
-                opacity: isImageLoading ? 0.85 : 1, // subtle visual cue
+                opacity: isImageLoading ? 0.85 : 1, 
               }}
             >
               {" "}
@@ -483,9 +481,9 @@ const StackGroup = ({ group, groupIndex, stickyStartPosition, startIndex }) => {
     let cardTop = stickyStartPosition;
     let cardHeight = 0;
 
-    const WIDTH_STEP = 3; // 1st narrower, 2nd wider, 3rd widest
-    const BASE_WIDTH = 88; // first card width %
-    const VISIBLE_PERCENT = 0.24; // how much of previous card stays visible
+    const WIDTH_STEP = 3; 
+    const BASE_WIDTH = 88; 
+    const VISIBLE_PERCENT = 0.24; 
     const MIN_VISIBLE_PX = 110;
     const MAX_VISIBLE_PX = 180;
     const SCALE_STEP = 0.035;
@@ -647,23 +645,23 @@ const NeatAltStackGrouped = ({
   const [isWideScreen, setIsWideScreen] = useState(false);
   const pathname = usePathname();
 
-  const dispatchKey = `${pathname}-stack-${stackOrder}`;
+
   const [isVisible, setIsVisible] = useState(false);
 
   const groupedCards = useMemo(() => {
     return chunkArray(cards, normalizedStackLimit);
   }, [cards, normalizedStackLimit]);
 
-  // Clear dispatched stacks when pathname changes (navigation)
+
   useEffect(() => {
     if (previousPathname !== pathname) {
-      // Clear all dispatched stacks for the new page
+     
       dispatchedStacks.clear();
       previousPathname = pathname;
     }
   }, [pathname]);
 
-  // Fade-in animation on mount
+
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
@@ -680,13 +678,13 @@ const NeatAltStackGrouped = ({
     return () => window.removeEventListener("resize", checkScreenWidth);
   }, []);
 
-  // Dispatch first card when conditions are met
+ 
   useEffect(() => {
     if (!cards.length) return;
     if (!isWideScreen) return;
 
     if (stackOrder === 0) {
-      // Always dispatch for the first stack on mount
+    
       const timer = setTimeout(() => {
         const firstCard = cards[0];
         const firstPair = Array.isArray(firstCard) ? firstCard : [firstCard];
