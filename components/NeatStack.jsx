@@ -520,17 +520,17 @@ const StackGroup = ({ group, groupIndex, stickyStartPosition, startIndex }) => {
       items.forEach((item, i) => {
         const baseScale = getBaseScale(i, items.length);
         const widthPercent = getWidthPercent(i);
+        const individualTop = stickyStartPosition + visibleOffset * i;
 
-        item.style.top = `${stickyStartPosition}px`;
+        item.style.top = `${individualTop}px`;
         item.style.width = `${widthPercent}%`;
         item.style.maxWidth = `${widthPercent}%`;
         item.style.marginLeft = "auto";
         item.style.marginRight = "auto";
-        item.style.transform = `translateY(${visibleOffset * i}px) scale(${baseScale})`;
-        item.style.zIndex = String(i + 1);
+        item.style.transform = `scale(${baseScale})`;
+        item.style.zIndex = String(i + 1); // keep later cards on top, as you want
       });
     };
-
     const animateStackCards = () => {
       const items = itemsRef.current.filter(Boolean);
       if (!items.length) {
@@ -538,18 +538,19 @@ const StackGroup = ({ group, groupIndex, stickyStartPosition, startIndex }) => {
         return;
       }
 
-      const top = container.getBoundingClientRect().top;
+      const containerTop = container.getBoundingClientRect().top;
       const visibleOffset = Number(container.dataset.visibleOffset || 140);
 
       items.forEach((item, i) => {
         const baseScale = getBaseScale(i, items.length);
-        const scrollingPos = cardTop - top - i * visibleOffset;
+        const individualTop = stickyStartPosition + visibleOffset * i;
+        const scrollingPos = individualTop - containerTop;
 
         if (scrollingPos > 0) {
           const scaleBoost = Math.min(scrollingPos * 0.0003, 0.03);
-          item.style.transform = `translateY(${visibleOffset * i}px) scale(${Math.min(baseScale + scaleBoost, 1)})`;
+          item.style.transform = `scale(${Math.min(baseScale + scaleBoost, 1)})`;
         } else {
-          item.style.transform = `translateY(${visibleOffset * i}px) scale(${baseScale})`;
+          item.style.transform = `scale(${baseScale})`;
         }
       });
 
