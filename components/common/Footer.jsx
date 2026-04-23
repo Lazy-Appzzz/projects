@@ -55,7 +55,7 @@ export default function Footer() {
             <h4>Quick Links</h4>
             <ul>
               <li>
-                <Link href="https://lindocode.com/">Home</Link>
+                <Link href="https://lindocode.com/">Lindocode Digital</Link>
               </li>
 
               <li>
