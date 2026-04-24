@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 
 import "./EmailForm.css";
 
-const EmailForm = ({ endpoint = "https://mail.api.lindocode.com/contact" }) => {
+const EmailForm = ({
+  endpoint = "https://mail.api.lindocode.com/contact",
+  theme = "",
+}) => {
   const [isMobile, setIsMobile] = useState(false);
   const [status, setStatus] = useState("idle");
   const [errors, setErrors] = useState({});
