@@ -45,7 +45,7 @@
   font-size: clamp(2.8rem, 5.6vw, 6rem);
   line-height: 0.96;
   letter-spacing: -0.05em;
-  color: #0f172a;
+  color: #2e3c4f;
   font-weight: 600;
 }
 
@@ -70,8 +70,8 @@
   max-width: 720px;
   border-radius: 30px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
+  background: rgba(235, 245, 255, 0.2);
+  backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.1),
@@ -101,7 +101,7 @@
 .email-field label {
   display: block;
   margin-bottom: 10px;
-  color: #0f172a;
+  color: #d86161;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: -0.01em;
