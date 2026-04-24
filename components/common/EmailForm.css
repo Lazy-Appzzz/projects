@@ -312,3 +312,15 @@
     font-size: 0.95rem;
   }
 }
+
+.email-eyebrow.default {
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  color: #6b7280;
+}
+
+.page-theme.theme-minimal-black .email-eyebrow {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #b27b32;
+  color: #e5e7eb;
+}

@@ -17,6 +17,7 @@ const EmailForm = ({
     message: "",
     company: "",
   });
+  const isMinimal = theme === "minimal-black" || theme === "minimal";
 
   useEffect(() => {
     const checkMobile = () => {
@@ -115,14 +116,14 @@ const EmailForm = ({
       <div className="email-shell">
         <div className="email-header">
           <motion.span
-            className="email-eyebrow"
+            className={`email-eyebrow ${isMinimal ? "minimal" : "default"}`}
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
             viewport={{ once: true }}
           >
             Contact
-          </motion.span>
+          </motion.span>{" "}
         </div>
 
         <div className="email-grid">
