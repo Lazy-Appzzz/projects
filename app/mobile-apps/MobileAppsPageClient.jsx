@@ -23,14 +23,14 @@ export default function MobileAppsPageClient({ theme = "" }) {
         <NeatAltStackGrouped
           cards={cardsData.mobileApps}
           multipleMockupWidth={100}
-          stickyStartPosition={100}
+          theme={theme}
         />
       </div>{" "}
       <div className="desktop">
         <NeatAltStack
           cards={cardsData.mobileApps}
           multipleMockupWidth={100}
-          stickyStartPosition={100}
+          theme={theme}
         />
       </div>
     </FullWidthLayout>

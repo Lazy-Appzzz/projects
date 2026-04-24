@@ -244,7 +244,7 @@ export default function FullWidthLayout({
           )}
         </div>
       </main>
-      <EmailForm />
+      <EmailForm theme={theme} />
       <Footer />
     </div>
   );

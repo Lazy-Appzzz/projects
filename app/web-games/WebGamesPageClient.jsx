@@ -22,15 +22,14 @@ export default function WebGamesPageClient({ theme = "" }) {
         <NeatAltStackGrouped
           cards={cardsData.webGames}
           multipleMockupWidth={100}
-          stickyStartPosition={100}
+          theme={theme}
         />
       </div>{" "}
       <div className="desktop">
         <NeatAltStack
           cards={cardsData.webGames}
           multipleMockupWidth={100}
-          stickyStartPosition={100}
-        />
+           theme={theme}        />
       </div>
     </FullWidthLayout>
   );

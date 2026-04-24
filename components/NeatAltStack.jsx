@@ -9,6 +9,22 @@ import SideModalNeatAltStack from "./SideModalNeatAltStack.jsx";
 import Logo from "./common/Logo";
 import ImageLoader from "./common/ImageLoader";
 
+const MOBILE_MEDIA_QUERY = "(max-width: 768px)";
+
+const getStackConfig = (theme = "", isMobile = false) => {
+  const isMinimal = theme === "minimal-black" || theme === "minimal";
+
+  if (isMobile) {
+    return {
+      stickyStartPosition: isMinimal ? 20 : 90,
+    };
+  }
+
+  return {
+    stickyStartPosition: isMinimal ? 50 : 130,
+  };
+};
+
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
@@ -74,15 +90,22 @@ const StackPair = ({
   const [isImageLoading, setIsImageLoading] = useState(true);
 
   useEffect(() => {
-    const checkResponsive = () => {
-      setIsMobile(window.innerWidth <= 768);
-      setIsExtraLg(window.innerWidth >= 1200);
+    const mobileMq = window.matchMedia(MOBILE_MEDIA_QUERY);
+    const xlMq = window.matchMedia("(min-width: 1200px)");
+
+    const update = () => {
+      setIsMobile(mobileMq.matches);
+      setIsExtraLg(xlMq.matches);
     };
 
-    checkResponsive();
-    window.addEventListener("resize", checkResponsive);
+    update();
+    mobileMq.addEventListener("change", update);
+    xlMq.addEventListener("change", update);
 
-    return () => window.removeEventListener("resize", checkResponsive);
+    return () => {
+      mobileMq.removeEventListener("change", update);
+      xlMq.removeEventListener("change", update);
+    };
   }, []);
 
   useEffect(() => {
@@ -175,7 +198,7 @@ const StackPair = ({
 
     const stackCardsInitEvent = () => {
       scrollingFn = stackCardsScrolling;
-      window.addEventListener("scroll", scrollingFn);
+      window.addEventListener("scroll", scrollingFn, { passive: true });
     };
 
     const stackCardsCallback = (entries) => {
@@ -218,6 +241,7 @@ const StackPair = ({
       container.removeEventListener("resize-stack-cards", resizeHandler);
       window.removeEventListener("resize", handleResize);
       if (scrollingFn) window.removeEventListener("scroll", scrollingFn);
+      clearTimeout(resizeTimeout);
     };
   }, [stickyStartPosition]);
 
@@ -253,7 +277,7 @@ const StackPair = ({
   };
 
   const imageContainerTransform =
-    previewCard.imgTransform ||
+    previewCard?.imgTransform ||
     (isExtraLg ? "rotate(3.5deg) scale(0.95)" : "rotate(3.5deg) scale(0.85)");
 
   return (
@@ -265,7 +289,7 @@ const StackPair = ({
       >
         <div className="project-number-container">
           <h2
-            className="lemon-font project-number "
+            className="lemon-font project-number"
             style={{
               color: projectStyle.color,
               margin: "3em 1em 1em 1em",
@@ -273,7 +297,8 @@ const StackPair = ({
           >
             PROJECT {projectNumber}
           </h2>
-          {previewCard.projectType && (
+
+          {previewCard?.projectType && (
             <span className="project-type-badge">
               {previewCard.projectType}
             </span>
@@ -297,11 +322,12 @@ const StackPair = ({
                 <span
                   className="live-badge preview-card__badge left"
                   style={{
-                    "--badge-color": previewCard.statusColor,
+                    "--badge-color": previewCard?.statusColor,
                   }}
                 >
-                  {previewCard.statusText}
+                  {previewCard?.statusText}
                 </span>
+
                 <h2
                   style={{
                     fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)",
@@ -311,8 +337,9 @@ const StackPair = ({
                     marginBottom: "0.5rem",
                   }}
                 >
-                  {previewCard.title}
+                  {previewCard?.title}
                 </h2>
+
                 <h4
                   style={{
                     color: "#5f6b7a",
@@ -321,9 +348,10 @@ const StackPair = ({
                     marginBottom: "1.25rem",
                   }}
                 >
-                  {previewCard.subtitle}
+                  {previewCard?.subtitle}
                 </h4>
-                {previewCard.description && (
+
+                {previewCard?.description && (
                   <div style={{ position: "relative" }}>
                     <p
                       style={{
@@ -342,10 +370,12 @@ const StackPair = ({
                     </p>
                   </div>
                 )}
+
                 <p style={{ color: "#667085", fontSize: "0.95rem" }}>
-                  {previewCard.details}
+                  {previewCard?.details}
                 </p>
-                {previewCard.githubLink && (
+
+                {previewCard?.githubLink ? (
                   <div
                     style={{
                       display: "flex",
@@ -379,8 +409,7 @@ const StackPair = ({
                       </svg>
                     </a>
                   </div>
-                )}{" "}
-                {!previewCard.githubLink && (
+                ) : (
                   <div
                     style={{
                       display: "flex",
@@ -437,14 +466,13 @@ const StackPair = ({
                   justifyContent: "center",
                   alignItems: "center",
                   position: "relative",
-                  opacity: isImageLoading ? 0.85 : 1, // subtle visual cue
+                  opacity: isImageLoading ? 0.85 : 1,
                 }}
               >
-                {" "}
                 <ImageLoader
                   className="card-image"
-                  src={previewCard.image}
-                  alt={previewCard.title}
+                  src={previewCard?.image}
+                  alt={previewCard?.title || "Project image"}
                   width={600}
                   height={400}
                   onLoadingChange={setIsImageLoading}
@@ -457,7 +485,8 @@ const StackPair = ({
                     transition: "all 0.3s ease",
                   }}
                 />
-                {!isImageLoading && previewCard.sticker ? (
+
+                {!isImageLoading && previewCard?.sticker ? (
                   <div
                     style={{
                       position: "absolute",
@@ -645,20 +674,20 @@ const StackPair = ({
               className="live-badge left details-card-badge"
               style={{
                 top: "0",
-                "--badge-color": detailsCard.statusColor,
+                "--badge-color": detailsCard?.statusColor,
               }}
             >
-              {detailsCard.statusText}
+              {detailsCard?.statusText}
             </span>
 
-            <section id={`stats-section-${detailsCard.cardId || pairIndex}`}>
+            <section id={`stats-section-${detailsCard?.cardId || pairIndex}`}>
               <motion.div
                 ref={(el) => (contentRefs.current[0] = el)}
                 data-index={0}
                 className={`content-section ${isVisible(0) ? "visible" : ""}`}
               >
                 <div className="details-card-header">
-                  <h2 className="details-card-title">Metrics Summary</h2>{" "}
+                  <h2 className="details-card-title">Metrics Summary</h2>
                   <span className="details-card-eyebrow">Details</span>
                 </div>
 
@@ -668,7 +697,7 @@ const StackPair = ({
                   initial="hidden"
                   animate={isVisible(0) ? "visible" : "hidden"}
                 >
-                  {detailsCard.stats?.map((stat, statIndex) => (
+                  {detailsCard?.stats?.map((stat, statIndex) => (
                     <motion.div
                       key={statIndex}
                       className="stat-item details-stat-item"
@@ -688,8 +717,8 @@ const StackPair = ({
                 >
                   {(
                     technologyIcons.find(
-                      (group) => group[detailsCard.iconKey],
-                    )?.[detailsCard.iconKey] || []
+                      (group) => group[detailsCard?.iconKey],
+                    )?.[detailsCard?.iconKey] || []
                   ).map((tech) => (
                     <motion.a
                       key={tech.id}
@@ -748,7 +777,7 @@ const StackPair = ({
       <SideModal
         isOpen={imageModalOpen}
         onClose={() => setImageModalOpen(false)}
-        title={`${previewCard.title} - Project ${projectNumber}`}
+        title={`${previewCard?.title} - Project ${projectNumber}`}
       >
         <SideModalNeatAltStack
           pair={selectedPair}
@@ -763,9 +792,34 @@ const StackPair = ({
 const NeatAltStack = ({
   multipleMockupWidth = 100,
   cards = [],
-  stickyStartPosition = 100,
+  theme = "",
+  stickyStartPosition,
   startIndex = 0,
 }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mobileMq = window.matchMedia(MOBILE_MEDIA_QUERY);
+
+    const update = () => {
+      setIsMobile(mobileMq.matches);
+    };
+
+    update();
+    mobileMq.addEventListener("change", update);
+
+    return () => {
+      mobileMq.removeEventListener("change", update);
+    };
+  }, []);
+
+  const stackConfig = getStackConfig(theme, isMobile);
+
+  const resolvedStickyStartPosition =
+    typeof stickyStartPosition === "number"
+      ? stickyStartPosition
+      : stackConfig.stickyStartPosition;
+
   return (
     <>
       {cards.map((pair, pairIndex) => (
@@ -774,7 +828,7 @@ const NeatAltStack = ({
           pair={pair}
           pairIndex={pairIndex}
           multipleMockupWidth={multipleMockupWidth}
-          stickyStartPosition={stickyStartPosition}
+          stickyStartPosition={resolvedStickyStartPosition}
           startIndex={startIndex}
         />
       ))}
