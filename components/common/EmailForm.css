@@ -34,7 +34,7 @@
 
 .email-header-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+  grid-template-columns: minmax(0, 1.3fr) 1;
   gap: 56px;
   align-items: end;
 }
@@ -59,140 +59,32 @@
 }
 
 .email-grid {
-  display: grid;
-  grid-template-columns: minmax(420px, 0.82fr) minmax(560px, 1.18fr);
-  gap: 42px;
+  display: flex;
+  justify-content: center;
   align-items: stretch;
 }
 
-.email-side-card,
 .email-form-card {
   position: relative;
+  width: 100%;
+  max-width: 720px;
   border-radius: 30px;
   overflow: hidden;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.82),
-    rgba(255, 255, 255, 0.7)
-  );
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
     0 16px 40px rgba(15, 23, 42, 0.08),
     0 35px 100px rgba(15, 23, 42, 0.1);
 }
 
-.email-side-card::before,
-.email-form-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0) 32%
-  );
-  pointer-events: none;
-}
-
-.email-side-card-inner {
+.email-form-card > * {
   position: relative;
   z-index: 1;
-  height: 100%;
-  padding: 38px 34px;
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(193, 18, 31, 0.08),
-      transparent 28%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.45),
-      rgba(255, 255, 255, 0.18)
-    );
-}
-
-.email-side-kicker {
-  display: inline-flex;
-  margin-bottom: 18px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #c1121f;
-}
-
-.email-side-card h3 {
-  margin: 0 0 18px;
-  font-size: clamp(1.7rem, 2vw, 2.5rem);
-  line-height: 1.04;
-  letter-spacing: -0.04em;
-  color: #111827;
-  font-weight: 600;
-  max-width: 520px;
-}
-
-.email-side-card > .email-side-card-inner > p {
-  margin: 0 0 34px;
-  max-width: 520px;
-  font-size: 1rem;
-  line-height: 1.85;
-  color: #667085;
-}
-
-.email-side-points {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-bottom: 30px;
-}
-
-.email-side-point {
-  display: grid;
-  grid-template-columns: 42px 1fr;
-  gap: 16px;
-  align-items: start;
-  padding-top: 18px;
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
-}
-
-.email-side-point span {
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  color: #c1121f;
-}
-
-.email-side-point p {
-  margin: 0;
-  font-size: 0.98rem;
-  line-height: 1.75;
-  color: #344054;
-}
-
-.email-side-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.email-side-badges span {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.04);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  color: #111827;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
 }
 
 .email-form-card {
-  position: relative;
-  z-index: 1;
   padding: 34px;
 }
 
@@ -348,13 +240,8 @@
     padding: 130px 28px 150px;
   }
 
-  .email-grid {
-    grid-template-columns: minmax(500px, 0.8fr) minmax(720px, 1.2fr);
-    gap: 52px;
-  }
-
-  .email-form-card,
-  .email-side-card-inner {
+  .email-form-card {
+    max-width: 780px;
     padding: 42px;
   }
 }
@@ -379,13 +266,7 @@
     max-width: 720px;
   }
 
-  .email-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .email-form-card,
-  .email-side-card-inner {
+  .email-form-card {
     padding: 28px;
   }
 }
@@ -414,24 +295,9 @@
     gap: 0;
   }
 
-  .email-side-card,
   .email-form-card {
     border-radius: 22px;
-  }
-
-  .email-form-card,
-  .email-side-card-inner {
     padding: 20px;
-  }
-
-  .email-side-card h3 {
-    font-size: 1.5rem;
-  }
-
-  .email-side-card > .email-side-card-inner > p,
-  .email-side-point p {
-    font-size: 0.94rem;
-    line-height: 1.7;
   }
 
   .email-field input,

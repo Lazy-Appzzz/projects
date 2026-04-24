@@ -121,92 +121,13 @@ const EmailForm = ({ endpoint = "https://mail.api.lindocode.com/contact" }) => {
             Contact
           </motion.span>
         </div>
+
         <div className="email-grid">
-          <motion.div
-            className="email-side-card"
-            initial={{ opacity: 0, x: -28 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <div className="email-side-card-inner">
-              <span className="email-side-kicker">Start a conversation</span>
-
-              <h3>
-                Strong products start with clear direction and the right
-                information.
-              </h3>
-
-              <p>
-                Share the essentials, and we’ll handle the strategy, design, and
-                build with precision and focus.
-              </p>
-
-              <div className="email-side-points">
-                <div className="email-side-point">
-                  <span>01</span>
-                  <p>
-                    <span
-                      style={{
-                        fontWeight: "bold",
-                        color: "#000000",
-                        fontSize: ".9em",
-                      }}
-                    >
-                      Submit your brief:
-                    </span>{" "}
-                    What you’re building, goals, key features, and audience
-                  </p>
-                </div>
-
-                <div className="email-side-point">
-                  <span>02</span>
-                  <p>
-                    <span
-                      style={{
-                        fontWeight: "bold",
-                        color: "#000000",
-                        fontSize: ".9em",
-                      }}
-                    >
-                      We review and define scope:{" "}
-                    </span>{" "}
-                    Refine requirements, confirm approach, timelines,
-                    deliverables and budget
-                  </p>
-                </div>
-
-                <div className="email-side-point">
-                  <span>03</span>
-                  <p>
-                    {" "}
-                    <span
-                      style={{
-                        fontWeight: "bold",
-                        color: "#000000",
-                        fontSize: ".9em",
-                      }}
-                    >
-                      Kickoff and build:{" "}
-                    </span>{" "}
-                    Structured execution with regular updates and fast, direct
-                    communication
-                  </p>
-                </div>
-              </div>
-
-              <div className="email-side-badges">
-                <span>Strategy</span>
-                <span>Design</span>
-                <span>Development</span>
-              </div>
-            </div>
-          </motion.div>{" "}
           <motion.form
             onSubmit={handleSubmit}
             className="email-form-card"
-            initial={{ opacity: 0, x: 28 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65 }}
             viewport={{ once: true }}
           >

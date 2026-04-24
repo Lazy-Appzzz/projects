@@ -755,7 +755,7 @@ p {
 }
 
 .page-theme.theme-minimal-black .details-card {
-  background: linear-gradient(180deg, #26221d 0%, #1c1916 100%) !important;
+  background: #26282a !important;
 
   border-bottom: 2px solid #b27b32;
 
