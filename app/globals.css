@@ -292,12 +292,46 @@ body .chip-bg svg {
 .default-layout,
 .page-theme {
   position: relative;
+  isolation: isolate;
 }
 
-.full-width-layout > *:not(.chip-bg):not(.navbar),
-.default-layout > *:not(.chip-bg):not(.navbar) {
+body .chip-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.navbar {
+  position: sticky;
+  z-index: 20;
+}
+
+.main-full-width,
+.main,
+.main-full-width-content {
   position: relative;
   z-index: 1;
+}
+
+.footer {
+  position: relative;
+  z-index: 2;
+  background: #000000;
+}
+
+.navbar {
+  position: sticky;
+  z-index: 9999;
+}
+
+.menu-overlay {
+  z-index: 10000;
+}
+
+.menu-content {
+  z-index: 10001;
 }
 
 .loader-text-primary {

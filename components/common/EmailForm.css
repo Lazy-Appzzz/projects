@@ -101,7 +101,7 @@
 .email-field label {
   display: block;
   margin-bottom: 10px;
-  color: #d86161;
+  color: #111827;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -323,4 +323,12 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: #b27b32;
   color: #e5e7eb;
+}
+
+.page-theme.theme-minimal-black .email-field label {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.page-theme.theme-minimal-black .email-submit-btn {
+  background: #b47c2e;
 }

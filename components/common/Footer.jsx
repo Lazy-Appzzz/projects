@@ -1,12 +1,30 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import Logo from "./Logo";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import "./Footer.css";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const searchParams = useSearchParams();
+
+  const theme = searchParams.get("theme");
+
+  const withTheme = (href, options = {}) => {
+    const { defaultTheme } = options;
+
+    if (theme === "minimal" || theme === "minimal-black") {
+      return `${href}?theme=${theme}`;
+    }
+
+    if (defaultTheme) {
+      return `${href}?theme=${defaultTheme}`;
+    }
+
+    return href;
+  };
 
   return (
     <footer className="footer">
@@ -74,12 +92,12 @@ export default function Footer() {
             <h4>Resources</h4>
             <ul>
               <li>
-                <Link href="https://lindocode.com/privacy#minimal">
+                <Link href={withTheme("https://lindocode.com/privacy")}>
                   Privacy & POPIA Policy
                 </Link>
               </li>
               <li>
-                <Link href="https://lindocode.com/terms#minimal">
+                <Link href={withTheme("https://lindocode.com/terms")}>
                   Terms & Conditions
                 </Link>
               </li>
@@ -96,9 +114,13 @@ export default function Footer() {
                 <a href="mailto:info@lindocode.com">info@lindocode.com</a>
               </li>
               <li>
-                <Link href="https://lindocode.com/contact#minimal">
-                  Start a project
-                </Link>
+                <li>
+                  <Link
+                    href={withTheme("/contact", { defaultTheme: "minimal" })}
+                  >
+                    Start a project
+                  </Link>
+                </li>
               </li>
             </ul>
           </div>
