@@ -30,13 +30,13 @@
             "id": 1,
             "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/hub2-1.webp",
             "alt": "",
-            "caption": "Homepage layout is responsive on a number of devices for convenience."
+            "caption": "An interactive carousel interface allows users to browse and explore multiple links seamlessly."
           },
           {
             "id": 2,
-            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/hub1-1.webp",
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/mockups5.webp",
             "alt": "",
-            "caption": "Layout can be toggled to render cards in preferred user interface view."
+            "caption": "Live previews are paired with performance and reliability insights before visiting sites."
           }
         ],
         "features": [
@@ -103,7 +103,13 @@
             "id": 1,
             "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/mockups3-1.webp",
             "alt": "",
-            "caption": "Homepage layout is responsive on a number of devices for convenience."
+            "caption": "A bold hero section introduces the portfolio with dynamic theming and immediate visual context."
+          },
+          {
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/mockups4.webp",
+            "alt": "",
+            "caption": "Project sections combine media, descriptions, and interactions to provide a deeper look into each build."
           }
         ],
         "features": [
@@ -169,9 +175,15 @@
         "mockupImages": [
           {
             "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/mockups3.webp",
+            "alt": "",
+            "caption": "Structured sections present services and capabilities with clear hierarchy and focused messaging."
+          },
+          {
+            "id": 2,
             "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/mockups4-1.webp",
             "alt": "",
-            "caption": "Homepage layout is responsive on a number of devices for convenience."
+            "caption": "A clean, responsive homepage built to adapt seamlessly across devices while maintaining visual consistency."
           }
         ],
         "features": [
