@@ -14,7 +14,7 @@ const MOBILE_MEDIA_QUERY = "(max-width: 768px)";
 const dispatchedStacks = new Map();
 let previousPathname = null;
 
-const chunkArray = (array = [], size = 3) => {
+const chunkArray = (array = [], size = 5) => {
   if (!Array.isArray(array) || size <= 0) return [];
 
   const result = [];

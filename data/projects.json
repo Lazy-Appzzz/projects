@@ -5,8 +5,8 @@
         "title": "Digital Hub",
         "statusColor": "red",
         "statusText": "IN DEVELOPMENT",
-        "subtitle": "Linktree-style Portfolio Hub",
-        "description": "Digital Hub is a web app currently in development, designed to function as a centralized hub for digital products, experiences, and capabilities through a refined interface, streamlined for better accessibility and presentation.",
+        "subtitle": "Real-Time Link Insights & Safety Checks",
+        "description": "Explore links safely before you open them. Digital Hub gives you instant previews, performance insights, and trust indicators - all in one place.",
         "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/hub3-4.webp",
         "bgImage": "/assets/images/temp-latest/BG5.svg",
         "link": "#mockup-section-creative-hub",
@@ -73,6 +73,142 @@
         }
       }
     ],
+    [
+      {
+        "title": "Portfolio",
+        "statusColor": "red",
+        "statusText": "IN DEVELOPMENT",
+        "subtitle": "Developer Portfolio Site",
+        "description": "A premium, performance-focused developer portfolio built with Vite and modern UI principles. It showcases real-world projects, open-source activity, and interactive components with smooth animations, optimized for both high-end and low-end devices.",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/mockups2-1.webp",
+        "bgImage": "/assets/images/temp-latest/BG5.svg",
+        "link": "#mockup-section-creative-hub",
+        "githubLink": "https://github.com/Lindo-code/portfolio-site"
+      },
+      {
+        "title": "Portfolio Link",
+        "statusColor": "orange",
+        "statusText": "PORTFOLIO DETAILS",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "bgImage": "",
+        "link": "https://portfolio.lindocode.com/",
+        "iconKey": "digitalhub",
+        "cardId": "digital-hub",
+        "githubLink": "https://github.com/Lindocode-Digital/digital-hub",
+        "mockupWidth": 75,
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/mockups3-1.webp",
+            "alt": "",
+            "caption": "Homepage layout is responsive on a number of devices for convenience."
+          }
+        ],
+        "features": [
+          "Centralized portfolio hub",
+          "Responsive layout",
+          "Modern UI/UX design",
+          "Fast navigation",
+          "Scalable architecture"
+        ],
+        "stats": [
+          {
+            "label": "Performance",
+            "value": "99%"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "5/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
+          },
+          {
+            "label": "Completion",
+            "value": "99.9%"
+          }
+        ],
+        "icons": {
+          "tech": [
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg"
+          ]
+        }
+      }
+    ],
+
+    [
+      {
+        "title": "Lindocode Digital",
+        "statusColor": "red",
+        "statusText": "IN DEVELOPMENT",
+        "subtitle": "Home Page",
+        "description": "Official Lindocode Digital homepage. Showcasing our services across web development, mobile applications, databases, APIs, and full-stack digital solutions.",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/lindocode2.webp",
+        "bgImage": "/assets/images/temp-latest/BG5.svg",
+        "link": "#mockup-section-creative-hub",
+        "githubLink": ""
+      },
+      {
+        "title": "Lindocode Digital Link",
+        "statusColor": "orange",
+        "statusText": "LINDOCODE DIGITAL DETAILS",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "bgImage": "",
+        "link": "https://lindocode.com/",
+        "iconKey": "digitalhub",
+        "cardId": "digital-hub",
+        "githubLink": "",
+        "mockupWidth": 75,
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/mockups4-1.webp",
+            "alt": "",
+            "caption": "Homepage layout is responsive on a number of devices for convenience."
+          }
+        ],
+        "features": [
+          "Centralized portfolio hub",
+          "Responsive layout",
+          "Modern UI/UX design",
+          "Fast navigation",
+          "Scalable architecture"
+        ],
+        "stats": [
+          {
+            "label": "Performance",
+            "value": "98%"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "4.9/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
+          },
+          {
+            "label": "Completion",
+            "value": "95%"
+          }
+        ],
+        "icons": {
+          "tech": [
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg"
+          ]
+        }
+      }
+    ],
+
     [
       {
         "title": "Recipe Search",

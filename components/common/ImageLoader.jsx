@@ -68,8 +68,7 @@ const ImageLoader = ({
           transition: "opacity 0.2s ease",
         }}
         className={className}
-        onLoad={handleLoad}
-      />
+        onLoad={handleLoad}       />
     </div>
   );
 };

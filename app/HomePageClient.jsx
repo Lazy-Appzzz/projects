@@ -55,6 +55,7 @@ export default function HomePageClient({ theme = "" }) {
           cards={cardsData.webApps}
           multipleMockupWidth={100}
           stackOrder={0}
+          stackLimit={20}
         />
       </div>
 
@@ -75,6 +76,7 @@ export default function HomePageClient({ theme = "" }) {
           cards={cardsData.webGames}
           multipleMockupWidth={100}
           stackOrder={1}
+          stackLimit={20}
         />
       </div>
 
@@ -95,6 +97,7 @@ export default function HomePageClient({ theme = "" }) {
           cards={cardsData.mobileApps}
           multipleMockupWidth={100}
           stackOrder={2}
+          stackLimit={20}
         />
       </div>
     </FullWidthLayout>
