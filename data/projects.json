@@ -76,8 +76,8 @@
     [
       {
         "title": "Portfolio",
-        "statusColor": "red",
-        "statusText": "IN DEVELOPMENT",
+        "statusColor": "green",
+        "statusText": "LIVE",
         "subtitle": "Developer Portfolio Site",
         "description": "A premium, performance-focused developer portfolio built with Vite and modern UI principles. It showcases real-world projects, open-source activity, and interactive components with smooth animations, optimized for both high-end and low-end devices.",
         "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/mockups2-1.webp",
