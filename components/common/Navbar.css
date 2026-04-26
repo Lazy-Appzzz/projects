@@ -15,7 +15,7 @@ html {
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   box-shadow:
-    -4px 6px 12px rgba(0, 0, 0, 0.6),
+    0 10px 20px -10px rgba(0, 0, 0, 0.6),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
   color: rgba(255, 255, 255, 0.9);
   position: sticky;
