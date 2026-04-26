@@ -30,11 +30,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer-top">
-          <Link
-            href="https://lindocode.com/"
-            className="footer-brand"
-            aria-label="Lindocode Digital Home"
-          >
+          <div className="footer-brand">
             <div className="footer-brand-mark">
               <Logo
                 size="medium"
@@ -65,7 +61,7 @@ export default function Footer() {
                 clarity, and dependable digital experiences.
               </p>
             </div>
-          </Link>
+          </div>
         </div>
 
         <div className="footer-grid">
