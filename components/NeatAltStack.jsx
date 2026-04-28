@@ -765,10 +765,19 @@ const StackPair = ({
               <button
                 className="btn btn-primary details-card-button"
                 onClick={handlePreviewImageClick}
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer", border: "3px solid red" }}
               >
                 View More
-              </button>
+              </button>{" "}
+              <a
+                href={detailsCard.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary details-card-button"
+                style={{ textDecoration: "none", border: "3px solid red" }}
+              >
+                Open
+              </a>
             </div>
           )}
         </div>

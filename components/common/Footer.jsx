@@ -112,7 +112,9 @@ export default function Footer() {
               <li>
                 <li>
                   <Link
-                    href={withTheme("/contact", { defaultTheme: "minimal" })}
+                    href={withTheme("https://lindocode.com/contact", {
+                      defaultTheme: "minimal",
+                    })}
                   >
                     Start a project
                   </Link>
