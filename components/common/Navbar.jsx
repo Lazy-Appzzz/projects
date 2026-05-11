@@ -104,20 +104,6 @@ export default function Navbar({ theme = "" }) {
                 rayColor="var(--navbar-logo-color, #fff)"
                 dotColor="var(--navbar-logo-dot-color, #C90201)"
               />
-              <div className="brand-text">
-                <span
-                  className="brand-text1"
-                  style={{ fontFamily: "sans-serif" }}
-                >
-                  LINDOCODE
-                </span>
-                <span
-                  className="brand-text2"
-                  style={{ fontFamily: "sans-serif" }}
-                >
-                  DIGITAL
-                </span>
-              </div>
             </div>
 
             <div ref={menuWrapRef} className="navbar-menu-wrap">
