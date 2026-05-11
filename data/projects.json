@@ -75,6 +75,66 @@
     ],
     [
       {
+        "title": "LazyReader: Product Page",
+        "statusColor": "red",
+        "statusText": "IN DEVELOPMENT",
+        "subtitle": "Modern Cloud Reading Experience",
+        "description": "Discover the official LazyReader product page - showcasing the platform, features, design direction, and private testing access for the upcoming cloud-powered EPUB reading app experience.",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/lazyreader/lazyreader-site1-1.webp",
+        "link": "#mockup-section-lazy-reader",
+        "githubLink": ""
+      },
+      {
+        "title": "LazyReader: Product Page Link",
+        "statusColor": "orange",
+        "statusText": "LAZYREADER: PRODUCT DETAILS",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "bgImage": "",
+        "link": "https://lazyreader.lindocode.com",
+        "iconKey": "lazyreader",
+        "cardId": "lazy-reader",
+        "githubLink": "",
+        "mockupWidth": 75,
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/lazyreader/lazyreader-site2-1.webp",
+            "alt": "LazyReader landing page preview",
+            "caption": "Premium LazyReader landing page and immersive EPUB reading experience preview"
+          },
+          {
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/lazyreader/lazyreader-site3-1.webp",
+            "alt": "LazyReader closed testing download page",
+            "caption": "Private closed-testing APK access and secure download portal preview"
+          }
+        ],
+        "features": [
+          "Cloud-connected EPUB library access",
+          "Modern distraction-free reading UI",
+          "Cross-device reading experience",
+          "Google Drive integration",
+          "Fast and lightweight reader engine"
+        ],
+        "stats": [
+          { "label": "Performance", "value": "85%" },
+          { "label": "User Satisfaction", "value": "4.8/5" },
+          { "label": "Uptime", "value": "99.9%" },
+          { "label": "Completion", "value": "98%" }
+        ],
+        "icons": {
+          "tech": [
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg"
+          ]
+        }
+      }
+    ],
+    [
+      {
         "title": "Portfolio",
         "statusColor": "green",
         "statusText": "LIVE",
@@ -570,6 +630,68 @@
     ]
   ],
   "mobileApps": [
+    [
+      {
+        "title": "LazyReader",
+        "statusColor": "red",
+        "statusText": "IN DEVELOPMENT",
+        "subtitle": "Cloud-Powered EPUB Reading Experience",
+        "description": "LazyReader is a modern cloud-connected EPUB reader designed for readers who want access to their personal library anywhere. Connect your cloud storage, open your books instantly, and enjoy a focused reading experience with a premium interface built for speed and simplicity.",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/lazyreader/lazyreader-app2.webp",
+        "link": "#mockup-section-lazy-reader",
+        "githubLink": "https://github.com/Lindocode-Digital/lazyreader-releases",
+        "sticker": "circle"
+      },
+      {
+        "title": "LazyReader Link",
+        "statusColor": "orange",
+        "statusText": "LAZYREADER DETAILS",
+        "subtitle": "",
+        "description": "",
+        "image": "",
+        "bgImage": "",
+        "link": "https://lazyreader.lindocode.com",
+        "iconKey": "lazyreader",
+        "cardId": "lazy-reader",
+        "githubLink": "https://github.com/Lindocode-Digital/lazyreader-releases",
+        "mockupWidth": 75,
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/lazyreader/lazyreader-app3-1.webp",
+            "alt": "LazyReader book loading experience",
+            "caption": "Guided loading and progress interface displayed while preparing and opening books"
+          },
+          {
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/lazyreader/lazyreader-app1-3.webp",
+            "alt": "LazyReader reader settings and book controls",
+            "caption": "Reader interface showcasing book details, reading customization, table of contents, and reading controls"
+          }
+        ],
+        "features": [
+          "Cloud-connected EPUB library access",
+          "Modern distraction-free reading UI",
+          "Cross-device reading experience",
+          "Google Drive integration",
+          "Fast and lightweight reader engine"
+        ],
+        "stats": [
+          { "label": "Performance", "value": "85%" },
+          { "label": "User Satisfaction", "value": "4.8/5" },
+          { "label": "Uptime", "value": "99.9%" },
+          { "label": "Completion", "value": "98%" }
+        ],
+        "icons": {
+          "tech": [
+            "assets/images/icons/docker-logo-svgrepo-com.svg",
+            "assets/images/icons/git-svgrepo-com.svg",
+            "assets/images/icons/react-svgrepo-com.svg"
+          ]
+        }
+      }
+    ],
+
     [
       {
         "title": "Scan Me",
