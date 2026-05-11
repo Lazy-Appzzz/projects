@@ -132,10 +132,10 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(229, 231, 235, 0.9);
-  border-top: 4px solid #c90201;
-  border-left: 4px solid #c90201;
-  border-bottom: 4px solid #c90201;
+  /*  border: 1px solid rgba(229, 231, 235, 0.9); */
+  /* border-top: 4px solid #c90201; */
+  /* border-left: 4px solid #c90201; */
+  /* border-bottom: 4px solid #c90201; */
   border-radius: 28px 0 0 28px;
   backdrop-filter: blur(10px);
 }

@@ -11,12 +11,13 @@ const ImageLoader = ({
   style,
   className,
   onLoadingChange,
+  priority = false,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLoad = () => {
     setIsLoading(false);
-    onLoadingChange?.(false); // 👈 notify parent
+    onLoadingChange?.(false);
   };
 
   return (
@@ -62,13 +63,16 @@ const ImageLoader = ({
         alt={alt}
         width={width}
         height={height}
+        quality={85}
+        priority={priority}
         style={{
           ...style,
           opacity: isLoading ? 0 : 1,
-          transition: "opacity 0.2s ease",
+          transition: "opacity 0.25s ease",
         }}
         className={className}
-        onLoad={handleLoad}       />
+        onLoad={handleLoad}
+      />{" "}
     </div>
   );
 };

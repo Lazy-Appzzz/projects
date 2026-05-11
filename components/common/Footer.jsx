@@ -71,16 +71,12 @@ export default function Footer() {
               <li>
                 <Link href="https://lindocode.com/">Lindocode Digital</Link>
               </li>
-
+              <li>
+                <Link href="https://lazyreader.lindocode.com">LazyReader</Link>
+              </li>
               <li>
                 <Link href="https://lindocode.com/digitalhub">Digital Hub</Link>
               </li>
-              {/* <li> */}
-              {/*   <Link href="/projects">Featured Projects</Link> */}
-              {/* </li> */}
-              {/* <li> */}
-              {/*   <Link href="/contact">Contact</Link> */}
-              {/* </li> */}
             </ul>
           </div>
 
@@ -97,9 +93,6 @@ export default function Footer() {
                   Terms & Conditions
                 </Link>
               </li>
-              {/* <li> */}
-              {/*   <Link href="/attributes">Image Attributes</Link> */}
-              {/* </li> */}
             </ul>
           </div>
 
