@@ -4,18 +4,20 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "tinacms dev -c \"next dev\"",
+    "build": "tinacms build && next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@tinacms/cli": "^2.4.3",
     "framer-motion": "^12.38.0",
     "next": "16.2.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-icons": "^5.6.0",
-    "react-intersection-observer": "^10.0.3"
+    "react-intersection-observer": "^10.0.3",
+    "tinacms": "^3.9.0"
   },
   "devDependencies": {
     "eslint": "^9",
