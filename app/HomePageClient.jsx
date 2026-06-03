@@ -5,6 +5,10 @@ import FullWidthLayout from "@/components/layouts/FullWidthLayout";
 import cardsData from "@/data/projects.json";
 import NeatAltStackGrouped from "@/components/NeatStack";
 
+const webApps = cardsData.webApps.map(p => [p.card, p.detail]);
+const webGames = cardsData.webGames.map(p => [p.card, p.detail]);
+const mobileApps = cardsData.mobileApps.map(p => [p.card, p.detail]);
+
 export default function HomePageClient({ theme = "" }) {
   const [selectedPair, setSelectedPair] = useState(null);
 
@@ -52,7 +56,7 @@ export default function HomePageClient({ theme = "" }) {
 
         <NeatAltStackGrouped
           theme={theme}
-          cards={cardsData.webApps}
+          cards={webApps}
           multipleMockupWidth={100}
           stackOrder={0}
           stackLimit={20}
@@ -73,7 +77,7 @@ export default function HomePageClient({ theme = "" }) {
 
         <NeatAltStackGrouped
           theme={theme}
-          cards={cardsData.webGames}
+          cards={webGames}
           multipleMockupWidth={100}
           stackOrder={1}
           stackLimit={20}
@@ -94,7 +98,7 @@ export default function HomePageClient({ theme = "" }) {
 
         <NeatAltStackGrouped
           theme={theme}
-          cards={cardsData.mobileApps}
+          cards={mobileApps}
           multipleMockupWidth={100}
           stackOrder={2}
           stackLimit={20}

@@ -5,6 +5,8 @@ import NeatAltStack from "@/components/NeatAltStack";
 import NeatAltStackGrouped from "@/components/NeatStack";
 import cardsData from "@/data/projects.json";
 
+const mobileApps = cardsData.mobileApps.map(p => [p.card, p.detail]);
+
 export default function MobileAppsPageClient({ theme = "" }) {
   return (
     <FullWidthLayout
@@ -21,14 +23,14 @@ export default function MobileAppsPageClient({ theme = "" }) {
       {" "}
       <div className="others">
         <NeatAltStackGrouped
-          cards={cardsData.mobileApps}
+          cards={mobileApps}
           multipleMockupWidth={100}
           theme={theme}
         />
       </div>{" "}
       <div className="desktop">
         <NeatAltStack
-          cards={cardsData.mobileApps}
+          cards={mobileApps}
           multipleMockupWidth={100}
           theme={theme}
         />

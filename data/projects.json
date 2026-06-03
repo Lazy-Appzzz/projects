@@ -1,7 +1,7 @@
 {
   "webApps": [
-    [
-      {
+    {
+      "card": {
         "title": "Digital Hub",
         "statusColor": "red",
         "statusText": "IN DEVELOPMENT",
@@ -12,7 +12,7 @@
         "link": "#mockup-section-creative-hub",
         "githubLink": "https://github.com/Lindocode-Digital/digital-hub"
       },
-      {
+      "detail": {
         "title": "Digital Hub Link",
         "statusColor": "orange",
         "statusText": "DIGITAL HUB DETAILS",
@@ -72,9 +72,9 @@
           ]
         }
       }
-    ],
-    [
-      {
+    },
+    {
+      "card": {
         "title": "LazyReader: Product Page",
         "statusColor": "red",
         "statusText": "IN DEVELOPMENT",
@@ -84,7 +84,7 @@
         "link": "#mockup-section-lazy-reader",
         "githubLink": ""
       },
-      {
+      "detail": {
         "title": "LazyReader: Product Page Link",
         "statusColor": "orange",
         "statusText": "LAZYREADER: PRODUCT DETAILS",
@@ -132,9 +132,9 @@
           ]
         }
       }
-    ],
-    [
-      {
+    },
+    {
+      "card": {
         "title": "Portfolio",
         "statusColor": "green",
         "statusText": "LIVE",
@@ -145,7 +145,7 @@
         "link": "#mockup-section-creative-hub",
         "githubLink": "https://github.com/Lindo-code/portfolio-site"
       },
-      {
+      "detail": {
         "title": "Portfolio Link",
         "statusColor": "orange",
         "statusText": "PORTFOLIO DETAILS",
@@ -205,10 +205,9 @@
           ]
         }
       }
-    ],
-
-    [
-      {
+    },
+    {
+      "card": {
         "title": "Lindocode Digital",
         "statusColor": "red",
         "statusText": "IN DEVELOPMENT",
@@ -219,7 +218,7 @@
         "link": "#mockup-section-creative-hub",
         "githubLink": ""
       },
-      {
+      "detail": {
         "title": "Lindocode Digital Link",
         "statusColor": "orange",
         "statusText": "LINDOCODE DIGITAL DETAILS",
@@ -279,10 +278,9 @@
           ]
         }
       }
-    ],
-
-    [
-      {
+    },
+    {
+      "card": {
         "title": "Recipe Search",
         "statusColor": "green",
         "statusText": "LIVE",
@@ -292,7 +290,7 @@
         "bgImage": "/assets/images/temp-latest/BG4.svg",
         "link": "#stats-section-recipe-search"
       },
-      {
+      "detail": {
         "title": "Recipe Search Link",
         "statusColor": "orange",
         "statusText": "RECIPE SEARCH DETAILS",
@@ -367,11 +365,11 @@
           ]
         }
       }
-    ]
+    }
   ],
   "webGames": [
-    [
-      {
+    {
+      "card": {
         "title": "Infiltration Countdown",
         "statusText": "IN DEVELOPMENT",
         "statusColor": "red",
@@ -381,7 +379,7 @@
         "bgImage": "/assets/images/temp-latest/BG5.svg",
         "link": "#stats-section-infiltration-countdown"
       },
-      {
+      "detail": {
         "title": "Infiltration Countdown Link",
         "statusColor": "orange",
         "statusText": "INFILTRATION COUNTDOWN DETAILS",
@@ -397,7 +395,7 @@
             "id": 1,
             "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/infiltration1.webp",
             "alt": "",
-            "caption": "A victory screen is displayed upon completion, featuring a “Well done, soldier!” message alongside the player’s performance statistics."
+            "caption": "A victory screen is displayed upon completion, featuring a \"Well done, soldier!\" message alongside the player's performance statistics."
           },
           {
             "id": 2,
@@ -455,9 +453,9 @@
           ]
         }
       }
-    ],
-    [
-      {
+    },
+    {
+      "card": {
         "title": "Jambuddy",
         "statusText": "LIVE",
         "statusColor": "green",
@@ -467,7 +465,7 @@
         "bgImage": "/assets/images/temp-latest/BG4.svg",
         "link": "#stats-section-jambuddy"
       },
-      {
+      "detail": {
         "title": "Jambuddy Link",
         "statusColor": "orange",
         "statusText": "JAMBUDDY DETAILS",
@@ -541,9 +539,9 @@
           ]
         }
       }
-    ],
-    [
-      {
+    },
+    {
+      "card": {
         "title": "Memory Game",
         "statusColor": "green",
         "statusText": "LIVE",
@@ -553,7 +551,7 @@
         "bgImage": "/assets/images/temp-latest/BG3.svg",
         "link": "#stats-section-memory-game"
       },
-      {
+      "detail": {
         "title": "Memory Game",
         "statusColor": "orange",
         "statusText": "MEMORY GAME DETAILS",
@@ -627,11 +625,11 @@
           ]
         }
       }
-    ]
+    }
   ],
   "mobileApps": [
-    [
-      {
+    {
+      "card": {
         "title": "LazyReader",
         "statusColor": "red",
         "statusText": "IN DEVELOPMENT",
@@ -641,10 +639,9 @@
         "link": "#mockup-section-lazy-reader",
         "githubLink": "https://github.com/Lindocode-Digital/lazyreader-releases",
         "mockupWidth": 75,
-
         "sticker": "circle"
       },
-      {
+      "detail": {
         "title": "LazyReader Link",
         "statusColor": "orange",
         "statusText": "LAZYREADER DETAILS",
@@ -692,10 +689,9 @@
           ]
         }
       }
-    ],
-
-    [
-      {
+    },
+    {
+      "card": {
         "title": "Scan Me",
         "statusColor": "green",
         "statusText": "LIVE",
@@ -706,7 +702,7 @@
         "link": "#stats-section-scan-me",
         "sticker": "circle"
       },
-      {
+      "detail": {
         "title": "Scan Me",
         "statusColor": "orange",
         "statusText": "SCAN ME DETAILS",
@@ -781,20 +777,20 @@
           ]
         }
       }
-    ],
-    [
-      {
+    },
+    {
+      "card": {
         "title": "Simple Variometer",
         "statusColor": "green",
         "statusText": "LIVE",
         "subtitle": "Altitude & Acceleration Tracker for Pilots",
-        "description": "Simple Variometer is a pilot-assist app that monitors vertical acceleration using a mobile device’s built-in sensors. Key features include speed, position, and heading display, altitude trend indicators, and continuous screen activation for flight readiness.",
+        "description": "Simple Variometer is a pilot-assist app that monitors vertical acceleration using a mobile device's built-in sensors. Key features include speed, position, and heading display, altitude trend indicators, and continuous screen activation for flight readiness.",
         "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/vario.webp",
         "bgImage": "/assets/images/temp-latest/BG4.svg",
         "link": "#stats-section-simple-variometer",
         "sticker": "circle"
       },
-      {
+      "detail": {
         "title": "Simple Variometer",
         "statusColor": "orange",
         "statusText": "SIMPLE VARIOMETER DETAILS",
@@ -872,9 +868,9 @@
           ]
         }
       }
-    ],
-    [
-      {
+    },
+    {
+      "card": {
         "title": "Eco Collect",
         "statusColor": "red",
         "statusText": "IN DEVELOPMENT",
@@ -886,7 +882,7 @@
         "imgTransform": "rotate(3.5deg) scale(.8)",
         "sticker": "circle"
       },
-      {
+      "detail": {
         "title": "Eco Collect Prototype Link",
         "statusColor": "orange",
         "statusText": "ECO COLLECT DETAILS",
@@ -964,7 +960,7 @@
           ]
         }
       }
-    ]
+    }
   ],
   "appGames": []
 }

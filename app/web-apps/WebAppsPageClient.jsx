@@ -5,6 +5,8 @@ import NeatAltStackGrouped from "@/components/NeatStack";
 import NeatAltStack from "@/components/NeatAltStack";
 import cardsData from "@/data/projects.json";
 
+const webApps = cardsData.webApps.map(p => [p.card, p.detail]);
+
 export default function WebAppsPageClient({ theme = "" }) {
   return (
     <FullWidthLayout
@@ -20,14 +22,14 @@ export default function WebAppsPageClient({ theme = "" }) {
     >
       <div className="others">
         <NeatAltStackGrouped
-          cards={cardsData.webApps}
+          cards={webApps}
           multipleMockupWidth={100}
           theme={theme}
         />
       </div>{" "}
       <div className="desktop">
         <NeatAltStack
-          cards={cardsData.webApps}
+          cards={webApps}
           multipleMockupWidth={100}
           theme={theme}
         />
