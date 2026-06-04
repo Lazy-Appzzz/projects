@@ -65,8 +65,8 @@
     {
       "card": {
         "title": "LazyReader: Product Page",
-        "statusColor": "red",
-        "statusText": "IN DEVELOPMENT",
+        "statusColor": "green",
+        "statusText": "LIVE",
         "subtitle": "Modern Cloud Reading Experience",
         "description": "Discover the official LazyReader product page - showcasing the platform, features, design direction, and private testing access for the upcoming cloud-powered EPUB reading app experience.",
         "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/lazyreader/lazyreader-site1-1.webp",
