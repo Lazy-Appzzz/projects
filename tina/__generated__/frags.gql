@@ -1,0 +1,183 @@
+fragment ProjectsParts on Projects {
+  __typename
+  webApps {
+    __typename
+    card {
+      __typename
+      title
+      statusColor
+      statusText
+      subtitle
+      description
+      image
+      bgImage
+      link
+      githubLink
+      mockupWidth
+      imgTransform
+      sticker
+    }
+    detail {
+      __typename
+      title
+      statusColor
+      statusText
+      link
+      iconKey
+      cardId
+      githubLink
+      mockupWidth
+      button
+      buttonText
+      incomplete
+      mockupImages {
+        __typename
+        id
+        src
+        alt
+        caption
+      }
+      features
+      stats {
+        __typename
+        label
+        value
+      }
+    }
+  }
+  webGames {
+    __typename
+    card {
+      __typename
+      title
+      statusColor
+      statusText
+      subtitle
+      description
+      image
+      bgImage
+      link
+      githubLink
+      mockupWidth
+      imgTransform
+      sticker
+    }
+    detail {
+      __typename
+      title
+      statusColor
+      statusText
+      link
+      iconKey
+      cardId
+      githubLink
+      mockupWidth
+      button
+      buttonText
+      incomplete
+      mockupImages {
+        __typename
+        id
+        src
+        alt
+        caption
+      }
+      features
+      stats {
+        __typename
+        label
+        value
+      }
+    }
+  }
+  mobileApps {
+    __typename
+    card {
+      __typename
+      title
+      statusColor
+      statusText
+      subtitle
+      description
+      image
+      bgImage
+      link
+      githubLink
+      mockupWidth
+      imgTransform
+      sticker
+    }
+    detail {
+      __typename
+      title
+      statusColor
+      statusText
+      link
+      iconKey
+      cardId
+      githubLink
+      mockupWidth
+      button
+      buttonText
+      incomplete
+      mockupImages {
+        __typename
+        id
+        src
+        alt
+        caption
+      }
+      features
+      stats {
+        __typename
+        label
+        value
+      }
+    }
+  }
+  appGames {
+    __typename
+    card {
+      __typename
+      title
+      statusColor
+      statusText
+      subtitle
+      description
+      image
+      bgImage
+      link
+      githubLink
+      mockupWidth
+      imgTransform
+      sticker
+    }
+    detail {
+      __typename
+      title
+      statusColor
+      statusText
+      link
+      iconKey
+      cardId
+      githubLink
+      mockupWidth
+      button
+      buttonText
+      incomplete
+      mockupImages {
+        __typename
+        id
+        src
+        alt
+        caption
+      }
+      features
+      stats {
+        __typename
+        label
+        value
+      }
+    }
+  }
+}
