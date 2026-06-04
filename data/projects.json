@@ -16,10 +16,6 @@
         "title": "Digital Hub Link",
         "statusColor": "orange",
         "statusText": "DIGITAL HUB DETAILS",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "bgImage": "",
         "link": "https://lindocode.com/digitalhub",
         "iconKey": "digitalhub",
         "cardId": "digital-hub",
@@ -63,14 +59,7 @@
             "label": "Completion",
             "value": "60%"
           }
-        ],
-        "icons": {
-          "tech": [
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg"
-          ]
-        }
+        ]
       }
     },
     {
@@ -88,10 +77,6 @@
         "title": "LazyReader: Product Page Link",
         "statusColor": "orange",
         "statusText": "LAZYREADER: PRODUCT DETAILS",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "bgImage": "",
         "link": "https://lazyreader.lindocode.com",
         "iconKey": "lazyreader",
         "cardId": "lazy-reader",
@@ -119,18 +104,23 @@
           "Fast and lightweight reader engine"
         ],
         "stats": [
-          { "label": "Performance", "value": "85%" },
-          { "label": "User Satisfaction", "value": "4.8/5" },
-          { "label": "Uptime", "value": "99.9%" },
-          { "label": "Completion", "value": "98%" }
-        ],
-        "icons": {
-          "tech": [
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg"
-          ]
-        }
+          {
+            "label": "Performance",
+            "value": "85%"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "4.8/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
+          },
+          {
+            "label": "Completion",
+            "value": "98%"
+          }
+        ]
       }
     },
     {
@@ -149,10 +139,6 @@
         "title": "Portfolio Link",
         "statusColor": "orange",
         "statusText": "PORTFOLIO DETAILS",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "bgImage": "",
         "link": "https://portfolio.lindocode.com/",
         "iconKey": "digitalhub",
         "cardId": "digital-hub",
@@ -196,14 +182,7 @@
             "label": "Completion",
             "value": "99.9%"
           }
-        ],
-        "icons": {
-          "tech": [
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg"
-          ]
-        }
+        ]
       }
     },
     {
@@ -222,10 +201,6 @@
         "title": "Lindocode Digital Link",
         "statusColor": "orange",
         "statusText": "LINDOCODE DIGITAL DETAILS",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "bgImage": "",
         "link": "https://lindocode.com/",
         "iconKey": "digitalhub",
         "cardId": "digital-hub",
@@ -269,14 +244,7 @@
             "label": "Completion",
             "value": "95%"
           }
-        ],
-        "icons": {
-          "tech": [
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg"
-          ]
-        }
+        ]
       }
     },
     {
@@ -294,14 +262,10 @@
         "title": "Recipe Search Link",
         "statusColor": "orange",
         "statusText": "RECIPE SEARCH DETAILS",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "bgImage": "",
-        "mockupWidth": 100,
+        "link": "https://lindo-code-recipe-search-app.netlify.app/",
         "iconKey": "recipe-search",
         "cardId": "recipe-search",
-        "link": "https://lindo-code-recipe-search-app.netlify.app/",
+        "mockupWidth": 100,
         "mockupImages": [
           {
             "id": 1,
@@ -340,30 +304,7 @@
             "label": "Completion",
             "value": "98%"
           }
-        ],
-        "icons": {
-          "tech": [
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg",
-            "assets/images/icons/aws-svgrepo-com.svg",
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg"
-          ]
-        }
+        ]
       }
     }
   ],
@@ -371,8 +312,8 @@
     {
       "card": {
         "title": "Infiltration Countdown",
-        "statusText": "IN DEVELOPMENT",
         "statusColor": "red",
+        "statusText": "IN DEVELOPMENT",
         "subtitle": "2D Space Shooter Game",
         "description": "A space-themed game where players control the SH-141 Fighter Battleship, engaging in battles against light and heavy enemy battleships. The game offers a variety of challenges, requiring players to navigate and defeat enemy ships while avoiding collisions and achieving specific objectives.",
         "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/infiltration.webp",
@@ -383,13 +324,9 @@
         "title": "Infiltration Countdown Link",
         "statusColor": "orange",
         "statusText": "INFILTRATION COUNTDOWN DETAILS",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "bgImage": "",
+        "link": "https://lindo-code-infiltration-countdown.netlify.app/",
         "iconKey": "infiltration",
         "cardId": "infiltration-countdown",
-        "link": "https://lindo-code-infiltration-countdown.netlify.app/",
         "mockupImages": [
           {
             "id": 1,
@@ -428,37 +365,14 @@
             "label": "Completion",
             "value": "61%"
           }
-        ],
-        "icons": {
-          "tech": [
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg",
-            "assets/images/icons/aws-svgrepo-com.svg",
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg"
-          ]
-        }
+        ]
       }
     },
     {
       "card": {
         "title": "Jambuddy",
-        "statusText": "LIVE",
         "statusColor": "green",
+        "statusText": "LIVE",
         "subtitle": "Vanilla Javascrip Semitone difference Game",
         "description": "This interactive music theory game helps users practice interval recognition using the note circle. The app randomly selects two notes, and the user must calculate the number of semi-tones between them. Ideal for musicians, it reinforces theory knowledge in a simple, engaging quiz format.",
         "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/jambuddy-1.webp",
@@ -469,13 +383,9 @@
         "title": "Jambuddy Link",
         "statusColor": "orange",
         "statusText": "JAMBUDDY DETAILS",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "bgImage": "",
+        "link": "https://lindo-code-semitone-difference.netlify.app/",
         "iconKey": "jambuddy",
         "cardId": "jambuddy",
-        "link": "https://lindo-code-semitone-difference.netlify.app/",
         "mockupImages": [
           {
             "id": 1,
@@ -514,30 +424,7 @@
             "label": "Completion",
             "value": "99.9%"
           }
-        ],
-        "icons": {
-          "tech": [
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg",
-            "assets/images/icons/aws-svgrepo-com.svg",
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg"
-          ]
-        }
+        ]
       }
     },
     {
@@ -546,7 +433,7 @@
         "statusColor": "green",
         "statusText": "LIVE",
         "subtitle": "React-Based Emoji Matching Game",
-        "description": "A fun and interactive memory card game built with React. Players flip over emoji cards two at a time to find matching pairs, with animated feedback for matches and mismatches. The game includes dynamic state management, reset functionality, and a celebratory modal upon completion.",
+        "description": "A fun and interactive memory card game built with React. Players flip over emoji cards two at a time to find matching pairs, with animated feedback for matches and mismatches. The game includes dynamic state management, reset functionality, and a celebratory modal upon completion. Visit page to play.",
         "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/mem-game.webp",
         "bgImage": "/assets/images/temp-latest/BG3.svg",
         "link": "#stats-section-memory-game"
@@ -555,13 +442,9 @@
         "title": "Memory Game",
         "statusColor": "orange",
         "statusText": "MEMORY GAME DETAILS",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "bgImage": "",
+        "link": "https://lindo-code-memory-game.netlify.app/",
         "iconKey": "memory-game",
         "cardId": "memory-game",
-        "link": "https://lindo-code-memory-game.netlify.app/",
         "mockupImages": [
           {
             "id": 1,
@@ -575,6 +458,13 @@
             "alt": "",
             "caption": "Once cards are matched they remain flipped and color changes from gold to green."
           }
+        ],
+        "features": [
+          "Engaging memory card gameplay powered by React",
+          "Animated emoji matching with real-time feedback",
+          "Smooth state-driven game logic and progression",
+          "Instant reset and replay for continuous engagement",
+          "Victory modal pops up when game has been won."
         ],
         "stats": [
           {
@@ -593,37 +483,7 @@
             "label": "Completion",
             "value": "89.9%"
           }
-        ],
-        "features": [
-          "Engaging memory card gameplay powered by React",
-          "Animated emoji matching with real-time feedback",
-          "Smooth state-driven game logic and progression",
-          "Instant reset and replay for continuous engagement",
-          "Victory modal pops up when game has been won."
-        ],
-        "icons": {
-          "tech": [
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg",
-            "assets/images/icons/aws-svgrepo-com.svg",
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg"
-          ]
-        }
+        ]
       }
     }
   ],
@@ -645,10 +505,6 @@
         "title": "LazyReader Link",
         "statusColor": "orange",
         "statusText": "LAZYREADER DETAILS",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "bgImage": "",
         "link": "https://lazyreader.lindocode.com",
         "iconKey": "lazyreader",
         "cardId": "lazy-reader",
@@ -676,18 +532,23 @@
           "Fast and lightweight reader engine"
         ],
         "stats": [
-          { "label": "Performance", "value": "85%" },
-          { "label": "User Satisfaction", "value": "4.8/5" },
-          { "label": "Uptime", "value": "99.9%" },
-          { "label": "Completion", "value": "98%" }
-        ],
-        "icons": {
-          "tech": [
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg"
-          ]
-        }
+          {
+            "label": "Performance",
+            "value": "85%"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "4.8/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
+          },
+          {
+            "label": "Completion",
+            "value": "98%"
+          }
+        ]
       }
     },
     {
@@ -706,13 +567,9 @@
         "title": "Scan Me",
         "statusColor": "orange",
         "statusText": "SCAN ME DETAILS",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "bgImage": "",
         "link": "",
-        "cardId": "scan-me",
         "iconKey": "scan-me",
+        "cardId": "scan-me",
         "mockupWidth": 45,
         "mockupImages": [
           {
@@ -752,30 +609,7 @@
             "label": "Completion",
             "value": "99.9%"
           }
-        ],
-        "icons": {
-          "tech": [
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg",
-            "assets/images/icons/aws-svgrepo-com.svg",
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg"
-          ]
-        }
+        ]
       }
     },
     {
@@ -794,13 +628,9 @@
         "title": "Simple Variometer",
         "statusColor": "orange",
         "statusText": "SIMPLE VARIOMETER DETAILS",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "bgImage": "",
         "link": "",
-        "cardId": "simple-variometer",
         "iconKey": "simple-vario",
+        "cardId": "simple-variometer",
         "mockupImages": [
           {
             "id": 1,
@@ -843,30 +673,7 @@
             "label": "Completion",
             "value": "99.9%"
           }
-        ],
-        "icons": {
-          "tech": [
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg",
-            "assets/images/icons/aws-svgrepo-com.svg",
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg"
-          ]
-        }
+        ]
       }
     },
     {
@@ -886,17 +693,13 @@
         "title": "Eco Collect Prototype Link",
         "statusColor": "orange",
         "statusText": "ECO COLLECT DETAILS",
-        "subtitle": "",
-        "description": "",
-        "image": "",
-        "bgImage": "",
         "link": "",
-        "cardId": "eco-collect",
         "iconKey": "eco-collect",
+        "cardId": "eco-collect",
         "mockupWidth": 35,
         "button": true,
-        "incomplete": "true",
         "buttonText": "View Prototype",
+        "incomplete": "true",
         "mockupImages": [
           {
             "id": 1,
@@ -935,30 +738,7 @@
             "label": "Completion",
             "value": "40%"
           }
-        ],
-        "icons": {
-          "tech": [
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg",
-            "assets/images/icons/aws-svgrepo-com.svg",
-            "assets/images/icons/docker-logo-svgrepo-com.svg",
-            "assets/images/icons/html-5-svgrepo-com.svg",
-            "assets/images/icons/css-3-svgrepo-com.svg",
-            "assets/images/icons/javascript-svgrepo-com.svg",
-            "assets/images/icons/nodejs-svgrepo-com.svg",
-            "assets/images/icons/git-svgrepo-com.svg",
-            "assets/images/icons/react-svgrepo-com.svg",
-            "assets/images/icons/expo-svgrepo-com.svg",
-            "assets/images/icons/figma-svgrepo-com.svg"
-          ]
-        }
+        ]
       }
     }
   ],
