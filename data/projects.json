@@ -353,6 +353,10 @@
           {
             "label": "User Satisfaction",
             "value": "4.8/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
           }
         ]
       }
