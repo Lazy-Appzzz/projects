@@ -130,7 +130,7 @@
         "statusText": "LIVE",
         "subtitle": "Modern Authoring Studio for EPUB creation.",
         "description": "LazyAuthor is a distraction-free writing studio built for authors who want to craft and publish interactive EPUBs without the friction. Write in a clean, focused editor, structure your chapters, embed rich media, and produce polished EPUB files ready for any reader. Pair it with LazyReader to push your work straight to your personal library and read it exactly as your audience will.",
-        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor.webp",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/lazyauthor/lazyauthor.webp",
         "link": "#mockup-section-lazy-author"
       },
       "detail": {
@@ -144,13 +144,13 @@
         "mockupImages": [
           {
             "id": 1,
-            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor1.webp",
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/lazyauthor/lazyauthor1.webp",
             "alt": "LazyAuthor mode selection preview",
             "caption": "In LazyAuthor selection mode user selects between interactive and normal EPUB creation."
           },
           {
             "id": 2,
-            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor2.webp",
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/lazyauthor/lazyauthor2.webp",
             "alt": "LazyAuthor EPUB preview mode",
             "caption": "In LazyAuthor preview mode user can preview how page will look once EPUB is exported."
           }
@@ -802,3 +802,4 @@
   ],
   "appGames": []
 }
+
