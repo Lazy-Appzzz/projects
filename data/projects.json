@@ -357,6 +357,10 @@
           {
             "label": "Uptime",
             "value": "99.9%"
+          },
+          {
+            "label": "Comletion",
+            "value": "90%"
           }
         ]
       }
