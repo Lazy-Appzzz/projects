@@ -321,6 +321,8 @@
         "statusColor": "orange",
         "statusText": "RECIPE SEARCH DETAILS",
         "link": "https://lazyauthor.lindocode.com",
+        "iconKey": "lazyreader",
+        "cardId": "lazy-author",
         "mockupWidth": 75,
         "mockupImages": [
           {
