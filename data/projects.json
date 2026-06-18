@@ -330,7 +330,10 @@
             "caption": "In LazyAuthor selection mode user selects between interactive and normal EPUB creation."
           },
           {
-            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor2.webp"
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor2.webp",
+            "alt": "LazyAuthor EPUB preview mode",
+            "caption": "In LazyAuthor preview mode user can preview how page will look once EPUB is exported."
           }
         ]
       }
