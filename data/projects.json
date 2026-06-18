@@ -321,9 +321,13 @@
         "statusColor": "orange",
         "statusText": "RECIPE SEARCH DETAILS",
         "link": "https://lazyauthor.lindocode.com",
+        "mockupWidth": 75,
         "mockupImages": [
           {
-            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor.webp1"
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor1.webp",
+            "alt": "LazyAuthor mode selection preview",
+            "caption": "In LazyAuthor selection mode user selects between interactive and normal EPUB creation."
           },
           {
             "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor2.webp"
