@@ -318,6 +318,7 @@
         "link": "#mockup-section-lazy-author"
       },
       "detail": {
+        "title": "LazyAuthor",
         "statusColor": "orange",
         "statusText": "RECIPE SEARCH DETAILS",
         "link": "https://lazyauthor.lindocode.com",
@@ -336,6 +337,18 @@
             "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor2.webp",
             "alt": "LazyAuthor EPUB preview mode",
             "caption": "In LazyAuthor preview mode user can preview how page will look once EPUB is exported."
+          }
+        ],
+        "features": [
+          "Auto-Save & Sync, means work is saved immediately on every change. Provides instant load on the next visit even without internet.",
+          "Import EPUB & content is mapped to chapters automatically",
+          "Preview mode in the chapter editor to see rendering of the chapter exactly as it will appear in the EPUB",
+          "With Interactive Story Editor write interactive stories with rich media such as audio & images"
+        ],
+        "stats": [
+          {
+            "label": "Performance",
+            "value": "98%"
           }
         ]
       }
