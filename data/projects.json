@@ -672,70 +672,6 @@
     },
     {
       "card": {
-        "title": "Simple Variometer",
-        "statusColor": "green",
-        "statusText": "LIVE",
-        "subtitle": "Altitude & Acceleration Tracker for Pilots",
-        "description": "Simple Variometer is a pilot-assist app that monitors vertical acceleration using a mobile device's built-in sensors. Key features include speed, position, and heading display, altitude trend indicators, and continuous screen activation for flight readiness.",
-        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/vario.webp",
-        "bgImage": "/assets/images/temp-latest/BG4.svg",
-        "link": "#stats-section-simple-variometer",
-        "sticker": "circle"
-      },
-      "detail": {
-        "title": "Simple Variometer",
-        "statusColor": "orange",
-        "statusText": "SIMPLE VARIOMETER DETAILS",
-        "link": "",
-        "iconKey": "simple-vario",
-        "cardId": "simple-variometer",
-        "mockupImages": [
-          {
-            "id": 1,
-            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/simple-variom2.webp",
-            "alt": "",
-            "caption": "Upward acceleration is detected via the device accelerometer and reflected with responsive audio feedback."
-          },
-          {
-            "id": 2,
-            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/neat_stacking/simple-variom3.png",
-            "alt": "",
-            "caption": "Downward acceleration is identified in real time and communicated through distinct audio cues."
-          }
-        ],
-        "features": [
-          "Sensor-driven variometer functionality for pilot assistance",
-          "Live flight data including speed, position, and heading",
-          "Clear altitude trend visualization for real-time feedback",
-          "Always-on display designed for cockpit use",
-          "Minimal, dependable UI built for flight conditions"
-        ],
-        "stats": [
-          {
-            "label": "Performance",
-            "value": "98%"
-          },
-          {
-            "label": "User Satisfaction",
-            "value": "4/5"
-          },
-          {
-            "label": "Uptime",
-            "value": "99.9%"
-          },
-          {
-            "label": "Completion",
-            "value": "99.9%"
-          },
-          {
-            "label": "Completion",
-            "value": "99.9%"
-          }
-        ]
-      }
-    },
-    {
-      "card": {
         "title": "Eco Collect",
         "statusColor": "red",
         "statusText": "IN DEVELOPMENT",
@@ -802,4 +738,3 @@
   ],
   "appGames": []
 }
-
