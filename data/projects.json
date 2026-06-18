@@ -320,7 +320,7 @@
       "detail": {
         "title": "LazyAuthor",
         "statusColor": "orange",
-        "statusText": "RECIPE SEARCH DETAILS",
+        "statusText": "LAZYAUTHOR DETAILS",
         "link": "https://lazyauthor.lindocode.com",
         "iconKey": "lazyreader",
         "cardId": "lazy-author",
