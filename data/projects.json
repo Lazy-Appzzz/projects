@@ -125,6 +125,64 @@
     },
     {
       "card": {
+        "title": "LazyAuthor",
+        "statusColor": "green",
+        "statusText": "LIVE",
+        "subtitle": "Modern Authoring Studio for EPUB creation.",
+        "description": "LazyAuthor is a distraction-free writing studio built for authors who want to craft and publish interactive EPUBs without the friction. Write in a clean, focused editor, structure your chapters, embed rich media, and produce polished EPUB files ready for any reader. Pair it with LazyReader to push your work straight to your personal library and read it exactly as your audience will.",
+        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor.webp",
+        "link": "#mockup-section-lazy-author"
+      },
+      "detail": {
+        "title": "LazyAuthor",
+        "statusColor": "orange",
+        "statusText": "LAZYAUTHOR DETAILS",
+        "link": "https://lazyauthor.lindocode.com",
+        "iconKey": "lazyreader",
+        "cardId": "lazy-author",
+        "mockupWidth": 75,
+        "mockupImages": [
+          {
+            "id": 1,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor1.webp",
+            "alt": "LazyAuthor mode selection preview",
+            "caption": "In LazyAuthor selection mode user selects between interactive and normal EPUB creation."
+          },
+          {
+            "id": 2,
+            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor2.webp",
+            "alt": "LazyAuthor EPUB preview mode",
+            "caption": "In LazyAuthor preview mode user can preview how page will look once EPUB is exported."
+          }
+        ],
+        "features": [
+          "Auto-Save & Sync, means work is saved immediately on every change. Provides instant load on the next visit even without internet.",
+          "Import EPUB & content is mapped to chapters automatically",
+          "Preview mode in the chapter editor to see rendering of the chapter exactly as it will appear in the EPUB",
+          "With Interactive Story Editor write interactive stories with rich media such as audio & images"
+        ],
+        "stats": [
+          {
+            "label": "Performance",
+            "value": "98%"
+          },
+          {
+            "label": "User Satisfaction",
+            "value": "4.8/5"
+          },
+          {
+            "label": "Uptime",
+            "value": "99.9%"
+          },
+          {
+            "label": "Comletion",
+            "value": "90%"
+          }
+        ]
+      }
+    },
+    {
+      "card": {
         "title": "Portfolio",
         "statusColor": "green",
         "statusText": "LIVE",
@@ -303,64 +361,6 @@
           {
             "label": "Completion",
             "value": "98%"
-          }
-        ]
-      }
-    },
-    {
-      "card": {
-        "title": "LazyAuthor",
-        "statusColor": "green",
-        "statusText": "LIVE",
-        "subtitle": "Modern Authoring Studio for EPUB creation.",
-        "description": "LazyAuthor is a distraction-free writing studio built for authors who want to craft and publish interactive EPUBs without the friction. Write in a clean, focused editor, structure your chapters, embed rich media, and produce polished EPUB files ready for any reader. Pair it with LazyReader to push your work straight to your personal library and read it exactly as your audience will.",
-        "image": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor.webp",
-        "link": "#mockup-section-lazy-author"
-      },
-      "detail": {
-        "title": "LazyAuthor",
-        "statusColor": "orange",
-        "statusText": "LAZYAUTHOR DETAILS",
-        "link": "https://lazyauthor.lindocode.com",
-        "iconKey": "lazyreader",
-        "cardId": "lazy-author",
-        "mockupWidth": 75,
-        "mockupImages": [
-          {
-            "id": 1,
-            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor1.webp",
-            "alt": "LazyAuthor mode selection preview",
-            "caption": "In LazyAuthor selection mode user selects between interactive and normal EPUB creation."
-          },
-          {
-            "id": 2,
-            "src": "https://dawn-unit-97b0.sdrowvieli1.workers.dev/creativehub/images/cards/mockups/lazyauthor2.webp",
-            "alt": "LazyAuthor EPUB preview mode",
-            "caption": "In LazyAuthor preview mode user can preview how page will look once EPUB is exported."
-          }
-        ],
-        "features": [
-          "Auto-Save & Sync, means work is saved immediately on every change. Provides instant load on the next visit even without internet.",
-          "Import EPUB & content is mapped to chapters automatically",
-          "Preview mode in the chapter editor to see rendering of the chapter exactly as it will appear in the EPUB",
-          "With Interactive Story Editor write interactive stories with rich media such as audio & images"
-        ],
-        "stats": [
-          {
-            "label": "Performance",
-            "value": "98%"
-          },
-          {
-            "label": "User Satisfaction",
-            "value": "4.8/5"
-          },
-          {
-            "label": "Uptime",
-            "value": "99.9%"
-          },
-          {
-            "label": "Comletion",
-            "value": "90%"
           }
         ]
       }
