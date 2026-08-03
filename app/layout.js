@@ -19,8 +19,8 @@ export const metadata = {
   },
 
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 
   openGraph: {
