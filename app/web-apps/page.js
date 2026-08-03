@@ -3,10 +3,7 @@ import WebAppsPageClient from "./WebAppsPageClient.jsx";
 export const metadata = {
   metadataBase: new URL("https://lindocode.com"),
 
-  title: {
-    default: "Web Apps | Lindocode Digital",
-    template: "%s | Lindocode Digital",
-  },
+  title: "Web Apps",
 
   description:
     "Building modern web apps, UI components, and innovative development solutions.",
@@ -16,8 +13,8 @@ export const metadata = {
   },
 
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 };
 

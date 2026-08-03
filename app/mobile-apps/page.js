@@ -3,10 +3,7 @@ import MobileAppsPageClient from "./MobileAppsPageClient.jsx";
 export const metadata = {
   metadataBase: new URL("https://lindocode.com"),
 
-  title: {
-    default: "Mobile | Lindocode Digital",
-    template: "%s | Lindocode Digital",
-  },
+  title: "Mobile Apps",
 
   description:
     "Building modern mobile apps, UI components, and innovative development solutions.",
@@ -16,8 +13,8 @@ export const metadata = {
   },
 
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 };
 
